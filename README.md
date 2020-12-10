@@ -1,2 +1,6 @@
-# holidayhack2020
-This is a repository for holidayhack2020 notes and screenshots.
+# Holiday Hack Challenge 2020: Three French Hens
+
+## Objective No. 1: Uncover Santa's Gift List
+[Objective #1](screenshots/obective-1.jpg)
+
+
