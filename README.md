@@ -1,6 +1,6 @@
 # Holiday Hack Challenge 2020: Three French Hens
 
-## Terminal Challenges
+## Challenges
 
 ### Kringle Kiosk (Shinny Upatree)
 
@@ -35,6 +35,47 @@
 - Step 19: "netstat --listen"
 - Step 20: "curl localhost:54321"
 - Step 21: "pkill 14516_munchkin"
+
+### The Elf C0de (Ribb Bonbowford)
+
+Mischevious munchkins have nabbed all the North Pole's lollipops intended for good children all over the world. Use your JavaScript skills to retrieve the nabbed lollipops from all the entrances of KringleCon.
+
+### Redis Bug Hunt (Holly Evergreen)
+~~~
+We need your help!!
+
+The server stopped working, all that's left is the maintenance port.
+
+To access it, run:
+
+curl http://localhost/maintenance.php
+
+We're pretty sure the bug is in the index page. Can you somehow use the
+maintenance page to view the source code for the index page?
+~~~
+
+### Speaker UNPrep (Bushy Evergreen)
+~~~
+Help us get into the Speaker Unpreparedness Room!
+
+The door is controlled by ./door, but it needs a password! If you can figure
+out the password, it'll open the door right up!
+
+Oh, and if you have extra time, maybe you can turn on the lights with ./lights
+activate the vending machines with ./vending-machines? Those are a little
+trickier, they have configuration files, but it'd help us a lot!
+
+(You can do one now and come back to do the others later if you want)
+
+We copied edit-able versions of everything into the ./lab/ folder, in case you
+want to try EDITING or REMOVING the configuration files to see how the binaries
+react.
+
+Note: These don't require low-level reverse engineering, so you can put away IDA
+and Ghidra (unless you WANT to use them!)
+~~~
+
+
 
 
 
