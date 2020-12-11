@@ -75,9 +75,36 @@ Note: These don't require low-level reverse engineering, so you can put away IDA
 and Ghidra (unless you WANT to use them!)
 ~~~
 
+### Scapy Prepper (Alabaster Snowball)
+~~~
+╔════════════════════════════════════════════════════════════════╗
+║  ___ ___ ___ ___ ___ _  _ _____   ___  _   ___ _  _____ _____  ║
+║ | _ \ _ \ __/ __| __| \| |_   _| | _ \/_\ / __| |/ / __|_   _| ║
+║ |  _/   / _|\__ \ _|| .` | | |   |  _/ _ \ (__| ' <| _|  | |   ║
+║ |_| |_|_\___|___/___|_|\_| |_|   |_|/_/ \_\___|_|\_\___| |_|   ║
+║                ___                                             ║
+║               | _ \_ _ ___ _ __ _ __  ___ _ _                  ║
+║               |  _/ '_/ -_) '_ \ '_ \/ -_) '_|                 ║
+║               |_| |_| \___| .__/ .__/\___|_|                   ║
+║                           |_|  |_|                             ║
+║                (Packets prepared with scapy)                   ║
+╚════════════════════════════════════════════════════════════════╝
+Type "yes" to begin. 
+~~~
 
+### CAN-Bus Investigation (Wunorse Openslae)
+~~~
+Welcome to the CAN bus terminal challenge!
 
+In your home folder, there's a CAN bus capture from Santa's sleigh. Some of
+the data has been cleaned up, so don't worry - it isn't too noisy. What you
+will see is a record of the engine idling up and down. Also in the data are
+a LOCK signal, an UNLOCK signal, and one more LOCK. Can you find the UNLOCK?
+We'd like to encode another key mechanism.
 
+Find the timestamp of the UNLOCK code in candump.log and submit it to
+./runtoanswer!
+~~~
 
 ## Objective No. 1: Uncover Santa's Gift List
 
