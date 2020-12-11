@@ -1,16 +1,17 @@
 # Holiday Hack Challenge 2020: Three French Hens
 
+## Terminal Challenges
 
-## Terminal Challenge: Kringle Kiosk
+### Kringle Kiosk
 
 - Determined through errors that the application was "cowsay".
 - Used command injection with "&&" to add another command to the end of the file which was "bin/bash"
 
-## Terminal Challenge: Unescape Tmux
+### Unescape Tmux
 
 - Used "tmux a" to attach the available tmux session
 
-## Terminal Challenge: Linux Primer (Sugarplum Mary)
+### Linux Primer (Sugarplum Mary)
 
 - Entered "yes" to begin
 - Step 1: "ls"
