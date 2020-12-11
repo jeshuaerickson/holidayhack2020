@@ -22,19 +22,10 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
-<<<<<<< HEAD
 ## Objective No. 2: Investigate S3 Bucket
-
-When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
-
-
-=======
-## Objective No. 2: 
 
 - Added wrapper3000 to the wordlist
 - Found this bucket (wrapper3000) and the file "package"
 - Now attempting to decompress the file
-
-<a href="http://s3.amazonaws.com/wrapper3000/package">http://s3.amazonaws.com/wrapper3000/package</a>
->>>>>>> 78eb770830a669ce4d0e7ed63485a60e6485d83e
+- <a href="http://s3.amazonaws.com/wrapper3000/package">http://s3.amazonaws.com/wrapper3000/package</a>
 
