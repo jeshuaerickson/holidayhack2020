@@ -75,7 +75,21 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 Help Sugarplum Mary in the Courtyard find the supervisor password for the point-of-sale terminal. What's the password?
 
 - Step 1: Click on the Point-of-Sale terminal
-- Step 2: 
+- Step 2: Foo
+
+## Objective No. 4: Operate the Santavator
+
+Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
+
+![](screenshots/objective-4-completed.jpg)
+
+- foo
+
+## Objective No. 5: Open HID Lock
+
+![](screenshots/objective-5-completed.jpg)
+
+
 
 
 
