@@ -70,6 +70,17 @@ We're pretty sure the bug is in the index page. Can you somehow use the
 maintenance page to view the source code for the index page?
 ~~~
 
+- Step 1: "curl http://localhost/maintenance.php"
+- Step 2: Notice this error output
+~~~
+	ERROR: 'cmd' argument required (use commas to separate commands); eg:
+	curl http://localhost/maintenance.php?cmd=help
+	curl http://localhost/maintenance.php?cmd=mget,example1
+~~~
+- Step 3: 
+
+
+
 ### Speaker UNPrep (Bushy Evergreen)
 ~~~
 Help us get into the Speaker Unpreparedness Room!
@@ -86,7 +97,7 @@ trickier, they have configuration files, but it'd help us a lot!
 We copied edit-able versions of everything into the ./lab/ folder, in case you
 want to try EDITING or REMOVING the configuration files to see how the binaries
 react.
-
+	
 Note: These don't require low-level reverse engineering, so you can put away IDA
 and Ghidra (unless you WANT to use them!)
 ~~~
