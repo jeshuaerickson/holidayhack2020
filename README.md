@@ -3,11 +3,27 @@
 ## Challenges
 
 ### Kringle Kiosk (Shinny Upatree)
+~~~
+Welcome to our castle, we're so glad to have you with us!
+Come and browse the kiosk; though our app's a bit suspicious.
+Poke around, try running bash, please try to come discover,
+Need our devs who made our app pull/patch to help recover?
+
+Escape the menu by launching /bin/bash
+~~~
 
 - Determined through errors that the application was "cowsay".
 - Used command injection with "&&" to add another command to the end of the file which was "bin/bash"
 
 ### Unescape Tmux (Pepper Minstix)
+~~~
+Can you help me?
+
+I was playing with my birdie (she's a Green Cheek!) in something called tmux,
+then I did something and it disappeared!
+
+Can you help me find her? We were so attached!!
+~~~
 
 - Used "tmux a" to attach the available tmux session
 
