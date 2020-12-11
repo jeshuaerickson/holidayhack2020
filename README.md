@@ -44,11 +44,15 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 [Objective #1](screenshots/objective-1-completed.jpg)
 
+There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
+
 - First stop in the Holiday Hack challenge! I talked to Jingle Ringleford and downloaded the billboard image.
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
 ## Objective No. 2: Investigate S3 Bucket
+
+When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
 
 - Added wrapper3000 to the wordlist
 - Found this bucket (wrapper3000) and the file "package"
@@ -64,7 +68,9 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - Step 8: "cat package.txt"
 - Step 9: Find the answer! ---> "North Pole: The Frostiest Place on Earth"
 
-## Objective No. 3:
+## Objective No. 3: Point-of-Sale Password Recovery
+
+Help Sugarplum Mary in the Courtyard find the supervisor password for the point-of-sale terminal. What's the password?
 
 
 
