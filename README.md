@@ -54,6 +54,8 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
 
+![](screenshots/objective-2-completed.jpg)
+
 - Added wrapper3000 to the wordlist
 - Found this bucket (wrapper3000) and the file "package"
 - Now attempting to decompress the file
