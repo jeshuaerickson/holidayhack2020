@@ -2,12 +2,12 @@
 
 ## Terminal Challenges
 
-### Kringle Kiosk
+### Kringle Kiosk (Shinny Upatree)
 
 - Determined through errors that the application was "cowsay".
 - Used command injection with "&&" to add another command to the end of the file which was "bin/bash"
 
-### Unescape Tmux
+### Unescape Tmux (Pepper Minstix)
 
 - Used "tmux a" to attach the available tmux session
 
