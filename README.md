@@ -28,4 +28,18 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - Found this bucket (wrapper3000) and the file "package"
 - Now attempting to decompress the file
 - <a href="http://s3.amazonaws.com/wrapper3000/package">http://s3.amazonaws.com/wrapper3000/package</a>
+- Step 1: "cat package" (and see that it was base64 encoded)
+- Step 2: "base64 -d package > package.zip"
+- Step 3: "unzip package.zip"
+- Step 4: "tar -xvf package.txt.Z.xz.xxd.tar.bz2"
+- Step 5: "xxd -r *.xxd > package.txt.Z.xz"
+- Step 6: "xz -d package.txt.Z.xz"
+- Step 7: "uncompress package.txt.Z"
+- Step 8: "cat package.txt"
+- Step 9: Find the answer! ---> "North Pole: The Frostiest Place on Earth"
+
+## Objective No. 3:
+
+
+
 
