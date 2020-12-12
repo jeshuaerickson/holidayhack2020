@@ -102,6 +102,8 @@ Note: These don't require low-level reverse engineering, so you can put away IDA
 and Ghidra (unless you WANT to use them!)
 ~~~
 
+#### Part 1: Open the Door
+
 - Step 1: Ran "strings door"
 - Step 2: Observed this output:
 ~~~
@@ -112,6 +114,40 @@ and Ghidra (unless you WANT to use them!)
 	Beep boop invalid password
 ~~~
 - Step 3: entered the password after being prompted when running the "door" binary
+
+#### Part 2: Turn on the Lights
+
+- Step 1: "cd lab"
+- Step 2: view "lights.conf" (this is where the username and password is)
+- Step 3: run "./lights" and notice that 'select fields are decrypted'
+	- Make note of hint from Bushy, which asks 'what if we use an encrypted username'
+- Step 4: Replace username with encrypted password.
+- Step 5: Run application again. Get the following result:
+~~~
+elf@59a34b8b05b2 ~/lab $ ./lights
+The speaker unpreparedness room sure is dark, you're thinking (assuming
+you've opened the door; otherwise, you wonder how dark it actually is)
+
+You wonder how to turn the lights on? If only you had some kind of hin---
+
+ >>> CONFIGURATION FILE LOADED, SELECT FIELDS DECRYPTED: /home/elf/lab/lights.conf
+
+---t to help figure out the password... I guess you'll just have to make do!
+
+The terminal just blinks: Welcome back, Computer-TurnLightsOn
+
+What do you enter? > Computer-TurnLightsOn
+Checking......
+That would have turned on the lights!
+
+If you've figured out the real password, be sure you run /home/elf/lights
+~~~
+- Step 6: Notice that the password/username was decrypted! ---> "Computer-TurnLightsOn"
+- Step 7: Enter this password in the real "lights" binary prompt when you run it.
+
+#### Part 3: 
+
+
 
 
 
