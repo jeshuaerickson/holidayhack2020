@@ -200,6 +200,10 @@ Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 ![](screenshots/objective-4-completed.jpg)
 
 
+Got some help from my kid on this one. :) 
+![](screenshots/elevator.png)
+
+
 ## Objective No. 5: Open HID Lock
 
 ![](screenshots/objective-5-completed.jpg)
