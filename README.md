@@ -102,6 +102,20 @@ Note: These don't require low-level reverse engineering, so you can put away IDA
 and Ghidra (unless you WANT to use them!)
 ~~~
 
+- Step 1: Ran "strings door"
+- Step 2: Observed this output:
+~~~
+	 (bytes Overflowextern "
+	NulErrorBox<Any>thread 'expected, found Door opened!
+	That would have opened the door!
+	Be sure to finish the challenge in prod: And don't forget, the password is "Op3nTheD00r"
+	Beep boop invalid password
+~~~
+- Step 3: entered the password after being prompted when running the "door" binary
+
+
+
+
 ### Scapy Prepper (Alabaster Snowball)
 ~~~
 ╔════════════════════════════════════════════════════════════════╗
@@ -205,6 +219,8 @@ Got some help from my kid on this one. :)
 
 
 ## Objective No. 5: Open HID Lock
+
+Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks for hints on this challenge. You may also visit Fitzy Shortstack in the kitchen for tips.
 
 ![](screenshots/objective-5-completed.jpg)
 
