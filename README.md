@@ -118,7 +118,7 @@ and Ghidra (unless you WANT to use them!)
 ╚════════════════════════════════════════════════════════════════╝
 Type "yes" to begin. 
 ~~~
-
+__
 ### CAN-Bus Investigation (Wunorse Openslae)
 ~~~
 Welcome to the CAN bus terminal challenge!
@@ -169,6 +169,28 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 ## Objective No. 3: Point-of-Sale Password Recovery
 
 Help Sugarplum Mary in the Courtyard find the supervisor password for the point-of-sale terminal. What's the password?
+
+![](screenshots/objective-3-complete.jpg)
+
+- Step 1: Download the santa-shop.exe file.
+- Step 2: Extract with "engrampa"
+	![](screenshots/engrampa.jpg)
+- Looking at the .asar file located here:  /home/kali/Downloads/app-64/resources
+- Remember to read hints and look at hint suggesting npm "asar" tool.
+- Reading throught this article on how to use it. Interesting!
+- Follow directions and unpack source code for santa-shop.exe
+	- <a href="https://medium.com/how-to-electron/how-to-get-source-code-of-any-electron-application-cbb5c7726c37">asar article on Medium</a>
+- "cat README.md" ---> "Remember, if you need to change Santa's passwords, it's at the top of main.js!"
+- Find the answer! ---> "santapass"
+~~~
+main.js
+// Modules to control application life and create native browser window
+const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path');
+
+const SANTA_PASSWORD = 'santapass';
+~~~
+
 
 - Step 1: Click on the Point-of-Sale terminal
 - Step 2: Foo
