@@ -175,13 +175,15 @@ Help Sugarplum Mary in the Courtyard find the supervisor password for the point-
 - Step 1: Download the santa-shop.exe file.
 - Step 2: Extract with "engrampa"
 	![](screenshots/engrampa.png)
-- Looking at the .asar file located here:  /home/kali/Downloads/app-64/resources
-- Remember to read hints and look at hint suggesting npm "asar" tool.
-- Reading throught this article on how to use it. Interesting!
-- Follow directions and unpack source code for santa-shop.exe
+- Step 3: Looking at the .asar file located here:  /home/kali/Downloads/app-64/resources
+- Step 4: Remember to read hints and look at hint suggesting npm "asar" tool.
+- Step 5: Reading throught this article on how to use it. Interesting!
+	- Follow directions and unpack source code for santa-shop.exe
 	- <a href="https://medium.com/how-to-electron/how-to-get-source-code-of-any-electron-application-cbb5c7726c37">asar article on Medium</a>
-- "cat README.md" ---> "Remember, if you need to change Santa's passwords, it's at the top of main.js!"
-- Find the answer! ---> "santapass"
+
+- Step 6: Review unpacked source code and then "cat README.md"
+	- "cat README.md" ---> "Remember, if you need to change Santa's passwords, it's at the top of main.js!"
+- Step 7: Find the answer! ---> "santapass"
 ~~~
 main.js
 // Modules to control application life and create native browser window
@@ -191,17 +193,12 @@ const path = require('path');
 const SANTA_PASSWORD = 'santapass';
 ~~~
 
-
-- Step 1: Click on the Point-of-Sale terminal
-- Step 2: Foo
-
 ## Objective No. 4: Operate the Santavator
 
 Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
 ![](screenshots/objective-4-completed.jpg)
 
-- foo
 
 ## Objective No. 5: Open HID Lock
 
