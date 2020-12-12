@@ -174,7 +174,7 @@ Help Sugarplum Mary in the Courtyard find the supervisor password for the point-
 
 - Step 1: Download the santa-shop.exe file.
 - Step 2: Extract with "engrampa"
-	![](screenshots/engrampa.jpg)
+	![](screenshots/engrampa.png)
 - Looking at the .asar file located here:  /home/kali/Downloads/app-64/resources
 - Remember to read hints and look at hint suggesting npm "asar" tool.
 - Reading throught this article on how to use it. Interesting!
