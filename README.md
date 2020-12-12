@@ -170,7 +170,7 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 Help Sugarplum Mary in the Courtyard find the supervisor password for the point-of-sale terminal. What's the password?
 
-![](screenshots/objective-3-complete.jpg)
+![](screenshots/objective-3-completed.jpg)
 
 - Step 1: Download the santa-shop.exe file.
 - Step 2: Extract with "engrampa"
