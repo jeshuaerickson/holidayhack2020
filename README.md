@@ -313,5 +313,64 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ## Objective No. 6: Splunk Challenge
 
+![](screenshots/splunk.png)
+
+Make sure you are "Santa" when you attempt this objective.
+
+### Question 1
+
+How many distinct MITRE ATT&CK techniques did Alice emulate?
+
+- Step 1: Visit the "Alice Bluebird" chat. Notice this search string:
+	" | tstats count where index=* by index "
+- Step 2: Use this search string in the "Search" page.
+- Step 3: Then simply set the search to "index=attack" (switch to verbose mode)
+- Step 4: Find the count for the field called "Test Number"
+- Answer: 13
+
+This was the recommended search
+~~~
+| tstats count where index=* by index 
+| search index=T*-win OR T*-main
+| rex field=index "(?<technique>t\d+)[\.\-].0*" 
+| stats dc(technique)
+~~~
+
+### Question 2
+
+What are the names of the two indexes that contain the results of emulating Enterprise ATT&CK technique 1059.003? (Put them in alphabetical order and separate them with a space)
+
+- Step 1: Read response from "Alice Bluebird"
+- Step 2: Use this search again: 
+~~~
+| tstats count where index=* by index
+~~~
+- Step 3: Notice the two indexes that start with 1059.003
+- Answers: 
+	- t1059.003-main
+	- t1059.003-win
+
+### Question 3
+
+One technique that Santa had us simulate deals with 'system information discovery'. What is the full name of the registry key that is queried to determine the MachineGuid?    
+- Step 1: Notice that this is t1082
+- Step 2: Try this is the search "index=t1082-win"
+- Step 3: Go here: https://github.com/redcanaryco/atomic-red-team/search?p=2&q=system+information
+- Step 4: Find the answer on this page: https://github.com/redcanaryco/atomic-red-team/blob/8eb52117b748d378325f7719554a896e37bccec7/atomics/T1082/T1082.md
+- Answer: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography"
+
+### Question 4
+
+According to events recorded by the Splunk Attack Range, when was the first OSTAP related atomic test executed? (Please provide the alphanumeric UTC timestamp.)
+
+- Step 1: Search "index=attack"
+- Step 2: Sort "execution time" desc.
+- Step 3: Find first instance of OSTAP
+- Answer: "2020-11-30T17:44:15Z" (OSTAP Worming Activity)
+
+### Question 5
+
+One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component?
+
 
 
