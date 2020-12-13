@@ -300,6 +300,9 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 	- Needed to wait seconds. I was being boneheaded and trying the door before the 10 seconds was up.
 - Step 6: Go through Santa's secret office and BECOME SANTA! WHAT ON EARTH!
 
+![](screenshots/black-badge.png)
+
+
 ## Objective No. 6: Splunk Challenge
 
 
