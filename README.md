@@ -145,12 +145,43 @@ If you've figured out the real password, be sure you run /home/elf/lights
 - Step 6: Notice that the password/username was decrypted! ---> "Computer-TurnLightsOn"
 - Step 7: Enter this password in the real "lights" binary prompt when you run it.
 
-#### Part 3: 
+#### Part 3: Vending Machine
+
+- Step 1: Rename config file.
+- Step 2: Try the vending machine binary int the lab and enter a new password:
+	- "CandyCane-"   encrypts to "LVEdQPpBwr" LVEdQPpBw	
+	- "AAAAAAAAAAAA" encrypts to "XiGRehmwXiGR"
+	- "BBBBBBBBBBBB" encrypts to "DqTpKv7fDqTp"
+	- "CCCCCCCCCCCC" encrypts to "Lbn3UP9WLbn3"
+	- "ABCABCABCABC" encrypts to "XqnRKPmfLiT3"
+	- "DDDDDDDDDDD"  encrypts to "yv09iu8Qyv0"
+	- "EEEEEEEEEEEE" encrypts to "hxkr3zCnhxkr"
+	- "hhhhhhhhhhhh" encrypts to "nnUgokAhnnUg"
+	- "aaaaaaaaaaaa" encrypts to "9Vbtacpg9Vbt"
+        - "nnnnnnnnnnnn" encrypts to "bhE62XDBbhE6"
+	- "ddddddddddddd" encryptsto "ORLdlwWbORLdl"
+	- "yyyyyyyyyyyy" encrypts to "iL5JQAMUiL5J"
+	- "333333333333" encrypts to "WJ1YbNtlWJ1Y"
+	- "eeeeeeeeeeee" encrypts to "wcZQAYuewcZQ"
+	- "ssssssssssss" encrypts to "A5PnWSbDA5Pn"
+	- "123456789a"   encrypts to "2W1hYoj4lV"
+	- "123456789b"   encrypts to "2W1hYoj4lU"
+	- "123456789e"	 encrypts to "2W1hYoj4lc"
+	- "123456789f"   encrypts to "2W1hYoj4lw"
+- Step 3: I tried nearly everything but apparently skipped "CandyCane1". Wow, that was an ordeal!
 
 
+### 33.6kbps (Fitzy Shortstack)
 
-
-
+- Step 1: Dial the number --> 756-8347
+- Step 2: Use the following sequence
+	- baa DEE brr
+	- aaah
+	- WEWEWwrwrrwrr
+	- beDURRdunditty
+	- SCHHRRHHRTHRTR 
+- Step 3: Got hint to talk to Shinny Upatree (to steal his tag ID) :)
+	- "2006e22f13" 
 
 ### Scapy Prepper (Alabaster Snowball)
 ~~~
@@ -260,7 +291,16 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ![](screenshots/objective-5-completed.jpg)
 
+- Step 1: Get this RFID: 2006e22ee1 (from the ? room)
+- Step 2: Sim HID tag: "lf hid sim -r 2006e22ee1" 
+- Step 3: Realize that tag ID doesn't do anything.
+- Step 4: Steal Shinny Upatree's ID, using "search lf" when standing next to him.
+- Step 5: Simulate the ID when you get to Santa's secret door in the workshop.
+        - "lf hid sim -r 2006e22f13" 
+	- Needed to wait seconds. I was being boneheaded and trying the door before the 10 seconds was up.
+- Step 6: Go through Santa's secret office and BECOME SANTA! WHAT ON EARTH!
 
+## Objective No. 6: Splunk Challenge
 
 
 
