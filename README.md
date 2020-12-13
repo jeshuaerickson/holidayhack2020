@@ -35,6 +35,8 @@ Can you help me find her? We were so attached!!
 
 ### Linux Primer (Sugarplum Mary)
 
+![](screenshots/sugarplum-mary.png)
+
 - Entered "yes" to begin
 - Step 1: "ls"
 - Step 2: "cat munchkin*"
