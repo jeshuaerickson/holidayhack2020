@@ -3,6 +3,9 @@
 ## Challenges
 
 ### Kringle Kiosk (Shinny Upatree)
+
+![](screenshots/shinny-upatree.png)
+
 ~~~
 Welcome to our castle, we're so glad to have you with us!
 Come and browse the kiosk; though our app's a bit suspicious.
@@ -16,6 +19,9 @@ Escape the menu by launching /bin/bash
 - Used command injection with "&&" to add another command to the end of the file which was "bin/bash"
 
 ### Unescape Tmux (Pepper Minstix)
+
+![](screenshots/pepper-minstix.png)
+
 ~~~
 Can you help me?
 
