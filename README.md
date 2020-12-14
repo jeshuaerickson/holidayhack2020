@@ -313,6 +313,10 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ## Objective No. 6: Splunk Challenge
 
+Access the Splunk terminal in the Great Room. What is the name of the adversary group that Santa feared would attack KringleCon?
+
+![](screenshots/objective-6-completed.jpg)
+
 ![](screenshots/splunk.png)
 
 Make sure you are "Santa" when you attempt this objective.
@@ -371,6 +375,52 @@ According to events recorded by the Splunk Attack Range, when was the first OSTA
 ### Question 5
 
 One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component?
+
+- Step 1: Look up the events in the "index=attack" list. 
+- Step 2: Notice the test called "using device audio capture commandlet"
+- Step 3: Notice the local execution time (2020-11-30T19:25:14) 
+- Step 4: Go back and search with "index=* EventID=1"
+- Step 5: *Find the time in the range in the Timeline.
+- Step 6: Find the event that matches. 
+	- (powershell command with the commandlet in it) (row 30)
+- Answer: 3648 (ProcessId)
+
+### Question 6
+
+Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation?
+
+- Step 1: Use this filter 'index=* file_name="*.bat"'
+- Step 2: Make note of all the bat files.
+- Step 3: Review a sample of them in the Atomic Red Team repo.
+- Step 4: Find one that is multiline effecting registry values.
+- Step 5: Discover that this is discovery.bat
+- Answer: "quser"
+
+### Question 7
+
+According to x509 certificate events captured by Zeek (formerly Bro), what is the serial number of the TLS certificate assigned to the Windows domain controller in the attack range?
+
+- Step 1: Use this filter 'index=* sourcetype=bro*"
+- Step 2: See values for certificate.serial
+- Step 3: Pick the most heavily used serial since this is a domain controller.
+- Answer: 55FCEEBB21270D9249E86F4B9DC7AA60
+
+### Challenge Question
+
+- Step 1: Google "RFC 7465" to see what Alice talking about.
+- Step 2: Looks like RC4 encryption.
+- Step 3: Go to CyberChef and see what I need. A Passphrase.
+- Step 4: Alice says I need to watch Splunk talk.
+	- Passphrase is "Stay Frosty"
+- Answer: "The Lollipop Guild"
+
+## Objective 7: Solve the Sleight's CAN-D-BUS Problem
+
+Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. We need you to exclude the malicious messages and no others to fix the sleigh. Visit the NetWars room on the roof and talk to Wunorse Openslae for hints.
+
+
+
+
 
 
 
