@@ -85,7 +85,7 @@ maintenance page to view the source code for the index page?
 	curl http://localhost/maintenance.php?cmd=help
 	curl http://localhost/maintenance.php?cmd=mget,example1
 ~~~
-- Step 3: 
+- Step 3: "curl http://localhost/maintenance.php?cmd=info" 
 
 
 
@@ -477,6 +477,9 @@ Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. 
 
 It works!
 
+## Objective 8: Broken Tag Generator
+
+Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in the environment variable GREETZ? Talk to Holly Evergreen in the kitchen for help with this.
 
 
 
