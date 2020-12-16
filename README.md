@@ -207,7 +207,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 ╚════════════════════════════════════════════════════════════════╝
 Type "yes" to begin. 
 ~~~
-__
+
 ### CAN-Bus Investigation (Wunorse Openslae)
 ~~~
 Welcome to the CAN bus terminal challenge!
@@ -221,6 +221,37 @@ We'd like to encode another key mechanism.
 Find the timestamp of the UNLOCK code in candump.log and submit it to
 ./runtoanswer!
 ~~~
+- Step 1: "awk '/19B/' candump.log
+- Step 2: Read through list of results 
+- Step 3: Start from the bottom and work my way up until getting right time stamp. :)
+
+~~~
+elf@d08e90349b0f:~$ awk '/19B/' candump.log
+(1608926661.626380) vcan0 244#000000019B
+(1608926662.390980) vcan0 244#000000019B
+(1608926664.626448) vcan0 19B#000000000000
+(1608926667.837300) vcan0 244#00000019BE
+(1608926671.122520) vcan0 19B#00000F000000
+(1608926673.157900) vcan0 244#00000019BE
+(1608926674.092148) vcan0 19B#000000000000
+elf@d08e90349b0f:~$ ./runtoanswer 
+There are two LOCK codes and one UNLOCK code in the log.  What is the decimal portion of the UNLOCK timestamp?
+(e.g., if the timestamp of the UNLOCK were 1608926672.391456, you would enter 391456.
+> 092148
+Your answer: 092148
+
+Checking....
+Sorry, that answer is incorrect. Please try again!
+elf@d08e90349b0f:~$ ./runtoanswer 
+There are two LOCK codes and one UNLOCK code in the log.  What is the decimal portion of the UNLOCK timestamp?
+(e.g., if the timestamp of the UNLOCK were 1608926672.391456, you would enter 391456.
+> 122520
+Your answer: 122520
+
+Checking....
+Your answer is correct!
+~~~
+
 
 ## Objective No. 1: Uncover Santa's Gift List
 
@@ -418,7 +449,33 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 
 Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. We need you to exclude the malicious messages and no others to fix the sleigh. Visit the NetWars room on the roof and talk to Wunorse Openslae for hints.
 
+![](screenshots/objective-7-completed.jpg)
 
+- Step 1: Filter out all the zero values currently running.
+	- Example 244#000000000000 	
+
+- Step 2: Notice what some of the controls do once all the zeros are filtered.
+~~~
+	START     -> 02A#00FF00
+	STOP      -> 02A#0000FF
+	LOCK      -> 19B#000000000000
+	UNLOCK    -> 19B#00000F000000
+	STEERINGR -> 019#00000001
+	STEERINGL -> 019#FFFFFFFF
+	BRAKE     -> 080#000001
+	ACCEL	  -> 244#
+
+	JUNK? --> 080#FFFFFA
+	JUNK? --> 19B#0000000F2057
+~~~
+- Step 3: Notice the some junky values that don't make sense.
+	- Why are there negative values for brakes??
+	- Why is there a lock/unlock value that presents a third state??
+- Step 4: Use these filters
+
+![](screenshots/sleigh-defrosted.png)
+
+It works!
 
 
 
