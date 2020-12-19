@@ -344,6 +344,75 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 
 ## Challenges
 
+### Scapy Prepper (Alabaster Snowball)
+
+~~~
+COMPLETED TASK #1:
+Welcome to the "Present Packet Prepper" interface! The North Pole could use your help preparing present packets for shipment.
+Start by running the task.submit() function passing in a string argument of 'start'.
+Type task.help() for help on this question.
+All you should have to do is type task.submit('start') to move past this question and get started with scapy packet manipulation.
+Correct! adding a () to a function or class will execute it. Ex - FunctionExecuted()
+
+Press Enter to Continue
+: 
+COMPLETED TASK #2:
+Submit the class object of the scapy module that sends packets at layer 3 of the OSI model.
+For example, task.submit(sendp) would submit the sendp scapy class used to send packets at layer 2 of the OSI model.
+Scapy classes can be found at ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
+Correct! The "send" scapy class will send a crafted scapy packet out of a network interface.
+
+Press Enter to Continue
+: 
+COMPLETED TASK #3:
+Submit the class object of the scapy module that sniffs network packets and returns those packets in a list.
+Look for "Sniff packets and return a list of packets." at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
+Correct! the "sniff" scapy class will sniff network traffic and return these packets in a list.
+
+Press Enter to Continue
+: 
+COMPLETED TASK #4:
+Submit the NUMBER only from the choices below that would successfully send a TCP packet and then return the first sniffed response packet to be stored in a variable named "pkt":
+1. pkt = sr1(IP(dst="127.0.0.1")/TCP(dport=20))
+2. pkt = sniff(IP(dst="127.0.0.1")/TCP(dport=20))
+3. pkt = sendp(IP(dst="127.0.0.1")/TCP(dport=20))
+Look for "Send packets at layer 3 and return only the first answer" at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
+Correct! sr1 will send a packet, then immediately sniff for a response packet.
+
+Press Enter to Continue
+: 
+COMPLETED TASK #5:
+Submit the class object of the scapy module that can read pcap or pcapng files and return a list of packets.
+Look for "Read a pcap or pcapng file and return a packet list" at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.utils.html )
+Correct! the "rdpcap" scapy class can read pcap files.
+
+Press Enter to Continue
+: 
+COMPLETED TASK #6:
+The variable UDP_PACKETS contains a list of UDP packets. Submit the NUMBER only from the choices below that correctly prints a summary of UDP_PACKETS:
+1. UDP_PACKETS.print()
+2. UDP_PACKETS.show()
+3. UDP_PACKETS.list()
+Try each option and see which one works. Submit the NUMBER only of the correct choice.
+Correct! .show() can be used on lists of packets AND on an individual packet.
+
+Press Enter to Continue
+: 
+COMPLETED TASK #7:
+Submit only the first packet found in UDP_PACKETS.
+You can specify an item from a list using "list_var_name[num]" where "num" is the item number you want starting at 0.
+
+Correct! Scapy packet lists work just like regular python lists so packets can be accessed by their position in the list starting at offset 0.
+
+Press Enter to Continue
+: 
+COMPLETED TASK #8:
+Submit only the entire TCP layer of the second packet in TCP_PACKETS.
+If you had a packet stored in a variable named pkt, you could access its IP layer using "pkt[IP]"
+Correct! Most of the major fields like Ether, IP, TCP, UDP, ICMP, DNS, DNSQR, DNSRR, Raw, etc... can be accessed this way. Ex - pkt[IP][TCP]
+
+~~~
+
 ### Kringle Kiosk (Shinny Upatree)
 
 ![](screenshots/shinny-upatree.png)
