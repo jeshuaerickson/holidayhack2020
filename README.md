@@ -333,6 +333,14 @@ Here's the result!
 
 Answer: "JackFrostWasHere"
 
+## Objective 9: ARP Shenanigans
+
+Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
+
+
+
+
+---
 
 ## Challenges
 
