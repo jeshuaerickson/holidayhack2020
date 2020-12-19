@@ -231,7 +231,10 @@ Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in th
 
 - Step 1: Get an error by doing and upload of an unsupported file:
 ~~~
-Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0s4xy.txt~~~
+
+Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0s4xy.txt
+
+~~~
 
 
 
