@@ -311,7 +311,6 @@ curl http://localhost/maintenance.php
 
 We're pretty sure the bug is in the index page. Can you somehow use the
 maintenance page to view the source code for the index page?
-~~~
 
 - Step 1: "curl http://localhost/maintenance.php"
 - Step 2: Notice this error output
