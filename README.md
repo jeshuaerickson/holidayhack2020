@@ -231,7 +231,7 @@ Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in th
 
 ![](screenshots/objective-8-completed.jpg)
 
-### Hints:
+### Hints
 
 - Remember, the processing happens in the background so you might need to wait a bit after exploiting but before grabbing the output!
 - I'm sure there's a vulnerability in the source somewhere... surely Jack wouldn't leave their mark?
@@ -336,6 +336,61 @@ Answer: "JackFrostWasHere"
 ## Objective 9: ARP Shenanigans
 
 Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
+
+### Hints
+
+- Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
+- The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
+- Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. Let's return a DNS response resolving the request to our IP.
+- The malware on the host does an HTTP request for a .deb package. Maybe we can get command line access by sending it a command in a customized .deb file
+
+### Steps
+
+- Step 1: Make sure you can reach 10.6.6.35 --> "ping 10.6.6.35"
+- Step 2: Do and "ls" of the home folder.
+- Step 3: Read "HELP.md"
+
+- Step 4: Read arp.pcap
+~~~
+guest@d6fc16938bc6:~/pcaps$ tshark -nnr arp.pcap
+    1   0.000000 cc:01:10:dc:00:00 → ff:ff:ff:ff:ff:ff ARP 60 Who has 10.10.10.1? Tell 10.10.10.2
+    2   0.031000 cc:00:10:dc:00:00 → cc:01:10:dc:00:00 ARP 60 10.10.10.1 is at cc:00:10:dc:00:00
+~~~
+
+- Step 5: Read dns.pcap
+~~~
+guest@d6fc16938bc6:~/pcaps$ tshark -nnr dns.pcap
+    1   0.000000 192.168.170.8 → 192.168.170.20 DNS 74 Standard query 0x75c0 A www.netbsd.org
+    2   0.048911 192.168.170.20 → 192.168.170.8 DNS 90 Standard query response 0x75c0 A www.netbsd.org A 204.152.190.12
+~~~
+
+### Help File
+
+#### To Add An Additional Terminal Pane:
+`/usr/bin/tmux split-window -hb`
+
+#### To exit a terminal pane simply type:
+`exit`
+
+#### To Launch a webserver to serve-up files/folder in a local directory:
+```
+cd /my/directory/with/files
+python3 -m http.server 80
+```
+
+#### A Sample ARP pcap can be viewed at:
+https://www.cloudshark.org/captures/d97c5b81b057
+
+#### A Sample DNS pcap can be viewed at:
+https://www.cloudshark.org/captures/0320b9b57d35
+
+#### If Reading arp.pcap with tcpdump or tshark be sure to disable name
+#### resolution or it will stall when reading:
+
+- tshark -nnr arp.pcap
+- tcpdump -nnr arp.pcap
+
+
 
 
 
