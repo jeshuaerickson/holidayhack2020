@@ -413,6 +413,7 @@ If you had a packet stored in a variable named pkt, you could access its IP laye
 Correct! Most of the major fields like Ether, IP, TCP, UDP, ICMP, DNS, DNSQR, DNSRR, Raw, etc... can be accessed this way. Ex - pkt[IP][TCP]
 
 >pkt=TCP_PACKETS[1]
+
 >task.submit(pkt[TCP])
 
 #### COMPLETED TASK #9:
@@ -421,6 +422,7 @@ pkt[IP].dst = "10.10.10.10" would changed the destination IP address of a packet
 Correct! You can change ALL scapy packet attributes using this method.
 
 >pkt=UDP_PACKETS[0]
+
 >pkt[IP].src='127.0.0.1'
 
 #### COMPLETED TASK #10:
@@ -430,6 +432,7 @@ Correct! Here is some really nice list comprehension that will grab all the raw 
 [pkt[Raw].load for pkt in TCP_PACKETS if Raw in pkt]
 
 >TCP_PACKETS[6][Raw].load
+
 >task.submit('echo\r\n')
 
 #### COMPLETED TASK #11:
