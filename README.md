@@ -337,6 +337,17 @@ Answer: "JackFrostWasHere"
 
 Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
 
+~~~
+Jack Frost has hijacked the host at 10.6.6.35 with some custom malware.
+Help the North Pole by getting command line access back to this host.
+
+Read the HELP.md file for information to help you in this endeavor.
+
+Note: The terminal lifetime expires after 30 or more minutes so be 
+sure to copy off any essential work you have done as you go.
+~~~
+
+
 ### Hints
 
 - Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
