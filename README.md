@@ -474,6 +474,20 @@ Correct! Your UDP packet creation should look something like this:
 
 >task.submit(pkt)
 
+#### COMPLETED TASK #15:
+The variable ARP_PACKETS contains an ARP request and response packets. The ARP response (the second packet) has 3 incorrect fields in the ARP layer. Correct the second packet in ARP_PACKETS to be a proper ARP response and then task.submit(ARP_PACKETS) for inspection.
+The three fields in ARP_PACKETS[1][ARP] that are incorrect are op, hwsrc, and hwdst. A sample ARP pcap can be referenced at https://www.cloudshark.org/captures/e4d6ea732135. You can run the "reset_arp()" function to reset the ARP packets back to their original form.
+Great, you prepared all the present packets!
+
+>pkt = ARP_PACKETS[1][ARP]
+
+>pkt.op=2
+
+>pkt.hwsrc='00:13:46:0b:22:ba'
+
+>pkt.hwdst='00:16:ce:6e:8b:24'
+
+>task.submit(ARP_PACKETS)
 
 
 
