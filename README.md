@@ -456,6 +456,7 @@ Here is a good link on creating packets with scapy ( https://0xbharath.github.io
 Correct! Your UDP packet creation should look something like this:
 
 > pkt = IP(dst="127.127.127.127")/UDP(dport=5000)
+
 > task.submit(pkt)
 
 
@@ -465,7 +466,8 @@ You can reference UDP_PACKETS[0] for a similar packet but dont use this exact pa
 Correct! Your UDP packet creation should look something like this:
 
 >pkt = IP(dst="127.2.3.4")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="elveslove.santa"))
-task.submit(pkt)
+
+>task.submit(pkt)
 
 
 
