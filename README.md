@@ -377,6 +377,12 @@ guest@d6fc16938bc6:~/pcaps$ tshark -nnr dns.pcap
 
 ### Help File
 
+
+#### How To Resize and Switch Terminal Panes:
+You can use the key combinations ( Ctrl+B ↑ or ↓ ) to resize the terminals.
+You can use the key combinations ( Ctrl+B o ) to switch terminal panes.
+See tmuxcheatsheet.com for more details
+
 #### To Add An Additional Terminal Pane:
 `/usr/bin/tmux split-window -hb`
 
