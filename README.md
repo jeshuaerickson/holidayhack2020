@@ -425,6 +425,8 @@ Correct! You can change ALL scapy packet attributes using this method.
 
 >pkt[IP].src='127.0.0.1'
 
+>task.submit(pkt)
+
 #### COMPLETED TASK #10:
 Submit the password "task.submit('elf_password')" of the user alabaster as found in the packet list TCP_PACKETS.
 You can access each packets Raw payload using TCP_PACKETS[0][Raw].load only incrementing 0 each packet. (if that particular packet has a payload)
