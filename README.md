@@ -455,6 +455,17 @@ https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe1
         sendp(response, iface="eth0")
 ~~~
 
+- Step 11: Notice that the infected host is attempting to resolve a DNS query.
+	- **ftp.osuosl.org**
+- Step 12: Provide DNS response that sets my host as the IP for that domain. 
+	- Here is a nice resource to get started with that: 
+	- https://thepacketgeek.com/scapy/building-network-tools/part-09/
+- Step 13: Now getting arp to DNS query with what might be a response but I am not sure.
+~~~
+  248 242.720565643 10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
+  249 242.740753041 10.6.6.35 → 10.6.6.53    DNS 84 Standard query 0x0000 A 10.6.6.53
+~~~
+
 
 
 ---
