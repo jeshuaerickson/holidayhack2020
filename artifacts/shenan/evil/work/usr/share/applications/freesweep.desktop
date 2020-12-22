@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Freesweep
+Comment=text-based minesweeper game
+Comment[de]=textbasiertes Minesweeper-Spiel
+Exec=freesweep
+Icon=freesweep
+Categories=Game;LogicGame;
+Keywords=text-based;logic;mines;terminal;
+Terminal=true

