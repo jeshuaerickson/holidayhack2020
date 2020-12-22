@@ -1,0 +1,55 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://github.com/rwestlund/freesweep
+Comment:
+ This package has been Debianised by Antti-Juhani Kaijanaho <ajk@debian.org>
+ from sources fetched at 1999-09-05 03:30 UTC from
+ <URL:http://www.upl.cs.wisc.edu/~hartmann/sweep/freesweep.tar.gz>
+ .
+ The sources for version 0.90 were fetched from
+ http://www.upl.cs.wisc.edu/~hartmann/sweep/freesweep-0.90.tar.gz
+ on Sat, 23 Feb 2008.
+ .
+ It was taken over by Edward Betts <edward@debian.org> on
+ Sat, 13 Nov 1999 14:25:53 +0000
+ .
+ It was taken over by the Debian Games Team
+ <pkg-games-devel@lists.alioth.debian.org> on Sat, 23 Feb 2008.
+
+Files: *
+Copyright: 1999, Gus Hartmann <hartmann@upl.cs.wisc.edu>
+           1999, Pete Keller <psilord@upl.cs.wisc.edu>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 1999,      Antti-Juhani Kaijanaho <ajk@debian.org>
+           1999-2001, Edward Betts <edward@debian.org>
+           2004,      Romain Francoise <rfrancoise@debian.org>
+           2006,      Aurelien Jarno <aurel32@debian.org>
+           2008,      Marco Rodrigues <gothicx@sapo.pt>
+           2008,      Ansgar Burchardt <ansgar@43-1.org>
+           2016-2020, Markus Koschany <apo@debian.org>
+License: GPL-2+
+
+Files: debian/freesweep.png
+Copyright: Mozilla Foundation
+License: GPL-2+
+Comment:
+ https://commons.wikimedia.org/wiki/File:Minefield-icon.png
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-2'.
