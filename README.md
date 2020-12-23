@@ -500,7 +500,7 @@ Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's f
 
 ![](screenshots/objective-10-completed.jpg)
 
-![](screenshots/remove-besanta-condition.jpg)
+![](screenshots/remove-besanta-condition.png)
 
 ## Objective 11a:
 
