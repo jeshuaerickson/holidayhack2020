@@ -432,6 +432,15 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. (Enter just the 16-character hex value of the nonce)
 
+### Hints:
+
+- If you have control over to bytes in a file, it's easy to create MD5 hash collisions. Problem is: there's that nonce that he would have to know ahead of time.
+
+#### Tinsel Upatree:
+
+Santa, I don't know if you've heard, but something is very, very wrong...We tabulated the latest score of the Naughty/Nice Blockchain. Jack Frost is the nicest being in the world! Jack Frost!?! As you know, we only really start checking the Naughty/Nice totals as we get closer to the holidays. Out of nowhere, Jack Frost has this crazy score... positive 4,294,935,958 nice points!
+No one has EVER gotten a score that high! No one knows how it happened. Most of us recall Jack having a NEGATIVE score only a few days ago...Worse still, his huge positive score seems to have happened way back in March. Our first thought was that he somehow changed the blockchain - but, as you know, that isn't possible. We ran a validation of the blockchain and it all checks out. Even the smallest change to any block should make it invalid. Blockchains are huge, so we cut a one minute chunk from when Jack's big score registered back in March. You can get a slice of the Naughty/Nice blockchain on your desk. You can get some tools to help you here. Tangle Coalbox, in the Speaker UNPreparedness room. has been talking with attendees about the issue.
+
 
 
 ---
