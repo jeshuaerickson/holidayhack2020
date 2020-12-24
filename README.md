@@ -480,21 +480,20 @@ Even though the chunk of the blockchain that you have ends with block 129996, ca
 
 ### Snowball Fight (Tangle Coalbox)
 
-#### Hints
-
-- Is it possible that the name a player provides influences how the forts are laid out?
-- Oh, oh, maybe if I feed a Hard name into an Easy game I can manipulate it!
-- UGH! on Impossible, the best I get are rejected player names in the page comments... maybe that's useful?
-- I'll have to re-watch Tom Liston's talk again.
+![](screenshots/win-no-impossible.png)
 
 #### Steps
 
 - Step 1: Watch Tom Liston's talk.
-- Step 2: Clone Liston's  mt19937 GitHub repository.
-- Step 3:   
-
-
-
+- Step 2: Clone Liston's  mt19937 GitHub repository. Review/run the code.
+- Step 3: Clone this repo: git@github.com:kmyk/mersenne-twister-predictor.git
+- Step 4: Open Chrome and go into developer mode.
+- Step 5: Notice the list of 624 seeds with a note at the bottom about the next seed being 'perfect'
+- Step 6: Put this list of seeds into a file and run mersenne-twister-predictor on it.
+- Step 7: Take the first seed value generated/predicted and put it in 'easy mode'
+	- At the same time start up the 'Impossible' level in the Holiday Hack terminal.
+- Step 8: Transfer only 'hits' from easy mode over to impossible mode in terminal. Since they have the same seed then
+  the 'hit's will be the same. This will allow you to make sure every shot in the impossible mode is successful.
 
 ### Scapy Prepper (Alabaster Snowball)
 
