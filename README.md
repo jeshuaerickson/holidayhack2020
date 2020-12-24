@@ -480,7 +480,7 @@ Even though the chunk of the blockchain that you have ends with block 129996, ca
 
 ### Snowball Fight (Tangle Coalbox)
 
-![](screenshots/win-no-impossible.png)
+![](screenshots/win-on-impossible.png)
 
 #### Steps
 
