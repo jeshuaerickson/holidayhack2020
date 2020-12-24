@@ -231,19 +231,6 @@ Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in th
 
 ![](screenshots/objective-8-completed.jpg)
 
-### Hints
-
-- Remember, the processing happens in the background so you might need to wait a bit after exploiting but before grabbing the output!
-- I'm sure there's a vulnerability in the source somewhere... surely Jack wouldn't leave their mark?
-- We might be able to find the problem if we can get source code!
-- Is there an endpoint that will print arbitrary files?
-- If you're having trouble seeing the code, watch out for the Content-Type! Your browser might be trying to help (badly)!
-- If you find a way to execute code blindly, I bet you can redirect to a file then download that file!
-- Can you figure out the path to the script? It's probably on error pages!
-- Once you know the path to the file, we need a way to download it!
-
-
-
 - Step 1: Get an error by doing and upload of an unsupported file:
 ~~~
 Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0s4xy.txt
@@ -259,6 +246,8 @@ nginx/1.19.5
 ~~~
 
 - Step 4: This is interesting in the /js/app.js file.
+	- Looks like **"/image?id="** might be succeptible to LFI.
+
 ~~~
         success: function (data) {
           $('.uploadForm')[0].reset();
@@ -275,7 +264,8 @@ nginx/1.19.5
                     angle: 0,
                     opacity: 1
 ~~~ 
-- Step 5: Didn't think I was getting anything with this, but I just needed to view the rreponse in Burp.
+
+- Step 5: Didn't think I was getting anything with this, but I just needed to view the rreponse in Burp.	
 ~~~
 https://tag-generator.kringlecastle.com/image?id=../etc/passwd
 
@@ -334,36 +324,6 @@ Answer: "JackFrostWasHere"
 Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
 
 ![](screenshots/objective-9-completed.jpg)
-
-
-~~~
-Jack Frost has hijacked the host at 10.6.6.35 with some custom malware.
-Help the North Pole by getting command line access back to this host.
-
-Read the HELP.md file for information to help you in this endeavor.
-
-Note: The terminal lifetime expires after 30 or more minutes so be 
-sure to copy off any essential work you have done as you go.
-~~~
-
-
-### Hints
-
-- Jack Frost must have gotten malware on our host at 10.6.6.35 because we can no longer access it. Try sniffing the eth0 interface using tcpdump -nni eth0 to see if you can view any traffic from that host.
-	- Here is the ARP request:
-	~~~
-	14:05:57.910839 ARP, Request who-has 10.6.6.53 tell 10.6.6.35, length 28
-	~~~
-
-- The host is performing an ARP request. Perhaps we could do a spoof to perform a machine-in-the-middle attack. I think we have some sample scapy traffic scripts that could help you in /home/guest/scripts.
-
-
-- Hmmm, looks like the host does a DNS request after you successfully do an ARP spoof. Let's return a DNS response resolving the request to our IP.
-
-
-- The malware on the host does an HTTP request for a .deb package. Maybe we can get command line access by sending it a command in a customized .deb file
-
-### Steps
 
 - Step 1: Make sure you can reach 10.6.6.35 --> "ping 10.6.6.35"
 - Step 2: Do an "ls" of the home folder.
