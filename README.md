@@ -428,7 +428,7 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 ![](screenshots/remove-besanta-condition.png)
 
-## Objective 11a: 
+## Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1 
 
 Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. (Enter just the 16-character hex value of the nonce)
 
