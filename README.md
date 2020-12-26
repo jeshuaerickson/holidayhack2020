@@ -432,17 +432,83 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. (Enter just the 16-character hex value of the nonce)
 
-### Hints:
-
-- If you have control over to bytes in a file, it's easy to create MD5 hash collisions. Problem is: there's that nonce that he would have to know ahead of time.
-
-#### Tinsel Upatree:
-
-Santa, I don't know if you've heard, but something is very, very wrong...We tabulated the latest score of the Naughty/Nice Blockchain. Jack Frost is the nicest being in the world! Jack Frost!?! As you know, we only really start checking the Naughty/Nice totals as we get closer to the holidays. Out of nowhere, Jack Frost has this crazy score... positive 4,294,935,958 nice points! No one has EVER gotten a score that high! No one knows how it happened. Most of us recall Jack having a NEGATIVE score only a few days ago...Worse still, his huge positive score seems to have happened way back in March. Our first thought was that he somehow changed the blockchain - but, as you know, that isn't possible. We ran a validation of the blockchain and it all checks out. Even the smallest change to any block should make it invalid. Blockchains are huge, so we cut a one minute chunk from when Jack's big score registered back in March. You can get a slice of the Naughty/Nice blockchain on your desk. You can get some tools to help you here. Tangle Coalbox, in the Speaker UNPreparedness room. has been talking with attendees about the issue.
+![](screenshots/objective-11a-completed.jpg)
 
 - Step 1: Set up docker instance with tools needed to solve this objective.
 - Step 2: Read through and understand naughty_nice.py
-- Step 3:  
+- Step 3: Load up blockchain.dat using this file and dump the nonces.
+- Step 4: The nonces come out at 64 bit integers. We need to either split these or figure out how to use them as is...with the right tool. Currently working with blockchain.py file that I created. Also reading more of naughty_nice.py 
+
+So apparently we need to do the following:
+- Get 312 64bit values.
+- Split them in half, making sure to line up on Endianness.
+- Feed them into the predictor and then put back together.
+
+**Answer:** 57066318f32f729d
+
+**blockchain.py**
+~~~
+# we only need 312 nonces
+
+for var in list(range(312)):
+    # start on block 1236
+    var = var + 1236
+    #print(c2.blocks[var].block_data)
+    #print(c2.blocks[var].nonce)
+    currentNonce = c2.blocks[var].nonce
+    hexNonce = (str('%016.016x' % (currentNonce)).encode('utf-8'))
+   
+
+    # this is actually first (though it is the second half of the nonce)
+    hexNonce_32a = (currentNonce  >> 32 ) & 0xffffffff
+
+    # this is second (though it is the first half of the nonce)
+    hexNonce_32b = currentNonce & 0xffffffff
+
+    # this is how we feed the 32 nonce parts into the predictor
+    print(hexNonce_32b)
+    print(hexNonce_32a)
+
+    # but when we put them back together for 64bit, we need to flip them back with 32a first.
+    # 32a prediction value was '0x57066318'
+    # 32b prediction value was '0xf32f729d'
+
+    #print(hexNonce)
+    #print(hex(hexNonce_32a))
+    
+    #print(hex(hexNonce_32b))
+    #print(c2.blocks[var].index)
+    #c2.blocks[var].dump_doc(1)
+~~~
+
+Here's the final script that retrieves he predicted values:
+
+
+** blockchain-get-32.sh **
+~~~
+
+# blockchain.py is the script shown above
+
+# gets the last 624 of the split up values
+./blockchain.py | tail -n 624 > blockchain32.out
+
+# checks he file to make sure there is 624
+wc blockchain32.out
+
+# feeds the split 32 values into the predictor
+# then gets the last nonce pair of the four total that came back to get us to 130000
+cat blockchain32.out | mt19937predict | head -8 | tail -n 2
+
+# feed the resulting pair in reverse order back to the objective.
+
+echo "All Done!"
+
+
+~~~
+
+
+
+
 
 ---
 
