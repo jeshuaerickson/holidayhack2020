@@ -464,6 +464,8 @@ Even though the chunk of the blockchain that you have ends with block 129996, ca
 
 ![](screenshots/objective-11a-completed.jpg)
 
+**Answer:** 57066318f32f729d
+
 - Step 1: Set up docker instance with tools needed to solve this objective.
 - Step 2: Read through and understand naughty_nice.py
 - Step 3: Load up blockchain.dat using this file and dump the nonces.
@@ -474,10 +476,7 @@ So apparently we need to do the following:
 - Split them in half, making sure to line up on Endianness.
 - Feed them into the predictor and then put back together.
 
-**Answer:** 57066318f32f729d
-
 **blockchain.py**
-
 
 ~~~
     #we only need 312 nonces
