@@ -18,6 +18,7 @@ code-block-font-size: \scriptsize
 
 # Holiday Hack Challenge 2020: Three French Hens
 
+![](screenshots/hh2020-title.png)
 
 
 # Objective 1: Uncover Santa's Gift List
