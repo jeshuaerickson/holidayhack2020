@@ -405,7 +405,10 @@ Maintainer: Ubuntu MOTU Developers (ubuntu-motu@lists.ubuntu.com)
 Description: Network utility for hacking all the things.
 
 ~~~
-	- "vim postinst"
+	
+
+- "vim postinst"
+
 ~~~
 
 #!/bin/sh
