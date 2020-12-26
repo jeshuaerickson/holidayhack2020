@@ -484,7 +484,7 @@ for var in list(range(312)):
 Here's the final script that retrieves he predicted values:
 
 
-** blockchain-get-32.sh **
+**blockchain-get-32.sh**
 ~~~
 
 # blockchain.py is the script shown above
