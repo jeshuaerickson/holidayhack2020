@@ -552,6 +552,9 @@ Hints:
 
 - If Jack was somehow able to change the contents of the block AND the document without changing the hash... that would require a very UNIque hash COLLision. (hashclash repo)
 
+
+From Wikipedia
+
 ~~~
 UniColl lets you control a few bytes in the collision blocks, before and after the first difference, which makes it an identical-prefix collision with some controllable differences, almost like a chosen-prefix collision. This is very handy, and even better the difference can be very predictable: in the case of m2+= 2^8 (a.k.a. N=1 / m2 9 in HashClash poc_no.sh script), the difference is +1 on the 9th byte, which makes it very exploitable, as you can even think about the collision in your head: the 9th character of that sentence will be replaced with the next one: 0 replaced by 1, a replaced by b..
 ~~~ 
@@ -559,10 +562,14 @@ UniColl lets you control a few bytes in the collision blocks, before and after t
 - Shinny Upatree swears that he doesn't remember writing the contents of the document found in that block. Maybe looking closely at the documents, you might find something interesting.
 
 - Apparently Jack was able to change just 4 bytes in the block to completely change everything about it. It's like some sort of evil game to him.
+	- Need to read this: https://speakerdeck.com/ange/colltris
 
 - Step 1: Figure out how MD5 hash is created and replicate that.
 - Step 2: Create SHA256 hash with this methodology.
 - Step 3: Find the altered block.
+- Step 4: After doing a dump of all the first docs in each block, I see there is a suspicous binary file associated with block **129459** and this is the nice score: "Score: ffffffff (4294967295)"
+- Step 5: Also notice that the associated pdf is loaded up with praise for Jack Frost. Yup, I think we're on the right block!
+
 
 
 
