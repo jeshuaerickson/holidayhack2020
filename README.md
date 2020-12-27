@@ -538,6 +538,34 @@ Here's the final script that retrieves he predicted values:
 
 ~~~
 
+# Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
+
+The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
+
+Hints:
+
+- A blockchain works by "chaining" blocks together - each new block includes a hash of the previous block. That previous hash value is included in the data that is hashed - and that hash value will be in the next block. So there's no way that Jack could change an existing block without it messing up the chain...
+
+- Qwerty Petabyte is giving a talk about blockchain tomfoolery!
+
+- The idea that Jack could somehow change the data in a block without invalidating the whole chain just collides with the concept of hashes and blockchains. While there's no way it could happen, maybe if you look at the block that seems like it got changed, it might help.
+
+- If Jack was somehow able to change the contents of the block AND the document without changing the hash... that would require a very UNIque hash COLLision. (hashclash repo)
+
+~~~
+UniColl lets you control a few bytes in the collision blocks, before and after the first difference, which makes it an identical-prefix collision with some controllable differences, almost like a chosen-prefix collision. This is very handy, and even better the difference can be very predictable: in the case of m2+= 2^8 (a.k.a. N=1 / m2 9 in HashClash poc_no.sh script), the difference is +1 on the 9th byte, which makes it very exploitable, as you can even think about the collision in your head: the 9th character of that sentence will be replaced with the next one: 0 replaced by 1, a replaced by b..
+~~~ 
+
+- Shinny Upatree swears that he doesn't remember writing the contents of the document found in that block. Maybe looking closely at the documents, you might find something interesting.
+
+- Apparently Jack was able to change just 4 bytes in the block to completely change everything about it. It's like some sort of evil game to him.
+
+- Step 1: Figure out how MD5 hash is created and replicate that.
+- Step 2: Create SHA256 hash with this methodology.
+- Step 3: Find the altered block.
+
+
+
 # Challenges
 
 # Snowball Fight (Tangle Coalbox)
