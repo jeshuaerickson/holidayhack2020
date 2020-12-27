@@ -228,19 +228,36 @@ class Block():
         s += '          Signature: %s\n' % (self.sig)
         return(s)
 
+#    def full_hash(self):
+#        hash_obj = MD5.new()
+#        hash_obj.update(self.block_data_signed())
+
+#        return hash_obj.hexdigest()
+
     def full_hash(self):
-        hash_obj = MD5.new()
-        #hash_obj_sha256 = SHA256.new()
+        hash_obj = SHA256.new()
         hash_obj.update(self.block_data_signed())
-        #hash_obj_sha256(self.block_data_signed())
+
         return hash_obj.hexdigest()
-        #return hash_obj_sha256.hexdigest()
 
     def hash_n_sign(self):
         hash_obj = MD5.new()
+        hash_obj_sha256 = SHA256.new()
         hash_obj.update(self.block_data())
+        
         signer = PKCS1_v1_5.new(private_key)
-        return (hash_obj.hexdigest(), b64encode(signer.sign(hash_obj)))
+        
+        #print(hash_obj.hexdigest())
+        return (hash_obj_sha256.hexdigest(), b64encode(signer.sign(hash_obj)))
+                
+
+
+#    def hash_n_sign(self):
+#        hash_obj = SHA256.new()
+#        hash_obj.update(self.block_data())
+#        
+#        signer = PKCS1_v1_5.new(private_key)
+#        return (hash_obj.hexdigest(), b64encode(signer.sign(hash_obj)))
 
     def block_data(self):
         s = (str('%016.016x' % (self.index)).encode('utf-8'))
@@ -419,8 +436,17 @@ class Chain():
 if __name__ == '__main__':
     with open('private.pem', 'rb') as fh:
         private_key = RSA.importKey(fh.read())
-    public_key = private_key.publickey()
-    c1 = Chain()
+#    public_key = private_key.publickey()
+#    c1 = Chain()
+#    
+    with open('official_public.pem', 'rb') as fh:
+        official_public_key = RSA.importKey(fh.read())
+    c1 = Chain(load=True, filename='blockchain.dat')
+    print('C1: Block chain verify: %s' % (c1.verify_chain(official_public_key)))
+
+
+
+
     for i in range(9):
         block_data = {}
         documents = []
@@ -436,7 +462,10 @@ if __name__ == '__main__':
         block_data['sign'] = Nice # this indicates whether the report is about naughty or nice behavior
         c1.add_block(block_data)
     print(c1.blocks[3])
-    print('C1: Block chain verify: %s' % (c1.verify_chain(public_key)))
+
+    #print('C1: Block chain verify: %s' % (c1.verify_chain(public_key)))
+    print('C1: Block chain verify: %s' % (c1.verify_chain(official_public_key)))
+
 
 # Note: This is how you would load and verify a blockchain contained in a file called blockchain.dat
 #
