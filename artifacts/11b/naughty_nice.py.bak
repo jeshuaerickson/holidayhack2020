@@ -230,11 +230,8 @@ class Block():
 
     def full_hash(self):
         hash_obj = MD5.new()
-        #hash_obj_sha256 = SHA256.new()
         hash_obj.update(self.block_data_signed())
-        #hash_obj_sha256(self.block_data_signed())
         return hash_obj.hexdigest()
-        #return hash_obj_sha256.hexdigest()
 
     def hash_n_sign(self):
         hash_obj = MD5.new()

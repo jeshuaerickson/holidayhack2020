@@ -568,10 +568,26 @@ UniColl lets you control a few bytes in the collision blocks, before and after t
 - Step 2: Create SHA256 hash with this methodology.
 - Step 3: Find the altered block.
 - Step 4: After doing a dump of all the first docs in each block, I see there is a suspicous binary file associated with block **129459** and this is the nice score: "Score: ffffffff (4294967295)"
-- Step 5: Also notice that the associated pdf is loaded up with praise for Jack Frost. Yup, I think we're on the right block!
+- Step 5: Also notice that the associated pdf is loaded up with praise for Jack Frost. 
+- Step 6: Now I need to see if I can get a SHA256 hash of this block so that as I alter it and if I get the block back to its original state I'll have the hash.
+	- Looks like I need to figure out how to put the pieces together to generate a SHA256 hash.
+	- I can replicate the MD5 hash but not the SHA256. Am I missing something?
+- Step 7: Was finally able to replicate the SHA256 hash of the altered block by doing the following:
+
+~~~
+#This is the sequence in the chain for Jack's altered block.
+blocksequence = 1010
+
+hash_obj_sha256 = SHA256.new()
+hash_obj_sha256.update(c2.blocks[blocksequence].block_data_signed())
+print(hash_obj_sha256.hexdigest())
+~~~
+
+- Step 8: Now I need to research how the block could have been altered.
 
 
 
+	
 
 # Challenges
 
