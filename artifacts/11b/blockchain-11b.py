@@ -11,7 +11,6 @@ with open('official_public.pem','rb') as fh:
     official_public_key = RSA.importKey(fh.read())
 c2 = Chain(load=True, filename='blockchain.dat')
 #print('C2: Block chain verify: %s' % (c2.verify_chain(official_public_key)))
-#print(c2.blocks[0])
 #c2.blocks[0].dump_doc(1)
 
 #iterate through blocks
@@ -21,7 +20,10 @@ blocksequence = 1010
 
 block_data = c2.blocks[blocksequence].block_data
 
+index = c2.blocks[blocksequence].index
 nonce = c2.blocks[blocksequence].nonce
+sign = c2.blocks[blocksequence].sign
+score = c2.blocks[blocksequence].score
 previous_hash =  c2.blocks[blocksequence].previous_hash
 current_hash  = c2.blocks[blocksequence].hash
 
@@ -29,7 +31,10 @@ print(" ")
 print(" ")
 
 #print("block data:      " + str(block_data))
+print("index:           " + str(index))
 print("nonce:           " + str(nonce))
+print("sign:            " + str(sign))
+print("score:           " + str(score))
 print("previous hash:   " + str(previous_hash))
 print("hash:            " + str(current_hash))
 
@@ -52,7 +57,10 @@ print(" ")
 print(" ")
 
 
+#print(c2.blocks[blocksequence].block_data())
 
+
+#print(c2.blocks[1010])
 
 
 
