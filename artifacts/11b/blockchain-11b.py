@@ -9,52 +9,59 @@ from naughty_nice import Chain
 
 with open('official_public.pem','rb') as fh:
     official_public_key = RSA.importKey(fh.read())
-c2 = Chain(load=True, filename='blockchain.dat')
-#print('C2: Block chain verify: %s' % (c2.verify_chain(official_public_key)))
-#c2.blocks[0].dump_doc(1)
 
-#iterate through blocks
+files = ['blockchain.dat','bc1.dat']
+for file in files:
 
-#jack's block sequence is 1010
-blocksequence = 1010
+    print(file + " ##################################################")
 
-block_data = c2.blocks[blocksequence].block_data
+    c2 = Chain(load=True, filename=file)
+    #c2 = Chain(load=True, filename='blockchain.dat')
+    #print('C2: Block chain verify: %s' % (c2.verify_chain(official_public_key)))
+    c2.blocks[1010].dump_doc(2)
 
-index = c2.blocks[blocksequence].index
-nonce = c2.blocks[blocksequence].nonce
-sign = c2.blocks[blocksequence].sign
-score = c2.blocks[blocksequence].score
-previous_hash =  c2.blocks[blocksequence].previous_hash
-current_hash  = c2.blocks[blocksequence].hash
+    #iterate through blocks
 
-print(" ")
-print(" ")
+    #jack's block sequence is 1010
+    blocksequence = 1010
 
-#print("block data:      " + str(block_data))
-print("index:           " + str(index))
-print("nonce:           " + str(nonce))
-print("sign:            " + str(sign))
-print("score:           " + str(score))
-print("previous hash:   " + str(previous_hash))
-print("hash:            " + str(current_hash))
+    block_data = c2.blocks[blocksequence].block_data
 
-# Trying to get SHA256 hash of Jack's block.
-hash_obj_sha256 = SHA256.new()
-hash_obj_md5 = MD5.new()
+    index = c2.blocks[blocksequence].index
+    nonce = c2.blocks[blocksequence].nonce
+    sign = c2.blocks[blocksequence].sign
+    score = c2.blocks[blocksequence].score
+    previous_hash =  c2.blocks[blocksequence].previous_hash
+    current_hash  = c2.blocks[blocksequence].hash
 
-hash_obj_sha256.update(c2.blocks[blocksequence].block_data_signed())
-hash_obj_md5.update(c2.blocks[blocksequence].block_data())
+    print(" ")
+    print(" ")
 
-#print(c2.blocks[1010].block_data())
+    #print("block data:      " + str(block_data))
+    print("index:           " + str(index))
+    print("nonce:           " + str(nonce))
+    print("sign:            " + str(sign))
+    print("score:           " + str(score))
+    print("previous hash:   " + str(previous_hash))
+    print("hash:            " + str(current_hash))
 
-print(" ")
-print("-------------------------------SHA256---------")
-print(hash_obj_sha256.hexdigest())
-print(" ")
-print("-------------------------------MD5------------")
-print(hash_obj_md5.hexdigest())
-print(" ")
-print(" ")
+    # Trying to get SHA256 hash of Jack's block.
+    hash_obj_sha256 = SHA256.new()
+    hash_obj_md5 = MD5.new()
+
+    hash_obj_sha256.update(c2.blocks[blocksequence].block_data_signed())
+    hash_obj_md5.update(c2.blocks[blocksequence].block_data())
+
+    #print(c2.blocks[1010].block_data())
+
+    print(" ")
+    print("-------------------------------SHA256---------")
+    print(hash_obj_sha256.hexdigest())
+    print(" ")
+    print("-------------------------------MD5------------")
+    print(hash_obj_md5.hexdigest())
+    print(" ")
+    print(" ")
 
 
 #print(c2.blocks[blocksequence].block_data())
