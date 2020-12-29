@@ -584,7 +584,8 @@ print(hash_obj_sha256.hexdigest())
 ~~~
 
 - Step 8: Now I need to research how the block could have been altered.
-
+- Step 9: I can see there is another document that becomes visible when making changes to the block.
+- Step 10: Now I need need to figure out how to change just the right bytes.
 
 
 	
