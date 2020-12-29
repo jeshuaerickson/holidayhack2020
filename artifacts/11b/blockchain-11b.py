@@ -14,6 +14,8 @@ with open('official_public.pem','rb') as fh:
 files = ['blockchain.dat','bc1.dat']
 for file in files:
 
+    print("")
+    print("")
     print(file + " ##################################################")
 
     c2 = Chain(load=True, filename=file)
@@ -28,7 +30,7 @@ for file in files:
     #jack's block sequence is 1010
     blocksequence = 1010
 
-    c2.blocks[blocksequence].dump_doc(2)
+    c2.blocks[blocksequence].dump_doc(1)
 
     #print(c2.blocks[blocksequence].block_data_signed())
 
@@ -46,7 +48,8 @@ for file in files:
     #current_hash2 = c2.blocks[blocksequence].hash_n_sign()
     second = c2.blocks[blocksequence].second
     sig = c2.blocks[blocksequence].sig
-
+    full_hash = c2.blocks[blocksequence].full_hash()
+    full_hash_sha256 = c2.blocks[blocksequence].full_hash_sha256()
 
     #print(current_hash2)
 
@@ -55,15 +58,16 @@ for file in files:
     print(" ")
 
     #print("block data:      " + str(block_data))
-    print("index:           " + str(index))
-    print("nonce:           " + str(nonce))
-    print("sign:            " + str(sign))
-    print("score:           " + str(score))
-    print("previous hash:   " + str(previous_hash))
-    print("hash:            " + str(current_hash))
-    print("second:          " + str(second))
-    print("sig:             " + str(sig))
-
+    print("index:            " + str(index))
+    print("nonce:            " + str(nonce))
+    print("sign:             " + str(sign))
+    print("score:            " + str(score))
+    print("previous hash:    " + str(previous_hash))
+    print("hash:             " + str(current_hash))
+    print("second:           " + str(second))
+    #print("sig:              " + str(sig))
+    print("full hash:        " + str(full_hash))
+    print("full hash sha256: " + str(full_hash_sha256))
 
     # Trying to get SHA256 hash of Jack's block.
     hash_obj_sha256 = SHA256.new()
@@ -77,13 +81,13 @@ for file in files:
     #print(c2.blocks[1010].block_data())
 
     print(" ")
-    print("-------------------------------SHA256---------")
-    print(hash_obj_sha256.hexdigest())
-    print(" ")
-    print("-------------------------------MD5------------")
-    print(hash_obj_md5.hexdigest())
-    print(" ")
-    print(" ")
+    #print("-------------------------------SHA256---------")
+    #print(hash_obj_sha256.hexdigest())
+    #print(" ")
+    #print("-------------------------------MD5------------")
+    #print(hash_obj_md5.hexdigest())
+    #print(" ")
+    #print(" ")
 
 
 #print(c2.blocks[blocksequence].block_data())
