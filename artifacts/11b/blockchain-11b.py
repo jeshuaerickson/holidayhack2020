@@ -18,12 +18,12 @@ for file in files:
     c2 = Chain(load=True, filename=file)
     #c2 = Chain(load=True, filename='blockchain.dat')
     #print('C2: Block chain verify: %s' % (c2.verify_chain(official_public_key)))
-    c2.blocks[1010].dump_doc(2)
 
     #iterate through blocks
 
     #jack's block sequence is 1010
     blocksequence = 1010
+    c2.blocks[blocksequence].dump_doc(2)
 
     block_data = c2.blocks[blocksequence].block_data
 
@@ -33,6 +33,9 @@ for file in files:
     score = c2.blocks[blocksequence].score
     previous_hash =  c2.blocks[blocksequence].previous_hash
     current_hash  = c2.blocks[blocksequence].hash
+    second = c2.blocks[blocksequence].second
+    sig = c2.blocks[blocksequence].sig
+
 
     print(" ")
     print(" ")
@@ -44,6 +47,9 @@ for file in files:
     print("score:           " + str(score))
     print("previous hash:   " + str(previous_hash))
     print("hash:            " + str(current_hash))
+    print("second:          " + str(second))
+    print("sig:             " + str(sig))
+
 
     # Trying to get SHA256 hash of Jack's block.
     hash_obj_sha256 = SHA256.new()
