@@ -194,6 +194,7 @@ class Block():
                     self.minute = now.tm_min
                     self.second = now.tm_sec
                     self.hash, self.sig = self.hash_n_sign()
+                    #self.hash_sha256, self.sig = self.hash_n_sign_sha256()
                 else:
                     return None
 
@@ -225,22 +226,27 @@ class Block():
         s += '               Time: %s:%s:%s\n' % ('%02.02i' % (self.hour), '%02.02i' % (self.minute), '%02.02i' % (self.second))
         s += '       PreviousHash: %s\n' % (self.previous_hash)
         s += '  Data Hash to Sign: %s\n' % (self.hash)
+        #s += 'Placeholder for 256: %s\n' % (self.hash_sha256)
         s += '          Signature: %s\n' % (self.sig)
         return(s)
 
     def full_hash(self):
         hash_obj = MD5.new()
-        #hash_obj_sha256 = SHA256.new()
         hash_obj.update(self.block_data_signed())
-        #hash_obj_sha256(self.block_data_signed())
         return hash_obj.hexdigest()
-        #return hash_obj_sha256.hexdigest()
 
     def hash_n_sign(self):
         hash_obj = MD5.new()
         hash_obj.update(self.block_data())
         signer = PKCS1_v1_5.new(private_key)
         return (hash_obj.hexdigest(), b64encode(signer.sign(hash_obj)))
+
+    def hash_n_sign_sha256(self):
+        hash_obj = SHA256.new()
+        hash_obj.update(self.block_data())
+        signer = PKCS1_v1_5.new(private_key)
+        return (hash_obj.hexdigest(), b64encode(signer.sign(hash_obj)))
+
 
     def block_data(self):
         s = (str('%016.016x' % (self.index)).encode('utf-8'))
