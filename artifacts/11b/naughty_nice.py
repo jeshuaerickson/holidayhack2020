@@ -235,6 +235,12 @@ class Block():
         hash_obj.update(self.block_data_signed())
         return hash_obj.hexdigest()
 
+    def full_hash_sha256(self):
+        hash_obj = SHA256.new()
+        hash_obj.update(self.block_data_signed())
+        return hash_obj.hexdigest()
+
+
     def hash_n_sign(self):
         hash_obj = MD5.new()
         #hash_obj_sha256 = SHA256.new()
