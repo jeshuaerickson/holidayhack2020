@@ -237,8 +237,11 @@ class Block():
 
     def hash_n_sign(self):
         hash_obj = MD5.new()
+        #hash_obj_sha256 = SHA256.new()
         hash_obj.update(self.block_data())
+        #hash_obj_sha256.update(self.block_data())
         signer = PKCS1_v1_5.new(private_key)
+        #print(b64encode(signer.sign(hash_obj_sha256)))
         return (hash_obj.hexdigest(), b64encode(signer.sign(hash_obj)))
 
     def hash_n_sign_sha256(self):
