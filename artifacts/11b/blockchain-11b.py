@@ -5,10 +5,11 @@ import naughty_nice as nn
 from Crypto.PublicKey import RSA
 from Crypto.Hash import MD5, SHA256
 from naughty_nice import Chain
-
+from naughty_nice import Block
 
 with open('official_public.pem','rb') as fh:
     official_public_key = RSA.importKey(fh.read())
+
 
 files = ['blockchain.dat','bc1.dat']
 for file in files:
@@ -16,6 +17,9 @@ for file in files:
     print(file + " ##################################################")
 
     c2 = Chain(load=True, filename=file)
+   
+    
+    
     #c2 = Chain(load=True, filename='blockchain.dat')
     #print('C2: Block chain verify: %s' % (c2.verify_chain(official_public_key)))
 
@@ -23,9 +27,15 @@ for file in files:
 
     #jack's block sequence is 1010
     blocksequence = 1010
+
     c2.blocks[blocksequence].dump_doc(2)
 
+    #print(c2.blocks[blocksequence].block_data_signed())
+
+    
+    
     block_data = c2.blocks[blocksequence].block_data
+    #b2 = Block(block_data="foo")
 
     index = c2.blocks[blocksequence].index
     nonce = c2.blocks[blocksequence].nonce
@@ -33,8 +43,12 @@ for file in files:
     score = c2.blocks[blocksequence].score
     previous_hash =  c2.blocks[blocksequence].previous_hash
     current_hash  = c2.blocks[blocksequence].hash
+    #current_hash2 = c2.blocks[blocksequence].hash_n_sign()
     second = c2.blocks[blocksequence].second
     sig = c2.blocks[blocksequence].sig
+
+
+    #print(current_hash2)
 
 
     print(" ")
@@ -56,7 +70,9 @@ for file in files:
     hash_obj_md5 = MD5.new()
 
     hash_obj_sha256.update(c2.blocks[blocksequence].block_data_signed())
-    hash_obj_md5.update(c2.blocks[blocksequence].block_data())
+    hash_obj_md5.update(c2.blocks[blocksequence].block_data_signed())
+    #hash_obj_md5.update(str(block_data))
+
 
     #print(c2.blocks[1010].block_data())
 
