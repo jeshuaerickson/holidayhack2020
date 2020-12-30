@@ -608,6 +608,12 @@ needed to increment accordingly. If we bumped him from 1 to 0 we had to make a c
 byte. See screenshot below. Ignore "Santa" bytes. I searched for "Santa" to get to the right location in the
 block.
 
+**How to change bytes:**
+
+![](screenshots/colltris-109.jpg)
+
+**Bytes changed:**
+
 ![](screenshots/11b-bytes-changed.png)
 
 - Step 4: Compare original to edited bc1.dat to original blockchain.dat.
