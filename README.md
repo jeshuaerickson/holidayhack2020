@@ -806,28 +806,29 @@ Answer:
 
 ## Linux Primer (Sugarplum Mary)
 
-- Entered "yes" to begin
-- Step 1: "ls"
-- Step 2: "cat munchkin*"
-- Step 3: "rm mun*"
-- Step 4: "pwd"
-- Step 5: "ls -al"
-- Step 6: "history | grep mun"
-- Step 7: "env"
-- Step 8: "cd workshop"
-- Step 9: 
-- Step 10: "chmod +x ./lollipop_engine"
-- Step 11: "mv /home/elf/workshop/electrical/blown_fuse0 /home/elf/workshop/electrical/fuse0"
-- Step 12: "ln -s fuse0 fuse1"
-- Step 13: "cp fuse1 fuse2"
-- Step 14: "echo "MUNCHKIN_REPELLENT" >> fuse2"
-- Step 15: "git status"
-- Step 16: "find /opt/munchkin_den -user munchkin"
-- Step 17: "find /opt/munchkin_den -size +108k -size -110k"
-- Step 18: "ps aux"
-- Step 19: "netstat --listen"
-- Step 20: "curl localhost:54321"
-- Step 21: "pkill 14516_munchkin"
+~~~
+Entered "yes" to begin
+"ls"
+"cat munchkin*"
+"rm mun*"
+"pwd"
+"ls -al"
+"history | grep mun"
+"env"
+"cd workshop"
+"chmod +x ./lollipop_engine"
+"mv /home/elf/workshop/electrical/blown_fuse0 /home/elf/workshop/electrical/fuse0"
+"ln -s fuse0 fuse1"
+"cp fuse1 fuse2"
+"echo "MUNCHKIN_REPELLENT" >> fuse2"
+"git status"
+"find /opt/munchkin_den -user munchkin"
+"find /opt/munchkin_den -size +108k -size -110k"
+"ps aux"
+"netstat --listen"
+"curl localhost:54321"
+"pkill 14516_munchkin"
+~~~
 
 ## Redis Bug Hunt (Holly Evergreen)
 
