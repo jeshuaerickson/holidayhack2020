@@ -59,9 +59,10 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
+
 Lesson Learned |
 -------------- |
-**Photo obfuscation can actually be 'undone' in some cases.** |
+Photo obfuscation can actually be 'undone' in some cases.|
 
 # Objective 2: Investigate S3 Bucket
 
@@ -84,9 +85,10 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 7: "uncompress package.txt.Z"
 - Step 8: "cat package.txt"
 
+
 Lesson Learned |
 -------------- |
-**There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!**|
+There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!|
 
 # Objective 3: Point-of-Sale Password Recovery
 
@@ -119,10 +121,10 @@ const path = require('path');
 const SANTA_PASSWORD = 'santapass';
 ~~~
 
+
 Lesson Learned |
 -------------- |
-**You might thing that a password or source code for an application is unavailable to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.**
-
+You might thing that a password or source code for an application is unavailable to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.|
 
 # Objective 4: Operate the Santavator
 
