@@ -469,6 +469,8 @@ Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's f
 
 ![](screenshots/objective-10-completed.jpg)
 
+*Note: You can't be in Santa mode when you complete this challenge. Santa already has access to his office. So you're not really defeating the fingerprint sensor when you're Santa. You're just using it.* 
+
 This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three and deleted it. After doing this, you can save "app.js" and reload the elevator code in your browser. 
 
 ![](screenshots/remove-besanta-condition.png)
