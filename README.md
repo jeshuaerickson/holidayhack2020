@@ -21,7 +21,7 @@ code-block-font-size: \scriptsize
 
 ![](screenshots/hh2020-title.png)
 
-**Narrative 7 of 7**
+**Narrative**
 
 ~~~
 KringleCon back at the castle, set the stage...
@@ -54,6 +54,10 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 ![](screenshots/objective-1-completed.jpg)
 
 **Answer:** "poxmark"
+
+**Lesson** 
+
+*Sometimes there are things in photos that you think are not visible as a result of obfuscation. Even in a bitmap image there are ways to 'undo' what has been done, but you simply need to observe and think about what was done initially.* 
 
 There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
 
