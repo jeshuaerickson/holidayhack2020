@@ -586,6 +586,7 @@ for file in files:
 - Step 2: Identify bytes changed by Jack Frost:
 	- He changed his naughty/nice from 0 to 1, so we changed it back to 0.
 	- He changed the visible document to '2' so we changed it back to '3' (Fancy how PDF's can have hidden pages!)
+		- Wombat cruelty??!
 
 - Step 3: Determine which bytes we could change and still not alter the MD5 hash. This required doing a fair amount of
   reading and getting nudges from folks on Discord! These bytes had to correspond with JF's desired changes. And they
@@ -633,8 +634,6 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 # Snowball Fight (Tangle Coalbox)
 
-![](screenshots/win-on-impossible.png)
-
 - Step 1: Watch Tom Liston's talk.
 - Step 2: Clone Liston's  mt19937 GitHub repository. Review/run the code.
 - Step 3: Clone this repo: git@github.com:kmyk/mersenne-twister-predictor.git
@@ -649,78 +648,47 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 # Scapy Prepper (Alabaster Snowball)
 
 ## COMPLETED TASK #1:
-Welcome to the "Present Packet Prepper" interface! The North Pole could use your help preparing present packets for shipment.
-Start by running the task.submit() function passing in a string argument of 'start'.
-Type task.help() for help on this question.
-All you should have to do is type task.submit('start') to move past this question and get started with scapy packet manipulation.
-Correct! adding a () to a function or class will execute it. Ex - FunctionExecuted()
 
 >task.submit('start')
 
 ## COMPLETED TASK #2:
-Submit the class object of the scapy module that sends packets at layer 3 of the OSI model.
-For example, task.submit(sendp) would submit the sendp scapy class used to send packets at layer 2 of the OSI model.
-Scapy classes can be found at ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
-Correct! The "send" scapy class will send a crafted scapy packet out of a network interface.
 
 >task.submit(send)
 
 ## COMPLETED TASK #3:
-Submit the class object of the scapy module that sniffs network packets and returns those packets in a list.
-Look for "Sniff packets and return a list of packets." at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
-Correct! the "sniff" scapy class will sniff network traffic and return these packets in a list.
 
 >task.submit(sniff)
 
 ## COMPLETED TASK #4:
-Submit the NUMBER only from the choices below that would successfully send a TCP packet and then return the first sniffed response packet to be stored in a variable named "pkt":
 1. pkt = sr1(IP(dst="127.0.0.1")/TCP(dport=20))
 2. pkt = sniff(IP(dst="127.0.0.1")/TCP(dport=20))
 3. pkt = sendp(IP(dst="127.0.0.1")/TCP(dport=20))
-Look for "Send packets at layer 3 and return only the first answer" at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.sendrecv.html )
-Correct! sr1 will send a packet, then immediately sniff for a response packet.
 
 >task.submit('1')
 
 ## COMPLETED TASK #5:
-Submit the class object of the scapy module that can read pcap or pcapng files and return a list of packets.
-Look for "Read a pcap or pcapng file and return a packet list" at the link ( https://scapy.readthedocs.io/en/latest/api/scapy.utils.html )
-Correct! the "rdpcap" scapy class can read pcap files.
 
 >task.submit(rdpcap)
 
 ## COMPLETED TASK #6:
-The variable UDP_PACKETS contains a list of UDP packets. Submit the NUMBER only from the choices below that correctly prints a summary of UDP_PACKETS:
 1. UDP_PACKETS.print()
 2. UDP_PACKETS.show()
 3. UDP_PACKETS.list()
-Try each option and see which one works. Submit the NUMBER only of the correct choice.
-Correct! .show() can be used on lists of packets AND on an individual packet.
 
 >task.submit('2')
 
 ## COMPLETED TASK #7:
-Submit only the first packet found in UDP_PACKETS.
-You can specify an item from a list using "list_var_name[num]" where "num" is the item number you want starting at 0.
-
-Correct! Scapy packet lists work just like regular python lists so packets can be accessed by their position in the list starting at offset 0.
 
 >task.submit(UDP_PACKETS[0])
 
 
 ## COMPLETED TASK #8:
-Submit only the entire TCP layer of the second packet in TCP_PACKETS.
-If you had a packet stored in a variable named pkt, you could access its IP layer using "pkt[IP]"
-Correct! Most of the major fields like Ether, IP, TCP, UDP, ICMP, DNS, DNSQR, DNSRR, Raw, etc... can be accessed this way. Ex - pkt[IP][TCP]
 
 >pkt=TCP_PACKETS[1]
 
 >task.submit(pkt[TCP])
 
 ## COMPLETED TASK #9:
-Change the source IP address of the first packet found in UDP_PACKETS to 127.0.0.1 and then submit this modified packet
-pkt[IP].dst = "10.10.10.10" would changed the destination IP address of a packet in a variable named "pkt". Use this method to modify the src IP and submit the changed packet.
-Correct! You can change ALL scapy packet attributes using this method.
 
 >pkt=UDP_PACKETS[0]
 
@@ -729,56 +697,37 @@ Correct! You can change ALL scapy packet attributes using this method.
 >task.submit(pkt)
 
 ## COMPLETED TASK #10:
-Submit the password "task.submit('elf_password')" of the user alabaster as found in the packet list TCP_PACKETS.
-You can access each packets Raw payload using TCP_PACKETS[0][Raw].load only incrementing 0 each packet. (if that particular packet has a payload)
-Correct! Here is some really nice list comprehension that will grab all the raw payloads from tcp packets:
-[pkt[Raw].load for pkt in TCP_PACKETS if Raw in pkt]
 
 >TCP_PACKETS[6][Raw].load
 
->task.submit('echo.r.n') 
+>task.submit('echo.r.n') (had to change backslashes to periods -- my PDF renderer didn't like 'em) 
 
 ## COMPLETED TASK #11:
-The ICMP_PACKETS variable contains a packet list of several icmp echo-request and icmp echo-reply packets. Submit only the ICMP chksum value from the second packet in the ICMP_PACKETS list.
-You could get the ICMP id value of the 3rd packet using ICMP_PACKETS[2][ICMP].id .
-Correct! You can access the ICMP chksum value from the second packet using ICMP_PACKETS[1][ICMP].chksum .
 
 >task.submit(ICMP_PACKETS[1][ICMP].chksum)
 
 ## COMPLETED TASK #12:
-Submit the number of the choice below that would correctly create a ICMP echo request packet with a destination IP of 127.0.0.1 stored in the variable named "pkt"
 1. pkt = Ether(src='127.0.0.1')/ICMP(type="echo-request")
 2. pkt = IP(src='127.0.0.1')/ICMP(type="echo-reply")
 3. pkt = IP(dst='127.0.0.1')/ICMP(type="echo-request")
-Here is a good link on creating packets with scapy ( https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/creating_packets/index.html )
-Correct! Once you assign the packet to a variable named "pkt" you can then use that variable to send or manipulate your created packet.
 
 >task.submit('3')
 
 
 ## COMPLETED TASK #13:
-Create and then submit a UDP packet with a dport of 5000 and a dst IP of 127.127.127.127. (all other packet attributes can be unspecified)
-Here is a good link on creating packets with scapy ( https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/creating_packets/index.html )
-Correct! Your UDP packet creation should look something like this:
 
-> pkt = IP(dst="127.127.127.127")/UDP(dport=5000)
+>pkt = IP(dst="127.127.127.127")/UDP(dport=5000)
 
-> task.submit(pkt)
+>task.submit(pkt)
 
 
 ## COMPLETED TASK #14:
-Create and then submit a UDP packet with a dport of 53, a dst IP of 127.2.3.4, and is a DNS query with a qname of "elveslove.santa". (all other packet attributes can be unspecified)
-You can reference UDP_PACKETS[0] for a similar packet but dont use this exact packet but create a new one. You can also reference this link ( https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/creating_packets/index.html )
-Correct! Your UDP packet creation should look something like this:
 
 >pkt = IP(dst="127.2.3.4")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="elveslove.santa"))
 
 >task.submit(pkt)
 
 ## COMPLETED TASK #15:
-The variable ARP_PACKETS contains an ARP request and response packets. The ARP response (the second packet) has 3 incorrect fields in the ARP layer. Correct the second packet in ARP_PACKETS to be a proper ARP response and then task.submit(ARP_PACKETS) for inspection.
-The three fields in ARP_PACKETS[1][ARP] that are incorrect are op, hwsrc, and hwdst. A sample ARP pcap can be referenced at https://www.cloudshark.org/captures/e4d6ea732135. You can run the "reset_arp()" function to reset the ARP packets back to their original form.
-Great, you prepared all the present packets!
 
 >pkt = ARP_PACKETS[1][ARP]
 
