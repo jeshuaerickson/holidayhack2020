@@ -61,7 +61,7 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 Lesson |
 ------ |
-** Photo obfuscation can actually be 'undone' in some cases.** |
+**Photo obfuscation can actually be 'undone' in some cases.** |
 
 # Objective 2: Investigate S3 Bucket
 
