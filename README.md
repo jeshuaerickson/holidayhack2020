@@ -55,16 +55,13 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 **Answer:** "poxmark"
 
-**Lesson** 
-
-*Sometimes there are things in photos that you think are not visible as a result of obfuscation. Even in a bitmap image there are ways to 'undo' what has been done, but you simply need to observe and think about what was done initially.* 
-
-There is a photo of Santa's Desk on that billboard with his personal gift list. What gift is Santa planning on getting Josh Wright for the holidays? Talk to Jingle Ringford at the bottom of the mountain for advice.
-
 - First stop in the Holiday Hack challenge! I talked to Jingle Ringleford and downloaded the billboard image.
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
 
+**Lesson** 
+
+*Sometimes there are things in photos that you think are not visible as a result of obfuscation. Even in a bitmap image there are ways to 'undo' what has been done, but you simply need to observe and think about what was done initially.* 
 
 # Objective 2: Investigate S3 Bucket
 
