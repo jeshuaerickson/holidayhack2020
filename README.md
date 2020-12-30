@@ -493,8 +493,9 @@ Even though the chunk of the blockchain that you have ends with block 129996, ca
 **blockchain.py**
 
 ~~~
-
-#we only need 312 nonces
+##############################################################
+##--we only need 312 nonces because these are 64bit nonces--##
+##############################################################
 
 for var in list(range(312)):
     #start on block 1236
