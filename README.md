@@ -84,7 +84,9 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 7: "uncompress package.txt.Z"
 - Step 8: "cat package.txt"
 
-
+Lesson |
+------ |
+There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!|
 
 
 
