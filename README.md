@@ -629,8 +629,10 @@ full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84 <--- MD5 after changes
 full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb <--- SHA256 after changes and answer to objective!
 
 ~~~
+
+# Challenges:
 	
-# Challenge: Snowball Fight (Tangle Coalbox)
+## Snowball Fight (Tangle Coalbox)
 
 - Step 1: Watch Tom Liston's talk.
 - Step 2: Clone Liston's  mt19937 GitHub repository. Review/run the code.
@@ -643,51 +645,52 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 - Step 8: Transfer only 'hits' from easy mode over to impossible mode in terminal. Since they have the same seed then
   the 'hit's will be the same. This will allow you to make sure every shot in the impossible mode is successful.
 
-# Challenge: Scapy Prepper (Alabaster Snowball)
+## Scapy Prepper (Alabaster Snowball)
 
-## COMPLETED TASK #1:
+### COMPLETED TASK #1:
 
 Answer: task.submit('start')
 
-## COMPLETED TASK #2:
+### COMPLETED TASK #2:
 
 Answer: task.submit(send)
 
-## COMPLETED TASK #3:
+### COMPLETED TASK #3:
 
 Answer: task.submit(sniff)
 
-## COMPLETED TASK #4:
+### COMPLETED TASK #4:
+
 1. pkt = sr1(IP(dst="127.0.0.1")/TCP(dport=20))
 2. pkt = sniff(IP(dst="127.0.0.1")/TCP(dport=20))
 3. pkt = sendp(IP(dst="127.0.0.1")/TCP(dport=20))
 
 Answer: task.submit('1')
 
-## COMPLETED TASK #5:
+### COMPLETED TASK #5:
 
 Answer: task.submit(rdpcap)
 
-## COMPLETED TASK #6:
+### COMPLETED TASK #6:
 1. UDP_PACKETS.print()
 2. UDP_PACKETS.show()
 3. UDP_PACKETS.list()
 
 Answer: task.submit('2')
 
-## COMPLETED TASK #7:
+### COMPLETED TASK #7:
 
 Answer: task.submit(UDP_PACKETS[0])
 
 
-## COMPLETED TASK #8:
+### COMPLETED TASK #8:
 
 Answer: 
 
 - pkt=TCP_PACKETS[1]
 - task.submit(pkt[TCP])
 
-## COMPLETED TASK #9:
+### COMPLETED TASK #9:
 
 Answer:
 
@@ -695,27 +698,27 @@ Answer:
 - pkt[IP].src='127.0.0.1'
 - task.submit(pkt)
 
-## COMPLETED TASK #10:
+### COMPLETED TASK #10:
 
 Answer: 
 
 - TCP_PACKETS[6][Raw].load
 - task.submit('echo.r.n') (had to change backslashes to periods -- my PDF renderer didn't like 'em) 
 
-## COMPLETED TASK #11:
+### COMPLETED TASK #11:
 
 Answer:
 
 - task.submit(ICMP_PACKETS[1][ICMP].chksum)
 
-## COMPLETED TASK #12:
+### COMPLETED TASK #12:
 1. pkt = Ether(src='127.0.0.1')/ICMP(type="echo-request")
 2. pkt = IP(src='127.0.0.1')/ICMP(type="echo-reply")
 3. pkt = IP(dst='127.0.0.1')/ICMP(type="echo-request")
 
 Answer: task.submit('3')
 
-## COMPLETED TASK #13:
+### COMPLETED TASK #13:
 
 Answer:
 
@@ -723,14 +726,14 @@ Answer:
 - task.submit(pkt)
 
 
-## COMPLETED TASK #14:
+### COMPLETED TASK #14:
 
 Answer:
 
 - pkt = IP(dst="127.2.3.4")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="elveslove.santa"))
 - task.submit(pkt)
 
-## COMPLETED TASK #15:
+### COMPLETED TASK #15:
 
 Answer:
 
@@ -740,16 +743,16 @@ Answer:
 - pkt.hwdst='00:16:ce:6e:8b:24'
 - task.submit(ARP_PACKETS)
 
-# Challenge: Kringle Kiosk (Shinny Upatree)
+## Kringle Kiosk (Shinny Upatree)
 
 - Determined through errors that the application was "cowsay".
 - Used command injection with "&&" to add another command to the end which was "bin/bash"
 
-# Challenge: Unescape Tmux (Pepper Minstix)
+## Unescape Tmux (Pepper Minstix)
 
 - Used "tmux a" to attach the available tmux session
 
-# Challenge: Linux Primer (Sugarplum Mary)
+## Linux Primer (Sugarplum Mary)
 
 - Entered "yes" to begin
 - Step 1: "ls"
@@ -774,7 +777,7 @@ Answer:
 - Step 20: "curl localhost:54321"
 - Step 21: "pkill 14516_munchkin"
 
-# Challenge: Redis Bug Hunt (Holly Evergreen)
+## Redis Bug Hunt (Holly Evergreen)
 
 
 - Step 1: "curl http://localhost/maintenance.php"
@@ -844,9 +847,9 @@ player@b71845abd4ae:~$ cat file
 
 ~~~
 
-# Challenge: Speaker UNPrep (Bushy Evergreen)
+## Speaker UNPrep (Bushy Evergreen)
 
-## Part 1: Open the Door
+### Part 1: Open the Door
 
 - Step 1: Ran "strings door"
 - Step 2: Observed this output:
@@ -859,7 +862,7 @@ player@b71845abd4ae:~$ cat file
 ~~~
 - Step 3: entered the password after being prompted when running the "door" binary
 
-## Part 2: Turn on the Lights
+### Part 2: Turn on the Lights
 
 - Step 1: "cd lab"
 - Step 2: view "lights.conf" (this is where the username and password is)
@@ -889,7 +892,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 - Step 6: Notice that the password/username was decrypted! ---> "Computer-TurnLightsOn"
 - Step 7: Enter this password in the real "lights" binary prompt when you run it.
 
-## Part 3: Vending Machine
+### Part 3: Vending Machine
 
 - Step 1: Rename config file.
 - Step 2: Try the vending machine binary int the lab and enter a new password:
@@ -914,7 +917,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 	- "123456789f"   encrypts to "2W1hYoj4lw"
 - Step 3: I tried nearly everything but apparently skipped "CandyCane1". Wow, that was an ordeal!
 
-# 33.6kbps (Fitzy Shortstack)
+## 33.6kbps (Fitzy Shortstack)
 
 - Step 1: Dial the number --> 756-8347
 - Step 2: Use the following sequence
@@ -925,7 +928,7 @@ If you've figured out the real password, be sure you run /home/elf/lights
 	- SCHHRRHHRTHRTR 
 - Step 3: Got hint to talk to Shinny Upatree (to steal his tag ID) :)
 
-# CAN-Bus Investigation (Wunorse Openslae)
+## CAN-Bus Investigation (Wunorse Openslae)
 
 - Step 1: "awk '/19B/' candump.log
 - Step 2: Read through list of results 
