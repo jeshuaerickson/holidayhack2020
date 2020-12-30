@@ -603,11 +603,11 @@ for file in files:
 
 - Step 3: Determine which bytes we could change and still not alter the MD5 hash. This required doing a fair amount of
   reading and getting nudges from folks on Discord! These bytes had to correspond with JF's desired changes. And they
-needed to increment accordingly. If we bumped him from 1 to 0 we had to make a change of this increment to a collusion
+needed to increment accordingly. If we bumped him from 1 to 0 we had to make a change of this increment to a collision
 byte. See screenshot below. Ignore "Santa" bytes. I searched for "Santa" to get to the right location in the
 block.
 
-**How to change bytes:**
+**How to change bytes:** (Unicoll Attack)
 
 ![](screenshots/colltris-109.jpg)
 
