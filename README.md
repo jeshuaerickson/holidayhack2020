@@ -124,7 +124,7 @@ const SANTA_PASSWORD = 'santapass';
 
 Lessons Learned |
 --------------- |
-You might think that a password or source code for an application is unavailable to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.|
+You might think that a password or source code for an application is not available to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.|
 
 # Objective 4: Operate the Santavator
 
