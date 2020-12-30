@@ -117,7 +117,7 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ![](screenshots/objective-5-completed.jpg)
 
-- Step 1: Get this RFID: 2006e22ee1 (from the ? room)
+- Step 1: Get this RFID: 2006e22ee1
 - Step 2: Sim HID tag: "lf hid sim -r 2006e22ee1" 
 - Step 3: Realize that tag ID doesn't do anything.
 - Step 4: Steal Shinny Upatree's ID, using "search lf" when standing next to him.
