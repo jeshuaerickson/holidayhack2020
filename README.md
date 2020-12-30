@@ -61,7 +61,7 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 Lesson |
 ------ |
-Sometimes there are things in photos that you think are not visible as a result of obfuscation. Even in a bitmap image there are ways to 'undo' what has been done, but you simply need to observe and think about what was done initially. |
+** Photo obfuscation can actually be 'undone' in some cases.** |
 
 # Objective 2: Investigate S3 Bucket
 
