@@ -649,95 +649,98 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 ## COMPLETED TASK #1:
 
->task.submit('start')
+Answer: task.submit('start')
 
 ## COMPLETED TASK #2:
 
->task.submit(send)
+Answer: task.submit(send)
 
 ## COMPLETED TASK #3:
 
->task.submit(sniff)
+Answer: task.submit(sniff)
 
 ## COMPLETED TASK #4:
 1. pkt = sr1(IP(dst="127.0.0.1")/TCP(dport=20))
 2. pkt = sniff(IP(dst="127.0.0.1")/TCP(dport=20))
 3. pkt = sendp(IP(dst="127.0.0.1")/TCP(dport=20))
 
->task.submit('1')
+Answer: task.submit('1')
 
 ## COMPLETED TASK #5:
 
->task.submit(rdpcap)
+Answer: task.submit(rdpcap)
 
 ## COMPLETED TASK #6:
 1. UDP_PACKETS.print()
 2. UDP_PACKETS.show()
 3. UDP_PACKETS.list()
 
->task.submit('2')
+Answer: task.submit('2')
 
 ## COMPLETED TASK #7:
 
->task.submit(UDP_PACKETS[0])
+Answer: task.submit(UDP_PACKETS[0])
 
 
 ## COMPLETED TASK #8:
 
->pkt=TCP_PACKETS[1]
+Answer: 
 
->task.submit(pkt[TCP])
+- pkt=TCP_PACKETS[1]
+- task.submit(pkt[TCP])
 
 ## COMPLETED TASK #9:
 
->pkt=UDP_PACKETS[0]
+Answer:
 
->pkt[IP].src='127.0.0.1'
-
->task.submit(pkt)
+- pkt=UDP_PACKETS[0]
+- pkt[IP].src='127.0.0.1'
+- task.submit(pkt)
 
 ## COMPLETED TASK #10:
 
->TCP_PACKETS[6][Raw].load
+Answer: 
 
->task.submit('echo.r.n') (had to change backslashes to periods -- my PDF renderer didn't like 'em) 
+- TCP_PACKETS[6][Raw].load
+- task.submit('echo.r.n') (had to change backslashes to periods -- my PDF renderer didn't like 'em) 
 
 ## COMPLETED TASK #11:
 
->task.submit(ICMP_PACKETS[1][ICMP].chksum)
+Answer:
+
+- task.submit(ICMP_PACKETS[1][ICMP].chksum)
 
 ## COMPLETED TASK #12:
 1. pkt = Ether(src='127.0.0.1')/ICMP(type="echo-request")
 2. pkt = IP(src='127.0.0.1')/ICMP(type="echo-reply")
 3. pkt = IP(dst='127.0.0.1')/ICMP(type="echo-request")
 
->task.submit('3')
-
+Answer: task.submit('3')
 
 ## COMPLETED TASK #13:
 
->pkt = IP(dst="127.127.127.127")/UDP(dport=5000)
+Answer:
 
->task.submit(pkt)
+- pkt = IP(dst="127.127.127.127")/UDP(dport=5000)
+- task.submit(pkt)
 
 
 ## COMPLETED TASK #14:
 
->pkt = IP(dst="127.2.3.4")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="elveslove.santa"))
+Answer:
 
->task.submit(pkt)
+- pkt = IP(dst="127.2.3.4")/UDP(dport=53)/DNS(rd=1,qd=DNSQR(qname="elveslove.santa"))
+- task.submit(pkt)
 
 ## COMPLETED TASK #15:
 
->pkt = ARP_PACKETS[1][ARP]
+Answer:
 
->pkt.op=2
-
->pkt.hwsrc='00:13:46:0b:22:ba'
-
->pkt.hwdst='00:16:ce:6e:8b:24'
-
->task.submit(ARP_PACKETS)
+- pkt = ARP_PACKETS[1][ARP]
+- pkt.op=2
+- pkt.hwsrc='00:13:46:0b:22:ba'
+- pkt.hwdst='00:16:ce:6e:8b:24'
+- task.submit(ARP_PACKETS)
 
 # Kringle Kiosk (Shinny Upatree)
 
