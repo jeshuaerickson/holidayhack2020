@@ -618,7 +618,6 @@ Byte | Diff | Result |
 ---- | ---- | ------ |
 30   | -1   | Turn Jack back to "Naughty" |
 D7   | +1   | Keep MD5 hash intact |
-**   | **   | ** |
 33   | +1   | Show JF's naughty Wombat abuse |
 1B   | -1   | Keep MD5 hash intact |
 
