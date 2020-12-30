@@ -630,9 +630,7 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 ~~~
 	
-# Challenges
-
-# Snowball Fight (Tangle Coalbox)
+# Challenge: Snowball Fight (Tangle Coalbox)
 
 - Step 1: Watch Tom Liston's talk.
 - Step 2: Clone Liston's  mt19937 GitHub repository. Review/run the code.
@@ -645,7 +643,7 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 - Step 8: Transfer only 'hits' from easy mode over to impossible mode in terminal. Since they have the same seed then
   the 'hit's will be the same. This will allow you to make sure every shot in the impossible mode is successful.
 
-# Scapy Prepper (Alabaster Snowball)
+# Challenge: Scapy Prepper (Alabaster Snowball)
 
 ## COMPLETED TASK #1:
 
@@ -742,16 +740,16 @@ Answer:
 - pkt.hwdst='00:16:ce:6e:8b:24'
 - task.submit(ARP_PACKETS)
 
-# Kringle Kiosk (Shinny Upatree)
+# Challenge: Kringle Kiosk (Shinny Upatree)
 
 - Determined through errors that the application was "cowsay".
 - Used command injection with "&&" to add another command to the end which was "bin/bash"
 
-# Unescape Tmux (Pepper Minstix)
+# Challenge: Unescape Tmux (Pepper Minstix)
 
 - Used "tmux a" to attach the available tmux session
 
-# Linux Primer (Sugarplum Mary)
+# Challenge: Linux Primer (Sugarplum Mary)
 
 - Entered "yes" to begin
 - Step 1: "ls"
@@ -776,7 +774,7 @@ Answer:
 - Step 20: "curl localhost:54321"
 - Step 21: "pkill 14516_munchkin"
 
-# Redis Bug Hunt (Holly Evergreen)
+# Challenge: Redis Bug Hunt (Holly Evergreen)
 
 
 - Step 1: "curl http://localhost/maintenance.php"
@@ -846,7 +844,7 @@ player@b71845abd4ae:~$ cat file
 
 ~~~
 
-# Speaker UNPrep (Bushy Evergreen)
+# Challenge: Speaker UNPrep (Bushy Evergreen)
 
 ## Part 1: Open the Door
 
