@@ -600,7 +600,6 @@ for file in files:
 - Step 2: Identify bytes changed by Jack Frost:
 	- He changed his naughty/nice from 0 to 1, so we changed it back to 0.
 	- He changed the visible document to '2' so we changed it back to '3' (Fancy how PDF's can have hidden pages!)
-		- Wombat cruelty??!
 
 - Step 3: Determine which bytes we could change and still not alter the MD5 hash. This required doing a fair amount of
   reading and getting nudges from folks on Discord! These bytes had to correspond with JF's desired changes. And they
