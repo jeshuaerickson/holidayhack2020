@@ -579,13 +579,17 @@ for file in files:
 
 - Step 2: Identify bytes changed by Jack Frost:
 	- He changed his naughty/nice from 0 to 1, so we changed it back to 0.
-	- He changed the visible document to '2' so we changed it back to '3'
+	- He changed the visible document to '2' so we changed it back to '3' (Fancy how PDF's can have hidden pages!)
 
-- Step 3: Determine which bytes we could change and still not alter the MD5 hash. This required doing a fair amount of reading and getting nudges from folks on Discord! These bytes had to correspond with JF's desired changes. And they needed to increment accordingly. If we bumped him from 1 to 0 we had to make a change of this increment to a collusion byte. See screenshot below. 
+- Step 3: Determine which bytes we could change and still not alter the MD5 hash. This required doing a fair amount of
+  reading and getting nudges from folks on Discord! These bytes had to correspond with JF's desired changes. And they
+needed to increment accordingly. If we bumped him from 1 to 0 we had to make a change of this increment to a collusion
+byte. See screenshot below. Ignore "Santa" bytes. I searched for "Santa" to get to the right location in the
+block.
 
 ![](screenshots/11b-bytes-changed.png)
 
-- Step: Compare original to edited bc1.dat to original blockchain.dat.
+- Step 4: Compare original to edited bc1.dat to original blockchain.dat.
 
 ~~~
 
@@ -619,43 +623,6 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 ~~~
 
-
-
-
-
-
-
-
-
-
-
-
-
-- Apparently Jack was able to change just 4 bytes in the block to completely change everything about it. It's like some sort of evil game to him.
-	- Need to read this: https://speakerdeck.com/ange/colltris
-
-- Step 1: Figure out how MD5 hash is created and replicate that.
-- Step 2: Create SHA256 hash with this methodology.
-- Step 3: Find the altered block.
-- Step 4: After doing a dump of all the first docs in each block, I see there is a suspicous binary file associated with block **129459** and this is the nice score: "Score: ffffffff (4294967295)"
-- Step 5: Also notice that the associated pdf is loaded up with praise for Jack Frost. 
-- Step 6: Now I need to see if I can get a SHA256 hash of this block so that as I alter it and if I get the block back to its original state I'll have the hash.
-	- Looks like I need to figure out how to put the pieces together to generate a SHA256 hash.
-	- I can replicate the MD5 hash but not the SHA256. Am I missing something?
-- Step 7: Was finally able to replicate the SHA256 hash of the altered block by doing the following:
-
-~~~
-#This is the sequence in the chain for Jack's altered block.
-blocksequence = 1010
-
-hash_obj_sha256 = SHA256.new()
-hash_obj_sha256.update(c2.blocks[blocksequence].block_data_signed())
-print(hash_obj_sha256.hexdigest())
-~~~
-
-- Step 8: Now I need to research how the block could have been altered.
-- Step 9: I can see there is another document that becomes visible when making changes to the block.
-- Step 10: Now I need need to figure out how to change just the right bytes.
 
 
 	
