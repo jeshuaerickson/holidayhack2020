@@ -19,40 +19,27 @@ for file in files:
     print(file + " ##################################################")
 
     c2 = Chain(load=True, filename=file)
-   
     
-    
-    #c2 = Chain(load=True, filename='blockchain.dat')
-    #print('C2: Block chain verify: %s' % (c2.verify_chain(official_public_key)))
-
-    #iterate through blocks
-
     #jack's block sequence is 1010
     blocksequence = 1010
 
-    c2.blocks[blocksequence].dump_doc(1)
-
-    #print(c2.blocks[blocksequence].block_data_signed())
-
+    #this dumps the resulting PDF
+    c2.blocks[blocksequence].dump_doc(2)
     
+    # this is for studying a single block
+    c2.save_a_block(blocksequence,filename=None)    
     
     block_data = c2.blocks[blocksequence].block_data
-    #b2 = Block(block_data="foo")
-
     index = c2.blocks[blocksequence].index
     nonce = c2.blocks[blocksequence].nonce
     sign = c2.blocks[blocksequence].sign
     score = c2.blocks[blocksequence].score
     previous_hash =  c2.blocks[blocksequence].previous_hash
     current_hash  = c2.blocks[blocksequence].hash
-    #current_hash2 = c2.blocks[blocksequence].hash_n_sign()
-    second = c2.blocks[blocksequence].second
-    sig = c2.blocks[blocksequence].sig
+    
+    #This is for tracking my comparison hashes
     full_hash = c2.blocks[blocksequence].full_hash()
     full_hash_sha256 = c2.blocks[blocksequence].full_hash_sha256()
-
-    #print(current_hash2)
-
 
     print(" ")
     print(" ")
@@ -64,8 +51,6 @@ for file in files:
     print("score:            " + str(score))
     print("previous hash:    " + str(previous_hash))
     print("hash:             " + str(current_hash))
-    print("second:           " + str(second))
-    #print("sig:              " + str(sig))
     print("full hash:        " + str(full_hash))
     print("full hash sha256: " + str(full_hash_sha256))
 
