@@ -548,6 +548,8 @@ Here's the final script that retrieves he predicted values:
 
 The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
 
+Answer: **fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb**
+
 - Step 1: Create a script to show MD5 and SHA256 hashes on changes to the blockchain.dat file.
 
 ~~~
@@ -607,8 +609,8 @@ sign:             1
 score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
-full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84
-full hash sha256: 58a3b9335a6ceb0234c12d35a0564c4ef0e90152d0eb2ce2082383b38028a90f
+full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84 <--- MD5 before changes
+full hash sha256: 58a3b9335a6ceb0234c12d35a0564c4ef0e90152d0eb2ce2082383b38028a90f <--- SHA256 before changes
  
 
 
@@ -622,15 +624,11 @@ sign:             0
 score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
-full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84
-full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb
+full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84 <--- MD5 after changes
+full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb <--- SHA256 after changes and answer to objective!
 
 ~~~
-
-
-
 	
-
 # Challenges
 
 # Snowball Fight (Tangle Coalbox)
@@ -844,10 +842,6 @@ Can you help me find her? We were so attached!!
 - Step 20: "curl localhost:54321"
 - Step 21: "pkill 14516_munchkin"
 
-# The Elf C0de (Ribb Bonbowford)
-
-Mischevious munchkins have nabbed all the North Pole's lollipops intended for good children all over the world. Use your JavaScript skills to retrieve the nabbed lollipops from all the entrances of KringleCon.
-
 # Redis Bug Hunt (Holly Evergreen)
 
 ~~~
@@ -862,8 +856,8 @@ curl http://localhost/maintenance.php
 
 We're pretty sure the bug is in the index page. Can you somehow use the
 maintenance page to view the source code for the index page?
-~~~
 
+~~~
 
 - Step 1: "curl http://localhost/maintenance.php"
 - Step 2: Notice this error output
@@ -873,6 +867,7 @@ maintenance page to view the source code for the index page?
 	curl http://localhost/maintenance.php?cmd=help
 	curl http://localhost/maintenance.php?cmd=mget,example1
 ~~~
+
 - Step 3: "curl http://localhost/maintenance.php?cmd=config,get,*"
 - Step 4: Notice this in the output:
 
