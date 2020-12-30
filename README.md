@@ -138,7 +138,7 @@ Got some help from my kid on this one. :)
 
 Lessons Learned |
 --------------- |
-Problems involving angles and refraction can often be solve many different ways. If you have kids, consult with them on problems like these. If you want them solved quickly, that is.|
+Problems involving angles and refraction can often be solved many different ways. If you have kids, consult with them on problems like these. If you want them solved quickly, that is.|
 
 # Objective 5: Open HID Lock
 
