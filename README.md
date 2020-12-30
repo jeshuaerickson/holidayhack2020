@@ -741,28 +741,10 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 # Kringle Kiosk (Shinny Upatree)
 
-~~~
-Welcome to our castle, we're so glad to have you with us!
-Come and browse the kiosk; though our app's a bit suspicious.
-Poke around, try running bash, please try to come discover,
-Need our devs who made our app pull/patch to help recover?
-
-Escape the menu by launching /bin/bash
-~~~
-
 - Determined through errors that the application was "cowsay".
-- Used command injection with "&&" to add another command to the end of the file which was "bin/bash"
+- Used command injection with "&&" to add another command to the end which was "bin/bash"
 
 # Unescape Tmux (Pepper Minstix)
-
-~~~
-Can you help me?
-
-I was playing with my birdie (she's a Green Cheek!) in something called tmux,
-then I did something and it disappeared!
-
-Can you help me find her? We were so attached!!
-~~~
 
 - Used "tmux a" to attach the available tmux session
 
@@ -793,20 +775,6 @@ Can you help me find her? We were so attached!!
 
 # Redis Bug Hunt (Holly Evergreen)
 
-~~~
-
-We need your help!!
-
-The server stopped working, all that's left is the maintenance port.
-
-To access it, run:
-
-curl http://localhost/maintenance.php
-
-We're pretty sure the bug is in the index page. Can you somehow use the
-maintenance page to view the source code for the index page?
-
-~~~
 
 - Step 1: "curl http://localhost/maintenance.php"
 - Step 2: Notice this error output
@@ -873,30 +841,9 @@ player@b71845abd4ae:~$ cat file
 #         \/ \/
 # 
 
-echo "Something is wrong with this page! Please use http://localhost/maintenance.php to see if you can figure out what's going on"
-?>
 ~~~
 
 # Speaker UNPrep (Bushy Evergreen)
-~~~
-Help us get into the Speaker Unpreparedness Room!
-
-The door is controlled by ./door, but it needs a password! If you can figure
-out the password, it'll open the door right up!
-
-Oh, and if you have extra time, maybe you can turn on the lights with ./lights
-activate the vending machines with ./vending-machines? Those are a little
-trickier, they have configuration files, but it'd help us a lot!
-
-(You can do one now and come back to do the others later if you want)
-
-We copied edit-able versions of everything into the ./lab/ folder, in case you
-want to try EDITING or REMOVING the configuration files to see how the binaries
-react.
-	
-Note: These don't require low-level reverse engineering, so you can put away IDA
-and Ghidra (unless you WANT to use them!)
-~~~
 
 ## Part 1: Open the Door
 
@@ -976,23 +923,8 @@ If you've figured out the real password, be sure you run /home/elf/lights
 	- beDURRdunditty
 	- SCHHRRHHRTHRTR 
 - Step 3: Got hint to talk to Shinny Upatree (to steal his tag ID) :)
-	- "2006e22f13" 
-
 
 # CAN-Bus Investigation (Wunorse Openslae)
-
-~~~
-Welcome to the CAN bus terminal challenge!
-
-In your home folder, there's a CAN bus capture from Santa's sleigh. Some of
-the data has been cleaned up, so don't worry - it isn't too noisy. What you
-will see is a record of the engine idling up and down. Also in the data are
-a LOCK signal, an UNLOCK signal, and one more LOCK. Can you find the UNLOCK?
-We'd like to encode another key mechanism.
-
-Find the timestamp of the UNLOCK code in candump.log and submit it to
-./runtoanswer!
-~~~
 
 - Step 1: "awk '/19B/' candump.log
 - Step 2: Read through list of results 
