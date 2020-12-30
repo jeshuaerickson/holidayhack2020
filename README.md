@@ -268,10 +268,10 @@ Jack Frost is somehow inserting malicious messages onto the sleigh's CAN-D bus. 
 
 It works!
 
-Lessons Learned
+**Lessons Learned**
 
-Some actions or actuations (like driving a car or sled) might not seem like they are digital in nature, but they are! |
-When looking for troublemakers, it is important to reduce noise as much as possible.|
+- Some actions or actuations (like driving a car or sled) might not seem like they are digital in nature, but they are!
+- When looking for troublemakers, it is important to reduce noise as much as possible.
 
 
 # Objective 8: Broken Tag Generator
