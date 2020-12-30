@@ -493,7 +493,8 @@ Even though the chunk of the blockchain that you have ends with block 129996, ca
 **blockchain.py**
 
 ~~~
-    #we only need 312 nonces
+
+#we only need 312 nonces
 
 for var in list(range(312)):
     #start on block 1236
@@ -518,12 +519,6 @@ for var in list(range(312)):
     #32a prediction value was '0x57066318'
     #32b prediction value was '0xf32f729d'
 
-    #print(hexNonce)
-    #print(hex(hexNonce_32a))
-    
-    #print(hex(hexNonce_32b))
-    #print(c2.blocks[var].index)
-    #c2.blocks[var].dump_doc(1)
 ~~~
 
 Here's the final script that retrieves he predicted values:
