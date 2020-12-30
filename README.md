@@ -657,7 +657,7 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 Lessons Learned |
 --------------- |
-It is important to seek help with solving a problem once you've hit a wall. Secondarily, MD5 collisions are a thing and they can actually happen, and you can make them happen! (Jack should have just been nice instead of trying to hack the naughty/nice blockchain.) With PDF documents, there is definitely more than what meets the eye. Additionaly, make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. Lastly, I have a much better sense of how block chains work now as a result of this objective! |
+It is important to seek help with solving a problem once you've hit a wall. Secondarily, MD5 collisions are a thing and they can actually happen, and you can make them happen! (Jack should have just been nice instead of trying to hack the naughty/nice blockchain.) I also learned that with PDF documents, there is definitely more than what meets the eye. Additionaly, make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. Lastly, I have a much better sense of how block chains work now as a result of this objective! |
 
 # Narrative
 
