@@ -86,7 +86,7 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 Lesson |
 ------ |
-There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!|
+**There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!**|
 
 
 
