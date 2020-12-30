@@ -167,7 +167,7 @@ Access the Splunk terminal in the Great Room. What is the name of the adversary 
 
 **Answer:** "The Lollipop Guild"
 
-Make sure you are "Santa" when you attempt this objective.
+rake sure you are "Santa" when you attempt this objective.
 
 ## Question 1
 
@@ -578,7 +578,7 @@ Here's the final script that retrieves he predicted values:
 
 Lessons Learned |
 --------------- |
-When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! Also, I did not fully understand what 32bit vs. 64bit meant until I did this exercise (you can split a 64bit number in half to make a 32bit number!!), which also helped me explain bits and registers to my 11-year-old. Finally, I had NO concept of Endianness until Holiday Hack 2020. But now I do! |
+When it comes to computers, everything is deterministic, including random numbers! Be very careful what assumptions you're making when you're using random numbers to make an application or component more secure! Also, you can split a 64bit number in half to make a 32bit number!! Additionaly, a deeper understanding of 32bit vs. 64bit helped me explain bits and registers to my 11-year-old. Finally, I had NO concept of Endianness until Holiday Hack 2020. But now I do! |
 
 
 # Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
@@ -671,7 +671,7 @@ full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408a
 
 Lessons Learned |
 --------------- |
-It is important to seek help with solving a problem once you've hit a wall. MD5 collusions are a thing and they can actually happen, and you can make them happen! Jack should have just been nice instead of trying to hack the naughty/nice blockchain. With PDF documents, there is definitely more than what meets the eye. Make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. |
+It is important to seek help with solving a problem once you've hit a wall. MD5 collusions are a thing and they can actually happen, and you can make them happen! Jack should have just been nice instead of trying to hack the naughty/nice blockchain. With PDF documents, there is definitely more than what meets the eye. Lastly, make sure you're a hundred percent confident you can recreate current state before you move on to make changes and create a new state that shows some differences and not others. For example, an non-changing MD5 hash and a changing SHA256 hash. |
 
 
 # Challenges:
