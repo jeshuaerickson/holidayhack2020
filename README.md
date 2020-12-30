@@ -941,25 +941,23 @@ If you've figured out the real password, be sure you run /home/elf/lights
 
 - Step 1: Rename config file.
 - Step 2: Try the vending machine binary int the lab and enter a new password:
-	- "CandyCane-"   encrypts to "LVEdQPpBwr" LVEdQPpBw	
-	- "AAAAAAAAAAAA" encrypts to "XiGRehmwXiGR"
-	- "BBBBBBBBBBBB" encrypts to "DqTpKv7fDqTp"
-	- "CCCCCCCCCCCC" encrypts to "Lbn3UP9WLbn3"
-	- "ABCABCABCABC" encrypts to "XqnRKPmfLiT3"
-	- "DDDDDDDDDDD"  encrypts to "yv09iu8Qyv0"
-	- "EEEEEEEEEEEE" encrypts to "hxkr3zCnhxkr"
-	- "hhhhhhhhhhhh" encrypts to "nnUgokAhnnUg"
-	- "aaaaaaaaaaaa" encrypts to "9Vbtacpg9Vbt"
-        - "nnnnnnnnnnnn" encrypts to "bhE62XDBbhE6"
-	- "ddddddddddddd" encryptsto "ORLdlwWbORLdl"
-	- "yyyyyyyyyyyy" encrypts to "iL5JQAMUiL5J"
-	- "333333333333" encrypts to "WJ1YbNtlWJ1Y"
-	- "eeeeeeeeeeee" encrypts to "wcZQAYuewcZQ"
-	- "ssssssssssss" encrypts to "A5PnWSbDA5Pn"
-	- "123456789a"   encrypts to "2W1hYoj4lV"
-	- "123456789b"   encrypts to "2W1hYoj4lU"
-	- "123456789e"	 encrypts to "2W1hYoj4lc"
-	- "123456789f"   encrypts to "2W1hYoj4lw"
+
+~~~
+"CandyCane-"    encrypts to "LVEdQPpBwr" -----> "CandyCane-" was what I found through table.	
+"AAAAAAAAAAAA"  encrypts to "XiGRehmwXiGR"
+"BBBBBBBBBBBB"  encrypts to "DqTpKv7fDqTp"
+"CCCCCCCCCCCC"  encrypts to "Lbn3UP9WLbn3"
+"ABCABCABCABC"  encrypts to "XqnRKPmfLiT3"
+"DDDDDDDDDDD"   encrypts to "yv09iu8Qyv0"
+"EEEEEEEEEEEE"  encrypts to "hxkr3zCnhxkr"
+"hhhhhhhhhhhh"  encrypts to "nnUgokAhnnUg"
+"aaaaaaaaaaaa"  encrypts to "9Vbtacpg9Vbt"
+"nnnnnnnnnnnn"  encrypts to "bhE62XDBbhE6"
+"ddddddddddddd" encrypts to "ORLdlwWbORLdl"
+"yyyyyyyyyyyy"  encrypts to "iL5JQAMUiL5J"
+"eeeeeeeeeeee"  encrypts to "wcZQAYuewcZQ"
+~~~
+
 - Step 3: I tried nearly everything but apparently skipped "CandyCane1". Wow, that was an ordeal!
 
 ## 33.6kbps (Fitzy Shortstack)
