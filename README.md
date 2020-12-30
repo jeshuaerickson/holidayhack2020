@@ -404,7 +404,10 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
 ~~~
 
 - Step 5: Note file being requested with http request.
-	- "GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
+
+~~~
+"GET /pub/jfrost/backdoor/suriv_amd64.deb HTTP/1.1"
+~~~
 
 - Step 6: Create that file and make it call back to listener on local machine.
 - Step 7: Determine payload to use. Simple nc reverse shell should work.
