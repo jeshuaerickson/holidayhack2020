@@ -152,8 +152,6 @@ Access the Splunk terminal in the Great Room. What is the name of the adversary 
 
 **Answer:** "The Lollipop Guild"
 
-![](screenshots/splunk.png)
-
 Make sure you are "Santa" when you attempt this objective.
 
 ## Question 1
