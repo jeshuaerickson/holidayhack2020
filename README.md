@@ -141,9 +141,8 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 - Step 5: Simulate the ID when you get to Santa's secret door in the workshop.
         - "lf hid sim -r 2006e22f13" 
 	- Needed to wait seconds. I was being boneheaded and trying the door before the 10 seconds was up.
-- Step 6: Go through Santa's secret office and BECOME SANTA! WHAT ON EARTH!
+- Step 6: Go through Santa's secret office and become Santa. Amazing! My badge is now the "KringleCon Black Badge"
 
-![](screenshots/black-badge.png)
 
 # Objective 6: Splunk Challenge
 
