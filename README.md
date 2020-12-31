@@ -706,8 +706,6 @@ hash:             347979fece8d403e06f89f8633b5231a
 
 # Narrative
 
-![](screenshots/balcony.png)
-
 ~~~
 KringleCon back at the castle, set the stage...
 But it's under construction like my GeoCities page.
@@ -731,6 +729,7 @@ All the rotting, plotting, low conniving streaming from that skull.
 Holiday Hackers, they're no slackers, returned Jack a big, old null!
 ~~~
 
+![](screenshots/balcony.png)
 
 # Challenges
 	
