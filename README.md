@@ -584,7 +584,7 @@ Here's the final script that retrieves he predicted values:
 
 The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
 
-Answer: **fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb**
+**Answer:** fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb
 
 - Step 1: Create a script to show MD5 and SHA256 hashes on changes to the blockchain.dat file.
 
