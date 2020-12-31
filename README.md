@@ -681,13 +681,17 @@ score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
 
-full hash:        
-b10b4a6bd373b61f32f4fd3a0cdfbf84 
-MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)
+***********************************************************
++ full hash:                                              +
++ b10b4a6bd373b61f32f4fd3a0cdfbf84                        + 
++ MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)  +
+***********************************************************
 
-full hash sha256: 
-fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb 
-SHA256 after changes and answer to objective!
+********************************************************************
++ full hash sha256:                                                +
++ fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb +
++ SHA256 after changes and ANSWER to objective!                    +
+********************************************************************
 
 ~~~
 
