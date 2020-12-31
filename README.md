@@ -152,6 +152,7 @@ How many distinct MITRE ATT&CK techniques did Alice emulate?
 - Answer: 13
 
 This was the recommended search
+
 ~~~
 | tstats count where index=* by index 
 | search index=T*-win OR T*-main
