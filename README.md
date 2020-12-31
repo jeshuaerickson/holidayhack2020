@@ -78,9 +78,9 @@ Help Sugarplum Mary in the Courtyard find the supervisor password for the point-
 - Step 2: Extract with "engrampa"
 - Step 3: Looking at the .asar file located here: app-64/resources
 - Step 4: Remember to read hints and look at hint suggesting npm "asar" tool.
-- Step 5: Reading throught this article on how to use it. Interesting!
+- Step 5: Reading through this article on how to use it. Interesting!
 	- Follow directions and unpack source code for santa-shop.exe
-	- <a href="https://medium.com/how-to-electron/how-to-get-source-code-of-any-electron-application-cbb5c7726c37">asar article on Medium</a>
+	- https://medium.com/how-to-electron/how-to-get-source-code-of-any-electron-application-cbb5c7726c37
 - Step 6: Review unpacked source code and then "cat README.md"
 	- "cat README.md" ---> "Remember, if you need to change Santa's passwords, it's at the top of main.js!"
 
