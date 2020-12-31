@@ -640,8 +640,14 @@ sign:             1
 score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
-full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84 <--- MD5 before changes
-full hash sha256: 58a3b9335a6ceb0234c12d35a0564c4ef0e90152d0eb2ce2082383b38028a90f <--- SHA256 before changes
+
+full hash:        
+b10b4a6bd373b61f32f4fd3a0cdfbf84
+MD5 before changes
+
+full hash sha256: 
+58a3b9335a6ceb0234c12d35a0564c4ef0e90152d0eb2ce2082383b38028a90f 
+SHA256 before changes
  
 
 
@@ -655,8 +661,14 @@ sign:             0
 score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
-full hash:        b10b4a6bd373b61f32f4fd3a0cdfbf84 <--- MD5 after changes
-full hash sha256: fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb <--- SHA256 after changes and answer to objective!
+
+full hash:        
+b10b4a6bd373b61f32f4fd3a0cdfbf84 
+MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)
+
+full hash sha256: 
+fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb 
+SHA256 after changes and answer to objective!
 
 ~~~
 
