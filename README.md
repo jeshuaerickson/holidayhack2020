@@ -30,15 +30,18 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 ![](screenshots/objective-1-completed.jpg)
 
-**Answer:** "poxmark"
+**Answer:** "proxmark"
 
-- First stop in the Holiday Hack challenge! I talked to Jingle Ringleford and downloaded the billboard image.
-- I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
-- Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
+This is the first stop in the Holiday Hack 2020 Challenge! Talk to Jingle Ringleford and download the billboard image. You may not be able to see the billboard at first. Try zooming out a bit in your web browser. Once you download the image, you'll see that it it is 'twirled'. Most bitmap image editors (Gimp, ImageMagick) will allow you to apply a twirling filter in reverse. I used the online application suggested in the hint. https://www.photopea.com/.
+
+I found it helpful to zoom in and then use the "Rectangle Select" tool. You can go right to "Filter >> Distort >> Twirl" once you have the area you'd like to focus on. It seems the best result comes when you try several different selected areas, starting from scratch each time. With every new selected area, see if the 'twirl' tool shows you some clarity right away. If it does, then you have only slightly more you need to do on the slider to see which item Santa plans to give Josh Wright. 
+
+![](screenshots/proxmark.png)
 
 **Lessons Learned**
 
 - Photo obfuscation can actually be 'undone' in some cases.
+- When working with "Distort" tools within image editing software, picking the correct "selection" area is half the battle.
 
 # Objective 2: Investigate S3 Bucket
 
