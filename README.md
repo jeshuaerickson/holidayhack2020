@@ -111,7 +111,7 @@ Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
 Got some help from my kid on this one. :) 
 
-![](screenshots/elevator.png)
+![](screenshots/santavator.png)
 
 **Lessons Learned**
 
