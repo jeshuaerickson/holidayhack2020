@@ -41,7 +41,7 @@ I found it helpful to zoom in and then use the "Rectangle Select" tool. You can 
 **Lessons Learned**
 
 - Photo obfuscation can actually be 'undone' in some cases.
-- When working with "Distort" tools within image editing software, picking the correct "selection" area is half the battle.
+- When working with image editing "distort" filter tools, picking the correct "selection" area is half the battle.
 
 # Objective 2: Investigate S3 Bucket
 
