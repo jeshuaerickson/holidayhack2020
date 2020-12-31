@@ -36,7 +36,7 @@ This is the first stop in the Holiday Hack 2020 Challenge! Talk to Jingle Ringle
 
 I found it helpful to zoom in and then use the "Rectangle Select" tool. You can go right to "Filter >> Distort >> Twirl" once you have the area you'd like to focus on. It seems the best result comes when you try several different selected areas, starting from scratch each time. With every new selected area, see if the 'twirl' tool shows you some clarity right away. If it does, then you have only slightly more you need to do on the slider to see which item Santa plans to give Josh Wright. 
 
-![](screenshots/proxmark.png)
+![](screenshots/proxmark-smaller.png)
 
 **Lessons Learned**
 
