@@ -706,6 +706,8 @@ hash:             347979fece8d403e06f89f8633b5231a
 
 # Narrative
 
+![](screenshots/balcony.png)
+
 ~~~
 KringleCon back at the castle, set the stage...
 But it's under construction like my GeoCities page.
