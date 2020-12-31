@@ -123,6 +123,10 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ![](screenshots/objective-5-completed.jpg)
 
+Get this tool!
+
+![](screenshots/proxmark-cli.png)
+
 - Step 1: Steal Shinny Upatree's ID, using "search lf" when standing next to him.
 - Step 2: Simulate the ID when you get to Santa's secret door in the workshop.
         - "lf hid sim -r 2006e22f13" 
