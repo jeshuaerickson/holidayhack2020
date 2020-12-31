@@ -487,12 +487,13 @@ Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's f
 
 This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three. Can I hack this on the client side? Yup!
 	
-- Set a 'breakpoint' in developer mode where the code checks to see if you have the 'besanta' token.
-- Now refresh your page and you'll land on the breakpoint when you click the fingerprint scanner.
-- Here's your opportunity! Simply remove the **"hasToken('besanta')"** condition.
-- Remember to save your changes right to the "app.js" file.
-- Now resume code execution in developer mode and you float right on by the logic that checks if you are Santa!
-- (This was a trick I learned from a BBKing/Black Hills Information Security webcast. Highly recommend!) 
+- Step 1: Set a 'breakpoint' in developer mode where the code checks to see if you have the 'besanta' token.
+- Step 2: Now refresh your page and you'll land on the breakpoint when you click the fingerprint scanner.
+- Step 3: Here's your opportunity! Simply remove the **"hasToken('besanta')"** condition.
+- Step 4: Remember to save your changes right to the "app.js" file.
+- Step 5: Now resume code execution in developer mode and you float right on by the logic that checks if you are Santa!
+
+These were tricks I learned from a BBKing/Black Hills Information Security webcast. Highly recommend! 
 
 ![](screenshots/remove-besanta-condition.png)
 
