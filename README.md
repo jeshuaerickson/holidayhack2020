@@ -51,22 +51,24 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 **Answer:** "North Pole: The Frostiest Place on Earth"
 
-- Added wrapper3000 to the wordlist
-- Found this bucket (wrapper3000) and the file "package"
-- Now attempting to decompress the file
+- Step 1: Add "wrapper3000" to the wordlist
+- Step 2: Rerun the supplied tool with this updated wordlist
+	- wordlist is located here: "~/bucket_finder/wordlist"
+	- run the tool with this wordlist "~/bucket_finder/bucket_finder.rb wordlist"
+- Step 3: Find this bucket (wrapper3000) and the file "package"
 - <a href="http://s3.amazonaws.com/wrapper3000/package">http://s3.amazonaws.com/wrapper3000/package</a>
-- Step 1: "cat package" (and see that it was base64 encoded)
-- Step 2: "base64 -d package > package.zip"
-- Step 3: "unzip package.zip"
-- Step 4: "tar -xvf package.txt.Z.xz.xxd.tar.bz2"
-- Step 5: "xxd -r *.xxd > package.txt.Z.xz"
-- Step 6: "xz -d package.txt.Z.xz"
-- Step 7: "uncompress package.txt.Z"
-- Step 8: "cat package.txt"
-
+- Step 4: "cat package" (and see that it was base64 encoded)
+- Step 5: "base64 -d package > package.zip"
+- Step 6: "unzip package.zip"
+- Step 7: "tar -xvf package.txt.Z.xz.xxd.tar.bz2"
+- Step 8: "xxd -r *.xxd > package.txt.Z.xz"
+- Step 9: "xz -d package.txt.Z.xz"
+- Step 10: "uncompress package.txt.Z"
+- Step 11: "cat package.txt"
 
 **Lessons Learned** 
 
+- Automation does wonders when comes time to look for publicly exposed s3 buckets.
 - There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!
 
 # Objective 3: Point-of-Sale Password Recovery
