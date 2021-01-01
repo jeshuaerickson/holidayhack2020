@@ -30,15 +30,6 @@ There is a photo of Santa's Desk on that billboard with his personal gift list. 
 
 ![](screenshots/objective-1-completed.jpg)
 
-<<<<<<< HEAD
-**Answer:** "poxmark"
-
-- First stop in the Holiday Hack challenge! I talked to Jingle Ringleford and downloaded the billboard image.
-- I used the tool suggested in the hint. Took several attempts at twirling and untwirling before I could see what was on the list for him.
-- Once I saw what was on the list, I read it as "poxmark", but had no idea if this was a thing, so I googled it. YUP! A very interesting thing at that. :)
-=======
-**Answer:** "proxmark"
-
 This is the first stop in the Holiday Hack 2020 Challenge! Talk to Jingle Ringleford and download the billboard image. You may not be able to see the billboard at first. Try zooming out a bit in your web browser. Once you download the image, you'll see that it it is 'twirled'. Most bitmap image editors (Gimp, ImageMagick) will allow you to apply a twirling filter in reverse. I used the online application suggested in the hint. https://www.photopea.com/.
 
 I found it helpful to zoom in and then use the "Rectangle Select" tool. You can go right to "Filter >> Distort >> Twirl" once you have the area you'd like to focus on. It seems the best result comes when you try several different selected areas, starting from scratch each time. With every new selected area, see if the 'twirl' tool shows you some clarity right away. If it does, then you have only slightly more you need to do on the slider to see which item Santa plans to give Josh Wright. 
@@ -58,24 +49,6 @@ When you unwrap the over-wrapped file, what text string is inside the package? T
 
 **Answer:** "North Pole: The Frostiest Place on Earth"
 
-<<<<<<< HEAD
-- Added wrapper3000 to the wordlist
-- Found this bucket (wrapper3000) and the file "package"
-- Now attempting to decompress the file
-- <a href="http://s3.amazonaws.com/wrapper3000/package">http://s3.amazonaws.com/wrapper3000/package</a>
-- Step 1: "cat package" (and see that it was base64 encoded)
-- Step 2: "base64 -d package > package.zip"
-- Step 3: "unzip package.zip"
-- Step 4: "tar -xvf package.txt.Z.xz.xxd.tar.bz2"
-- Step 5: "xxd -r *.xxd > package.txt.Z.xz"
-- Step 6: "xz -d package.txt.Z.xz"
-- Step 7: "uncompress package.txt.Z"
-- Step 8: "cat package.txt"
-
-
-**Lessons Learned** 
-
-=======
 - Step 1: Add "wrapper3000" to the wordlist
 - Step 2: Rerun the supplied tool with this updated wordlist
 	- wordlist is located here: "~/bucket_finder/wordlist"
@@ -511,9 +484,6 @@ Bypass the Santavator fingerprint sensor. Enter Santa's office without Santa's f
 
 *Note: You can't be in Santa mode when you complete this challenge. Santa already has access to his office. So you're not really defeating the fingerprint sensor when you're Santa. You're just using it as intended. Go to the Santa in the 'Entry' and switch back to being a normal user first.* 
 
-<<<<<<< HEAD
-This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three and deleted it. After doing this, you can save "app.js" and reload the elevator code in your browser. 
-=======
 This required going into developer mode in Google Chrome. I saw one spot where the 'besanta' token was a condition required for being able to go to floor three. Can I hack this on the client side? Yup!
 	
 - Step 1: Set a 'breakpoint' in developer mode where the code checks to see if you have the 'besanta' token.
