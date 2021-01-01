@@ -14,6 +14,7 @@ titlepage-rule-height: 2
 book: true
 numbersections: false
 classoption: oneside
+geometry: margin=2cm
 code-block-font-size: \scriptsize
 ---
 
