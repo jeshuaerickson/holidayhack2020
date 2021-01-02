@@ -394,7 +394,7 @@ Go to the NetWars room on the roof and help Alabaster Snowball get access back t
         arp_response.hwsrc = macaddr #provide my mac address
         arp_response.psrc = "10.6.6.53" #provide IP sought by 10.6.6.35
         arp_response.hwdst = packet.hwsrc
-	arp_responst.pdst = packet.psrc
+	arp_response.pdst = packet.psrc
 
         response = ether_resp/arp_response
 
