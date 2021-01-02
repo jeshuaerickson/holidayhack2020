@@ -24,6 +24,8 @@ code-block-font-size: \scriptsize
 
 GitHub Repository Location: **https://github.com/jeshuaerickson/holidayhack2020**
 
+*GitHub Repository not available until after January 11, 2021*
+
 
 # Objective 1: Uncover Santa's Gift List
 
