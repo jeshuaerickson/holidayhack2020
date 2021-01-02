@@ -1,7 +1,7 @@
 ---
 title: "Holiday Hack Challenge 2020"
 author: [Jeshua Erickson]
-date: "2020-12-25"
+date: "2020-01-02"
 subject: "Markdown"
 keywords: [Markdown, Example]
 subtitle: "Official Write-Up"
